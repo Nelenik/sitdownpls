@@ -1,3 +1,110 @@
-<header class="container header__container">
- 
-</header>
+  <header class="header">
+    <div class="container header__container header-grid">
+      <div class="header-grid__cell header-grid__cell--1 cell-1">
+        <label class="header__region region">
+          <span class="region__text">Ваш регион:</span>
+          <select name="region">
+            <option value="Москва">Москва</option>
+            <option value="Казань">Казань</option>
+            <option value="Уфа">Уфа</option>
+            <option value="Пермь">Пермь</option>
+          </select>
+        </label>
+        <a class="header__tel tel" href="tel:74958854547">
+          <svg class="tel__svg">
+            <use xlink:href="sprite.svg#call"></use>
+          </svg>
+          <span class="tel__text">+7 (495) 885-45-47</span>
+        </a>
+      </div>
+      <div class="header-grid__cell header-grid__cell--2 cell-2">
+        <nav class="additional-menu">
+          <ul class="list-reset additional-menu__list">
+            <li class="additional-menu__item">
+              <a class="additional-menu__link" href="#!">О компании</a>
+            </li>
+            <li class="additional-menu__item">
+              <a class="additional-menu__link" href="#!">Гарантия и возврат</a>
+            </li>
+            <li class="additional-menu__item">
+              <a class="additional-menu__link" href="#!">Корпоративным клиентам</a>
+            </li>
+            <li class="additional-menu__item">
+              <a class="additional-menu__link" href="#!">Дизайн-решение</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-grid__cell header-grid__cell--3">
+        <a href="#!" class="header__logo logo" aria-label="SitDownPls logo">
+          <svg class="logo__svg">
+            <use xlink:href="sprite.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="header-grid__cell header-grid__cell--4">
+        <nav class="main-menu">
+          <ul class="list-reset main-menu__list">
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#!">Каталог</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#!">Магазины</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#!">Шоу-рум</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#!">Доставка и оплата</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#!">Дисконт</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#!">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-grid__cell header-grid__cell--5">
+        <form class="header__search search" name="search">
+          <div class="search__input-wrap">
+            <svg class="search__loupe">
+              <use xlink:href="sprite.svg#search"></use>
+            </svg>
+            <input type="text" class="search__input" name="searchField" placeholder="Я хочу купить...">
+            <button class="btn-reset search__btn" type="button" name="searchBtn">
+              <svg>
+                <use xlink:href="sprite.svg#arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+          <label class="search__select-wrap">
+            <select name="searchCategory">
+              <option value="Диваны">Диваны</option>
+              <option value="Кресла">Кресла</option>
+              <option value="Пуфы">Пуфы</option>
+              <option value="Кровати">Кровати</option>
+              <option value="Тумбы">Тумбы</option>
+              <option value="Комоды">Комоды</option>
+              <option value="Стулья">Стулья</option>
+              <option value="Столы">Столы</option>
+              <option value="Аксессуары">Аксессуары</option>
+            </select>
+          </label>
+        </form>
+      </div>
+      <div class="header-grid__cell header-grid__cell--6">
+        <button class="btn-reset entry-btn" type="button">
+          <svg class="entry-btn__svg">
+            <use xlink:href="sprite.svg#user"></use>
+          </svg>
+        </button>
+        <button class="btn-reset cart-btn" type="button">
+          <svg class="cart-btn__svg">
+            <use xlink:href="sprite.svg#cart"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>

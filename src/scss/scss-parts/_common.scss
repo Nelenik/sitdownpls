@@ -1,0 +1,150 @@
+@import 'variables';
+@import 'mixins';
+
+.container {
+  @include container(1342px, 36px);
+}
+
+// common styles blocks
+.logo {
+  outline: none;
+  &__svg {
+    display: block;
+    width: 187px;
+    height: 27px;
+    fill: $secondary;
+    color: $primary;
+  }
+}
+
+.round-btn {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  transition: background-color 0.3s linear, border-color 0.3s linear;
+
+  & svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 10px;
+    height: 15px;
+    transform: translate(-50%, -50%);
+    stroke: $primary;
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    transition: stroke 0.3s linear;
+  }
+
+  &:focus-visible:not([class*=disabled]) {
+    background-color: $primary-light;
+
+    & svg {
+      stroke: $white;
+    }
+  }
+
+  &:hover:not(:focus-visible):not(:active):not([class*=disabled]) {
+    @media (hover: hover) {
+      background-color: $primary;
+
+      & svg {
+        stroke: $white;
+      }
+    }
+  }
+
+  &:active:not([class*=disabled]) {
+    background-color: $primary-shade;
+    border-color: $primary-shade;
+
+    & svg {
+      stroke: $white;
+    }
+  }
+
+  &--sm {
+    width: 22px;
+    height: 22px;
+
+    & svg {
+      width: 6px;
+      height: 10px;
+      stroke-width: 2px;
+    }
+  }
+
+  &[class*=disable] {
+    border-color: $grey;
+
+    & svg {
+      stroke: $grey;
+    }
+  }
+}
+
+.btn-colored {
+  margin-right: 20px;
+
+  padding: 20px 50.5px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: $white;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  background-color: $primary;
+  transition: background-color 0.3s linear, border-color 0.3s linear;
+
+  &:focus-visible {
+    background-color: $primary-light;
+    border-color: $primary-shade;
+  }
+
+  &:hover:not(:focus-visible):not(:active) {
+    @media(hover:hover) {
+      background-color: $primary-light;
+      border-color: $primary-light;
+    }
+  }
+
+  &:active {
+    background-color: $primary-shade;
+    border-color: $primary-shade;
+  }
+}
+
+.btn-transp {
+  padding: 17px 32px;
+  font-size: 1rem;
+  line-height: 100%;
+  font-weight: 700;
+  color: $primary;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  transition: background-color 0.3s linear, border-color 0.3s linear, color 0.3s linear;
+
+  &:focus-visible {
+    background-color: $primary-light;
+    color: $white;
+  }
+
+  &:hover:not(:focus-visible):not(:active) {
+    @media (hover:hover) {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &:active {
+    background-color: $primary-shade;
+    border-color: $primary-shade;
+    color: $white;
+  }
+
+}

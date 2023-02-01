@@ -1,0 +1,247 @@
+@import 'mixins';
+@import "variables";
+
+.header {
+  &__region {
+    margin-right: 30px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: $grey-light;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px repeat(2, auto);
+  align-items: center;
+  gap: 32px;
+
+  &__cell {
+    &--1 {
+      grid-column: span 4;
+    }
+
+    &--2 {
+      grid-column: span 8;
+    }
+
+    &--3 {
+      grid-column: span 2;
+    }
+
+    &--4 {
+      grid-column: span 10;
+    }
+
+    &--5 {
+      grid-column: span 10;
+    }
+
+    &--6 {
+      grid-column: span 2;
+    }
+  }
+}
+
+.cell-1 {
+  display: flex;
+  align-items: center;
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: $secondary;
+  outline: none;
+  transition: background-color 0.3s linear, color 0.3s linear;
+
+  &__svg {
+    width: 16px;
+    height: 16px;
+    fill: $secondary;
+    transition: fill 0.3s linear;
+  }
+
+  &:focus-visible {
+    background-color: $bone;
+  }
+
+  &:hover:not(:focus-visible):not(:active) {
+    @media (hover:hover) {
+      color: $secondary-light;
+
+      .tel__svg {
+        fill: $secondary-light;
+      }
+    }
+  }
+
+  &:active {
+    color: $secondary-shade;
+
+    .tel__svg {
+      fill: $secondary-shade;
+    }
+  }
+}
+
+.additional-menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: min(100%, 720px);
+    gap: 20px;
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+    font-size: 0.875rem;
+    line-height: 100%;
+    color: $grey;
+    outline: none;
+    transition: color 0.3s linear;
+
+    &::before {
+      @include focusPseudo(0 -8px, $pink-violet)
+    }
+
+    &:focus-visible {
+      color: $primary-shade;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:hover:not(:focus-visible):not(:active) {
+      @media (hover:hover) {
+        color: $primary;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+}
+
+.main-menu {
+  display: flex;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: min(100%, 952px);
+  }
+
+  &__link {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    color: $grey-dark;
+    outline: none;
+    transition: color 0.3s linear;
+
+    &::before {
+      @include focusPseudo(-2px -7px, $pink-violet)
+    }
+
+    &:focus-visible {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:hover:not(:focus-visible):not(:active) {
+      @media (hover:hover) {
+        color: $primary;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+}
+
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    width: 71.724788%;
+    /* 761/1061 */
+    background-color: $grey-light;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  &__loupe {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    fill: $grey;
+
+  }
+
+  &__input {
+    flex-grow: 1;
+    padding: 18px 27px;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  &__btn {
+    position: relative;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: 2px solid $primary;
+    border-radius: 50%;
+
+    & svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 15px;
+      transform: translate(-50%, -50%);
+      stroke: $primary;
+      stroke-width: 1.5px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+  }
+}

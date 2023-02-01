@@ -23,6 +23,16 @@
   padding: 0 $padding;
 }
 
+@mixin focusPseudo($inset, $bg) {
+  content: '';
+  position: absolute;
+  inset: $inset;
+  z-index: -1;
+  background-color: $bg;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
 
 @mixin sol1200 {
   @media (max-width: 1200px) {
