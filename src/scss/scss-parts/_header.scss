@@ -5,18 +5,6 @@
   &__region {
     margin-right: 30px;
   }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: $grey-light;
-    pointer-events: none;
-    z-index: -1;
-  }
 }
 
 .header-grid {
@@ -58,6 +46,82 @@
   align-items: center;
 }
 
+.region {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    margin-right: 4px;
+    font-size: 1rem;
+    line-height: 120%;
+    color: $grey-dark;
+  }
+
+  & .choices {
+    &[data-type*=select-one] {
+      & .choices__inner {
+        padding: 0;
+        padding-right: 16px;
+        padding-left: 3px;
+      }
+
+      &::after {
+        height: 8px;
+        width: 8px;
+        z-index: 3;
+        top: 40%;
+        right: 5px;
+        border: 1px solid $primary;
+        border-width: 0 0 1px 1px;
+        transform: rotate(-45deg);
+        transition: transform 0.25s linear;
+      }
+
+      &.is-open {
+        &::after {
+          margin: 0;
+          transform: rotate(-225deg);
+        }
+      }
+    }
+
+    &__inner {
+      padding: 0;
+      border: none;
+      min-height: unset;
+      background-color: transparent;
+      font-size: 1rem;
+      color: $primary;
+    }
+
+    &__list {
+      &--single {
+        padding: 0 6px 0 0;
+      }
+
+      &[aria-expanded] {
+        width: max(120%, 100px);
+        padding-top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: none;
+        background-color: transparent;
+        .choices__list {
+          border: 2px solid $grey-light;
+          background-color: $white;
+        }
+        .choices__item {
+          padding: 15px;
+          &--selectable {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
 .tel {
   display: flex;
   align-items: center;
@@ -97,6 +161,22 @@
   }
 }
 
+.cell-2 {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50vw;
+    width: 200vw;
+    bottom: 0;
+    background-color: $grey-light;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
 .additional-menu {
   display: flex;
   justify-content: flex-end;
@@ -109,6 +189,11 @@
     flex-wrap: wrap;
     width: min(100%, 720px);
     gap: 20px;
+  }
+
+  &__item {
+    padding: 16px 0;
+
   }
 
   &__link {
