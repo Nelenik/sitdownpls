@@ -23,6 +23,7 @@ export function initChoices() {
       itemSelectText: '',
       allowHTML: true,
       shouldSort: false,
+      placeholder: true,
     })
     if (el.name === 'searchSelect') {
       searchSelect = select;
