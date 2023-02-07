@@ -31,3 +31,14 @@ export function initChoices() {
     }
   })
 };
+
+export function addClassToSearch() {
+  const {search} = main;
+  search.searchField.addEventListener('input', () =>{
+    search.classList.add('js-search-on-input')
+  })
+  search.searchField.addEventListener('blur', () =>{
+    search.classList.remove('js-search-on-input')
+  })
+}
+
