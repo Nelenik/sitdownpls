@@ -7,20 +7,76 @@
 
   &__title {
     margin-bottom: 26px;
+    max-width: 80%;
   }
 
   &__swiper-nav {
     position: absolute;
     right: 36px;
     top: 0;
+    display: flex;
+    gap: 13px;
   }
 
   &__slide {
-    width: 25%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 18.5rem;
 
     &:nth-child(2),
     &:nth-child(5) {
-      width: 50%;
+      width: max(calc((100% - 37rem - $gap*2)), 18.5rem);
     }
   }
+}
+
+.offer {
+  min-height: 511px;
+
+  &__discount {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    padding: 7.6px 0;
+    min-width: 82px;
+    max-width: 50%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 135.714286%;
+    /* 19px/14 */
+    color: $white;
+    background-color: $secondary;
+    word-break: break-all;
+
+    &::after {
+      content: '';
+      position: inherit;
+      left: calc(100% - 9px);
+      top: 50%;
+      width: 18.5px;
+      height: 18.5px;
+      background-color: $secondary;
+      transform: translateY(-50%) rotate(45deg) skew(15deg, 15deg);
+    }
+  }
+
+  &__stock-price {
+    font-size: 1.125rem;
+    line-height: 130%;
+    color: $secondary;
+  }
+  &__grey-price {
+    text-decoration: line-through;
+  }
+}
+
+.price-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 23px;
 }

@@ -1,4 +1,4 @@
-const toWebp = require('gulp-webp');
+const toWebp = require('gulp-webp')
 const image = require('gulp-image');
 
 exports.images = () => {
@@ -8,7 +8,8 @@ exports.images = () => {
       message: "Error: <%= error.message %>"
     })))
     .pipe(toWebp())
-    .pipe(app.gulp.dest('src/img'))
+    // .pipe(app.gulp.dest('src/img'))
+    .pipe(app.gulp.dest(app.pathes.build.images))
     .pipe(app.gulp.src(app.pathes.src.images))
     .pipe(app.plugins.gulpif(app.isBuild, image()))
     .pipe(app.gulp.dest(app.pathes.build.images))
