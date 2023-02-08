@@ -8,6 +8,7 @@
 // common styles blocks
 .logo {
   outline: none;
+
   &__svg {
     display: block;
     width: 187px;
@@ -15,6 +16,14 @@
     fill: $secondary;
     color: $primary;
   }
+}
+
+.section-title {
+  @include resetMg;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 100%;
+  color: #333333;
 }
 
 .round-btn {

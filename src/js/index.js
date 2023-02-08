@@ -1,5 +1,12 @@
-import {initChoices} from './components/main/_header.js';
-import { addClassToSearch } from './components/main/_header.js';
-
+// header
+import {initChoices, addClassToSearch} from './components/main/_header.js';
 initChoices()
 addClassToSearch()
+
+//hero
+import { heroSwiperInit } from './components/main/_hero.js';
+heroSwiperInit()
+
+//offers
+import { offersSwiperInit } from './components/main/_offers.js';
+offersSwiperInit()

@@ -27,7 +27,7 @@ body {
   /* min-width: 320px; */
   font-family: 'OpenSans', sans-serif;
   font-weight: 400;
-
+  overflow-x: hidden;
 }
 
 .btn-reset {
@@ -48,4 +48,9 @@ body {
   list-style: none;
 }
 
+.visually-hidden {
+  position: fixed;
+  left: -100vh;
+  transform: scale(0);
+}
 

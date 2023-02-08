@@ -1,0 +1,87 @@
+.hero {
+  &__slide {
+    box-sizing: border-box;
+    display: flex;
+    height: auto;
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &--1 {
+      background-image: url("@img/main/hero_red-divan_desk.webp");
+    }
+
+    &--2 {
+      background-image: url("@img/main/hero_plant_desk.webp");
+    }
+
+    &--3 {
+      background-image: url("@img/main/hero_textile_desk.webp");
+    }
+
+    &--4 {
+      background-color: $white;
+    }
+  }
+
+  &__swiper {
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: 2px solid $white;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      // opacity: 1;
+    }
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &__title {
+    @include resetMg;
+    margin-bottom: auto;
+    max-width: 496px;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 135.416667%;
+    /* 65px/48 */
+    color: $grey;
+
+    &--white {
+      max-width: 587px;
+      color: $white;
+    }
+  }
+}
+
+.plug {
+  align-items: center;
+  justify-content: center;
+
+  &__svg {
+    flex: 0 0 auto;
+    display: block;
+    padding-bottom: 30px;
+    width: 161px;
+    height: 112px;
+  }
+
+  &__text {
+    max-width: 276px;
+    font-size: 1.5rem;
+    line-height: 100%;
+    text-align: center;
+    color: $grey;
+  }
+}

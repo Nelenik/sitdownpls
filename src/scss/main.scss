@@ -1,5 +1,7 @@
 @import "./scss-parts/base";
 @import '../../node_modules/choices.js/public/assets/styles/choices.min.css';
-@import '../../node_modules/swiper/swiper.min.css';
+@import '../../node_modules/swiper/swiper-bundle.min.css';
 @import "./scss-parts/common";
 @import "./scss-parts/header";
+@import "./scss-parts/main/hero";
+@import "./scss-parts/main/offers";
