@@ -1,0 +1,26 @@
+.offers {
+  padding-top: 70px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 26px;
+  }
+
+  &__swiper-nav {
+    position: absolute;
+    right: 36px;
+    top: 0;
+  }
+
+  &__slide {
+    width: 25%;
+
+    &:nth-child(2),
+    &:nth-child(5) {
+      width: 50%;
+    }
+  }
+}
