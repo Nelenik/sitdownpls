@@ -37,6 +37,21 @@
   background-color: $grey-light;
   border-radius: 10px;
 
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 1rem;
+    line-height: 150%;
+    color: $secondary;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    fill: $secondary;
+  }
+
   &__picture {
     align-self: center;
     margin-bottom: 16px;
@@ -55,6 +70,7 @@
     line-height: 130%;
     color: $grey-dark;
   }
+
   &__price {
     font-weight: 400;
     font-size: 1rem;
@@ -138,7 +154,6 @@
 
 .btn-colored {
   margin-right: 20px;
-
   padding: 20px 50.5px;
   font-size: 1rem;
   font-weight: 700;

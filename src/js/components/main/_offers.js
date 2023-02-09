@@ -1,3 +1,4 @@
+import {main} from "../_variables.js"
 import Swiper from "swiper/bundle";
 
 export function offersSwiperInit() {

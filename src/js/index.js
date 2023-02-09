@@ -10,3 +10,5 @@ heroSwiperInit()
 //offers
 import { offersSwiperInit } from './components/main/_offers.js';
 offersSwiperInit()
+
+//top-positions
