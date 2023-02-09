@@ -1,0 +1,32 @@
+.banner {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-image: url('@img/main/banner_desk.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__title {
+    @include resetMg;
+    max-width: 508px;
+    font-family: 'Playfair Display';
+    font-weight: 900;
+    font-size: 3.75rem;
+    line-height: 120%;
+    color: $gold;
+  }
+
+  &__descr {
+    @include resetMg;
+    margin-bottom: 49px;
+    max-width: 508px;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 120%;
+    color: $white;
+  }
+
+  &__btn {
+    padding: 22px 31.5px;
+  }
+}

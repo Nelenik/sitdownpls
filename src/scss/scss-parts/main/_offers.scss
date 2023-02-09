@@ -33,7 +33,9 @@
 }
 
 .offer {
+  position: relative;
   min-height: 511px;
+  padding-top: 37px;
 
   &__discount {
     position: absolute;
@@ -63,12 +65,21 @@
     }
   }
 
+  &__picture {
+    min-height: 245px;
+  }
+
+  &__title {
+    max-width: 222px;
+  }
+
   &__stock-price {
     font-size: 1.125rem;
     line-height: 130%;
     color: $secondary;
   }
   &__grey-price {
+    margin: 0;
     text-decoration: line-through;
   }
 }

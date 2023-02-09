@@ -1,6 +1,6 @@
 @import 'variables';
 @import 'mixins';
-
+// container первая переменная max-width, вторая - padding
 .container {
   @include container(1352px, 36px);
 }
@@ -27,12 +27,11 @@
 }
 
 .card {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
   padding: 30px;
+  min-height: 420px;
   height: 100%;
   background-color: $grey-light;
   border-radius: 10px;
@@ -41,6 +40,7 @@
     display: flex;
     align-items: center;
     gap: 7px;
+    margin-bottom: 7px;
     font-size: 1rem;
     line-height: 150%;
     color: $secondary;
@@ -54,6 +54,12 @@
 
   &__picture {
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 130px;
     margin-bottom: 16px;
   }
 
@@ -63,8 +69,8 @@
 
   &__title {
     @include resetMg;
-    margin-bottom: 23px;
-    max-width: 223px;
+    margin-bottom: auto;
+    
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 130%;
@@ -72,14 +78,13 @@
   }
 
   &__price {
+    margin-bottom: 24px;
     font-weight: 400;
     font-size: 1rem;
     line-height: 130%;
     color: $grey-shade;
   }
 }
-
-
 
 .round-btn {
   position: relative;
@@ -153,7 +158,6 @@
 }
 
 .btn-colored {
-  margin-right: 20px;
   padding: 20px 50.5px;
   font-size: 1rem;
   font-weight: 700;

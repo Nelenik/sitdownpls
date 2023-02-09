@@ -44,7 +44,7 @@
       "<picture>",
       "\t<source srcset=\"$1\" type=\"image/webp\" media=\"()\">",
       "\t<source srcset=\"$1\" type=\"image/webp\"> ",
-      "\t<img class=\"\" src=\"$1.$2\" alt=\"$3\" loading=\"lazy\">",
+      "\t<img class=\"\" src=\"$1\" alt=\"$2\" loading=\"lazy\">",
       "</picture>",
     ]
   },
