@@ -12,3 +12,8 @@ import { offersSwiperInit } from './components/main/_offers.js';
 offersSwiperInit()
 
 //top-positions
+
+
+//articles-prev
+import { articlesSwiperInit } from './components/main/_articles-prev.js';
+articlesSwiperInit()

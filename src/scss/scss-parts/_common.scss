@@ -18,8 +18,41 @@
   }
 }
 
+.grey-link {
+  position: relative;
+    z-index: 1;
+    font-size: 0.875rem;
+    line-height: 100%;
+    color: $grey;
+    outline: none;
+    transition: color 0.3s linear;
+
+    &::before {
+      @include focusPseudo(0 -8px, $pink-violet)
+    }
+
+    &:focus-visible {
+      color: $primary-shade;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:hover:not(:focus-visible):not(:active) {
+      @media (hover:hover) {
+        color: $primary;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+}
+
 .section-title {
   @include resetMg;
+  max-width: 90%;
   font-size: 2rem;
   font-weight: 400;
   line-height: 100%;
@@ -84,6 +117,9 @@
     line-height: 130%;
     color: $grey-shade;
   }
+  &__link {
+    outline: none;
+  }
 }
 
 .round-btn {
@@ -99,11 +135,11 @@
     top: 50%;
     left: 50%;
     display: block;
-    width: 10px;
-    height: 15px;
+    width: 8px;
+    height: 13px;
     transform: translate(-50%, -50%);
     stroke: $primary;
-    stroke-width: 1.5px;
+    stroke-width: 2px;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
@@ -134,17 +170,6 @@
 
     & svg {
       stroke: $white;
-    }
-  }
-
-  &--sm {
-    width: 22px;
-    height: 22px;
-
-    & svg {
-      width: 6px;
-      height: 10px;
-      stroke-width: 2px;
     }
   }
 
@@ -212,6 +237,60 @@
     background-color: $primary-shade;
     border-color: $primary-shade;
     color: $white;
+  }
+
+}
+
+.check {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &__default {
+    transform: scale(0);
+    position: absolute;
+    opacity: 0;
+    
+
+    &:focus-visible {
+      & + .check__custom {
+        border-color: $primary;
+        box-shadow: 0px 0px 3px 2px rgba(166,92,240,0.75);
+      }
+    }
+
+    &:checked {
+      & + .check__custom {
+        border-color: $primary;
+        background-color: $primary;
+        
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+    font-size: 0;
+    border: 1px solid $grey;
+    border-radius: 2px;
+    transform: translateY(-2px);
+    transition: border-color 0.3s linear, box-shadow 0.3s linear, background-color 0.3s linear;
+
+    svg {
+      width: 12.5px;
+      height: 9px;
+      fill:none;
+      stroke: $white;
+      opacity: 0;
+      transition: opacity 0.3s linear;
+    }
   }
 
 }

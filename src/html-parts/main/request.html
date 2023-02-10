@@ -1,0 +1,35 @@
+<section class="request">
+  <div class="container request__container">
+    <h2 class="visually-hidden">Форма обратной связи</h2>
+    <p class="request__title section-title">
+      Мы всегда вам рады!
+    </p>
+    <p class="request__descr">
+      Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.<button class="request__tooltip btn-reset" type="button"><svg class="">
+        <use xlink:href="sprite.svg#question-mark"></use>
+      </svg></button>
+    </p>
+    <form class="request__form" name="rqstForm" aria-label="Форма обратной связи">
+      <label class="request__field-wrap">
+        <input class="request__field" type="text" name="rqstName" placeholder="Как вас зовут?">
+      </label>
+      <label class="request__field-wrap">
+        <input class="request__field" type="tel" name="rqstTel" placeholder="Ваш телефон">
+      </label>
+      <label class="request__field-wrap">
+        <input class="request__field" type="email" name="rqstEmail" placeholder="Ваш e-mail">
+      </label>
+
+      <button class="request__btn btn-reset btn-colored" type="button">Отправить</button>
+      <label class="request__agreement check">
+        <input class="check__default" type="checkbox" name="rqstAgreement">
+        <span class="check__custom">
+          <svg>
+            <use xlink:href="sprite.svg#check"></use>
+          </svg>
+        </span>
+        <span class="check__text">Принимаю <a class="request__agreement-link" href="#!">пользовательское соглашение</a></span>
+      </label>
+    </form>
+  </div>
+</section>

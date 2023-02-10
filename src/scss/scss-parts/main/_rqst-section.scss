@@ -1,0 +1,107 @@
+.request {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  &__container {
+    background-image: url("@img/main/rqst_bg_desk.webp");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: calc((100% - $gap)/2) 383px;
+  }
+
+  &__title {
+    @include resetMg;
+    margin-bottom: 9px;
+    width: calc((100% - $gap)/2)
+  }
+
+  &__descr {
+    @include resetMg;
+    margin-bottom: 16px;
+    width: calc((100% - $gap)/2);
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 135.714286%;
+    /* 19px/14 */
+    color: $grey-shade;
+  }
+
+  &__tooltip {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    border: 1px solid $secondary;
+    border-radius: 50%;
+    transition: background-color 0.3s linear;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 7.7px;
+      fill: $secondary;
+      transition: fill 0.3s linear;
+    }
+
+    &:focus-visible,
+    &:hover {
+      background-color: $secondary;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - $gap)/2);
+  }
+
+  &__field-wrap {
+    margin-bottom: 30px;
+  }
+
+  &__field {
+    padding: 7px 18px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 250%;
+    /* 40px/16 */
+    color: $grey-dark;
+    outline: none;
+    border: 1px solid $grey-light;
+    border-radius: 10px;
+    background-color: $grey-light;
+
+    &::placeholder {
+      color: $grey;
+    }
+  }
+
+  &__btn {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    padding: 19px 35px;
+  }
+
+  &__agreement {
+    font-size: 0.875rem;
+    line-height: 135.714286%; /* 19px/14 */
+    color: $grey-dark;
+
+  }
+
+  &__agreement-link {
+    color: $primary;
+    text-decoration: underline;
+    outline: none;
+  }
+}
+

@@ -8,8 +8,8 @@ export function offersSwiperInit() {
     slidesPerView: 'auto',
     slidesPerGroup: 3,
     navigation: {
-      nextEl: '.swiper-nav__next',
-      prevEl: '.swiper-nav__prev'
+      nextEl: '.offers__swiper-next',
+      prevEl: '.offers__swiper-prev'
     }
   })
 }
