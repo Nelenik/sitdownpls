@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+
 // container первая переменная max-width, вторая - padding
 .container {
   @include container(1352px, 36px);
@@ -20,34 +21,34 @@
 
 .grey-link {
   position: relative;
-    z-index: 1;
-    font-size: 0.875rem;
-    line-height: 100%;
-    color: $grey;
-    outline: none;
-    transition: color 0.3s linear;
+  z-index: 1;
+  font-size: 0.875rem;
+  line-height: 100%;
+  color: $grey;
+  outline: none;
+  transition: color 0.3s linear;
+
+  &::before {
+    @include focusPseudo(0 -8px, $pink-violet)
+  }
+
+  &:focus-visible {
+    color: $primary-shade;
 
     &::before {
-      @include focusPseudo(0 -8px, $pink-violet)
+      opacity: 1;
     }
+  }
 
-    &:focus-visible {
-      color: $primary-shade;
-
-      &::before {
-        opacity: 1;
-      }
+  &:hover:not(:focus-visible):not(:active) {
+    @media (hover:hover) {
+      color: $primary;
     }
+  }
 
-    &:hover:not(:focus-visible):not(:active) {
-      @media (hover:hover) {
-        color: $primary;
-      }
-    }
-
-    &:active {
-      color: $primary-shade;
-    }
+  &:active {
+    color: $primary-shade;
+  }
 }
 
 .section-title {
@@ -58,7 +59,7 @@
   line-height: 100%;
   color: $grey-dark;
 }
-
+//product card styles
 .card {
   display: flex;
   flex-direction: column;
@@ -103,7 +104,7 @@
   &__title {
     @include resetMg;
     margin-bottom: auto;
-    
+
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 130%;
@@ -117,11 +118,12 @@
     line-height: 130%;
     color: $grey-shade;
   }
+
   &__link {
     outline: none;
   }
 }
-
+//btns round, transparent and colored
 .round-btn {
   position: relative;
   width: 32px;
@@ -240,29 +242,39 @@
   }
 
 }
-
+// invalid input message styles
+.invalid-message {
+  position: absolute;
+  left: 18px;
+  bottom: 100%;
+  // top: -12px;
+  font-size: 0.75rem;
+  line-height: 133.333333%; /* 16px/12 */
+}
+//custom checkbox
 .check {
   position: relative;
   display: flex;
   align-items: center;
+
   &__default {
     transform: scale(0);
     position: absolute;
     opacity: 0;
-    
+
 
     &:focus-visible {
-      & + .check__custom {
+      &+.check__custom {
         border-color: $primary;
-        box-shadow: 0px 0px 3px 2px rgba(166,92,240,0.75);
+        box-shadow: 0px 0px 3px 2px rgba(166, 92, 240, 0.75);
       }
     }
 
     &:checked {
-      & + .check__custom {
+      &+.check__custom {
         border-color: $primary;
         background-color: $primary;
-        
+
         svg {
           opacity: 1;
         }
@@ -280,17 +292,105 @@
     font-size: 0;
     border: 1px solid $grey;
     border-radius: 2px;
-    transform: translateY(-2px);
     transition: border-color 0.3s linear, box-shadow 0.3s linear, background-color 0.3s linear;
+    cursor: pointer;
 
     svg {
       width: 12.5px;
       height: 9px;
-      fill:none;
+      fill: none;
       stroke: $white;
       opacity: 0;
       transition: opacity 0.3s linear;
     }
+
+    &:hover {
+      box-shadow: 0px 0px 3px 2px rgba(166, 92, 240, 0.75);
+    }
   }
 
+}
+
+//feedback-form styles
+.feedback {
+  display: flex;
+  flex-direction: column;
+  &__field-wrap {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  &__field {
+    padding: 7px 18px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 250%;
+    /* 40px/16 */
+    color: $grey-dark;
+    outline: none;
+    border: 1px solid $grey-light;
+    border-radius: 10px;
+    background-color: $grey-light;
+    transition: border-color 0.3s linear, background-color 0.3s linear;
+
+    &::placeholder {
+      color: $grey;
+    }
+
+    &:focus-visible:not(.invalid):not(.valid) {
+      border-color: $primary;
+      background-color: $pink-ligth;
+    }
+
+    &:hover:not(:focus-visible) {
+      background-color: $grey-md;
+    }
+    &.invalid {
+      border-color: $error-red;
+    }
+    &.valid {
+      border-color: $valid-green;
+    }
+  }
+
+  &__btn {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    padding: 19px 35px;
+  }
+
+  &__agreement {
+    // position: relative;
+    font-size: 0.875rem;
+    line-height: 135.714286%; /* 19px/14 */
+    color: $grey-dark;
+    & .invalid-message {
+      bottom: 80%;
+    }
+  }
+
+  &__agreement-link {
+    position: relative;
+    color: $primary;
+    text-decoration: underline;
+    outline: none;
+    transition: color 0.3s linear;
+    &::before {
+      @include focusPseudo(4px -2px 0, $pink-violet);
+    }
+
+    &:focus-visible::before {
+      opacity: 1;
+    }
+
+    &:hover:not(:focus-visible):not(:active) {
+      @media (hover: hover) {
+        color: $primary-light;
+      }
+    }
+    &:active {
+      color: $primary-shade;
+    }
+  }
 }

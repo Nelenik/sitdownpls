@@ -17,3 +17,7 @@ offersSwiperInit()
 //articles-prev
 import { articlesSwiperInit } from './components/main/_articles-prev.js';
 articlesSwiperInit()
+
+//request-section
+import { formValidation } from './components/main/_rqst-section.js';
+formValidation()

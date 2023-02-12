@@ -58,50 +58,8 @@
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
     width: calc((100% - $gap)/2);
   }
 
-  &__field-wrap {
-    margin-bottom: 30px;
-  }
-
-  &__field {
-    padding: 7px 18px;
-    width: 100%;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 250%;
-    /* 40px/16 */
-    color: $grey-dark;
-    outline: none;
-    border: 1px solid $grey-light;
-    border-radius: 10px;
-    background-color: $grey-light;
-
-    &::placeholder {
-      color: $grey;
-    }
-  }
-
-  &__btn {
-    align-self: flex-start;
-    margin-bottom: 12px;
-    padding: 19px 35px;
-  }
-
-  &__agreement {
-    font-size: 0.875rem;
-    line-height: 135.714286%; /* 19px/14 */
-    color: $grey-dark;
-
-  }
-
-  &__agreement-link {
-    color: $primary;
-    text-decoration: underline;
-    outline: none;
-  }
 }
 

@@ -112,5 +112,23 @@
       "</label>"
     ],
     "description": "Snippet for custom checkbox",
+  },
+  "socials list": {
+    "scope": "html",
+    "prefix": "html-socials",
+    "body": [
+      "<ul class=\"list-reset socials\">",
+      "\t<li class=\"$1__item\">",
+      "\t\t<a class=\"$2__link\" href=\"#!\"></a>",
+      "\t</li>",
+      "\t<li class=\"$1__item\">",
+      "\t\t<a class=\"$2__link\" href=\"#!\"></a>",
+      "\t</li>",
+      "\t<li class=\"$1__item\">",
+      "\t\t<a class=\"$2__link\" href=\"#!\"></a>",
+      "\t</li>",
+      "</ul>"
+    ],
+    "description": "Snippet for socials list"
   }
 }
