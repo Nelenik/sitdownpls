@@ -8,5 +8,7 @@ export const mainPage = {
 }
 
 export const cataloguePage = {
-  
+  rangeBar: document.querySelector('.price__bar-wrap'),
+  rangeMin: document.querySelector('.field-min'),
+  rangeMax: document.querySelector('.field-max')
 }

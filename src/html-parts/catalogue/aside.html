@@ -4,10 +4,10 @@
     <ul class="list-reset filter__list">
       <li class="filter__item">
         <h4 class="filter__subtitle">
-          <span class="desk-subtitle">Категория</span>
-          <button class="btn-reset mobile-subtitle" type="button">Категория</button>
+          <span class="filter__subtitle-desk">Категория</span>
+          <button class="btn-reset filter__subtitle-mobile" type="button">Категория</button>
         </h4>
-        <div class="filter__group">
+        <div class="filter__group filter__group--check">
           <label class="filter__check-wrap check">
             <input class="check__default" type="checkbox" name="categoryCheck" value="Диваны">
             <span class="check__custom">
@@ -93,10 +93,10 @@
       </li>
       <li class="filter__item">
         <h4 class="filter__subtitle">
-          <span class="desk-subtitle">Цена</span>
-          <button class="btn-reset mobile-subtitle" type="button">Цена</button>
+          <span class="filter__subtitle-desk">Цена</span>
+          <button class="btn-reset filter__subtitle-mobile" type="button">Цена</button>
         </h4>
-        <!-- <div class="filter__group price">
+        <div class="filter__group price">
           <div class="price__interval">
             <label class="price__label">
               от
@@ -107,17 +107,15 @@
               <input class="price__field field-max" type="text" name="max" value="500000">
             </label>
           </div>
-          <div class="price__bar-wrap">
-
-          </div>
-        </div> -->
+          <div class="price__bar-wrap"></div>
+        </div>
       </li>
       <li class="filter__item">
         <h4 class="filter__subtitle">
-          <span class="desk-subtitle">Скидка</span>
-          <button class="btn-reset mobile-subtitle" type="button">Скидка</button>
+          <span class="filter__subtitle-desk">Скидка</span>
+          <button class="btn-reset filter__subtitle-mobile" type="button">Скидка</button>
         </h4>
-        <div class="filter__group">
+        <div class="filter__group filter__group--check">
           <label class="filter__check-wrap check">
             <input class="check__default" type="checkbox" name="discountCheck" value="Более 5 000">
             <span class="check__custom">
@@ -149,10 +147,10 @@
       </li>
       <li class="filter__item">
         <h4 class="filter__subtitle">
-          <span class="desk-subtitle">Цвет</span>
-          <button class="btn-reset mobile-subtitle" type="button">Цвет</button>
+          <span class="filter__subtitle-desk">Цвет</span>
+          <button class="btn-reset filter__subtitle-mobile" type="button">Цвет</button>
         </h4>
-        <div class="filter__group">
+        <div class="filter__group filter__group--check">
           <label class="filter__check-wrap check">
             <input class="check__default" type="checkbox" name="colorCheck" value="Коричневый">
             <span class="check__custom">
@@ -238,5 +236,20 @@
       </li>
     </ul>
   </div>
-  <article class="aside-block__banner"></article>
+  <article class="aside-block__banner banner-card">
+    <h3 class="banner-card__title">
+      Оксфорд 1950
+    </h3>
+    <p class="banner-card__descr">
+      Новая коллекция изысканных кресел
+    </p>
+    <a href="#!" class="banner-card__link to-catalog-link">
+      В каталог 
+      <span class="banner-card__icon to-catalog-link__icon">
+        <svg>
+        <use xlink:href="sprite.svg#arrow-right"></use>
+      </svg>
+    </span>
+    </a>
+  </article>
 </aside>

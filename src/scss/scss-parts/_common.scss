@@ -18,6 +18,7 @@
     color: $primary;
   }
 }
+
 // grey small link
 .grey-link {
   position: relative;
@@ -59,6 +60,7 @@
   line-height: 100%;
   color: $grey-dark;
 }
+
 //product card styles
 .card {
   display: flex;
@@ -123,6 +125,7 @@
     outline: none;
   }
 }
+
 //btns round, transparent and colored
 .round-btn {
   position: relative;
@@ -242,6 +245,116 @@
   }
 
 }
+
+//link В каталог styles
+.to-catalog-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  max-width: 345px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 120%;
+  color: $primary;
+  outline: none;
+  transition: color 0.3s linear;
+
+  &__icon {
+    flex-shrink: 0;
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    border: 2px solid $primary;
+    border-radius: 50%;
+    transition: background-color 0.3s linear, border-color 0.3s linear;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      display: block;
+      width: 6px;
+      height: 8px;
+      transform: translate(-50%, -50%);
+      stroke: $primary;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      transition: stroke 0.3s linear;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 27px;
+    height: 2px;
+    background-color: $primary;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: opacity 0.3s linear, transform 0.3s linear, background-color 0.3s linear;
+  }
+
+  &:focus-visible {
+    &::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .to-catalog-link__icon {
+      background-color: $primary-light;
+
+      svg {
+        stroke: $white;
+      }
+    }
+  }
+
+  &:hover:not(:focus-visible):not(:active) {
+    @media (hover: hover) {
+      &::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .to-catalog-link__icon {
+        background-color: $primary;
+
+        svg {
+          stroke: $white;
+        }
+      }
+    }
+  }
+
+  &:active {
+    color: $primary-shade;
+
+    &::after {
+      opacity: 1;
+      transform: scaleX(1);
+      background-color: $primary-shade;
+    }
+
+    .to-catalog-link__icon {
+      border-color: $primary-shade;
+      background-color: $primary-shade;
+
+      svg {
+        stroke: $white;
+      }
+    }
+  }
+
+}
+
 // invalid input message styles
 .invalid-message {
   position: absolute;
@@ -249,12 +362,14 @@
   bottom: 100%;
   // top: -12px;
   font-size: 0.75rem;
-  line-height: 133.333333%; /* 16px/12 */
+  line-height: 133.333333%;
+  /* 16px/12 */
 }
+
 //custom checkbox
 .check {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   &__default {
@@ -292,6 +407,7 @@
     font-size: 0;
     border: 1px solid $grey;
     border-radius: 2px;
+    transform: translateY(-2px);
     transition: border-color 0.3s linear, box-shadow 0.3s linear, background-color 0.3s linear;
     cursor: pointer;
 
@@ -315,6 +431,7 @@
 .feedback {
   display: flex;
   flex-direction: column;
+
   &__field-wrap {
     position: relative;
     margin-bottom: 30px;
@@ -346,9 +463,11 @@
     &:hover:not(:focus-visible) {
       background-color: $grey-md;
     }
+
     &.invalid {
       border-color: $error-red;
     }
+
     &.valid {
       border-color: $valid-green;
     }
@@ -363,8 +482,10 @@
   &__agreement {
     // position: relative;
     font-size: 0.875rem;
-    line-height: 135.714286%; /* 19px/14 */
+    line-height: 135.714286%;
+    /* 19px/14 */
     color: $grey-dark;
+
     & .invalid-message {
       bottom: 80%;
     }
@@ -376,6 +497,7 @@
     text-decoration: underline;
     outline: none;
     transition: color 0.3s linear;
+
     &::before {
       @include focusPseudo(4px -2px 0, $pink-violet);
     }
@@ -389,6 +511,7 @@
         color: $primary-light;
       }
     }
+
     &:active {
       color: $primary-shade;
     }
