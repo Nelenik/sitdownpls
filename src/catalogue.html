@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html-parts/head.html', {
+"title": "SitDownPls - каталог",
+"stylesPath": "css/catalogue.css",
+"jsPath": "js/catalogue.js",
+})
+
+<body>
+  @@include('html-parts/header.html', {})
+  <main>
+    <div class="container">
+      <nav class="breadcrumps" aria-label="Меню хлебные крошки">
+        <ul class="list-reset breadcrumps__list">
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="index.html">Главная</a>
+          </li>
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="#!">Каталог</a>
+          </li>
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="#!">Диваны</a>
+          </li>
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="#!">Прямые диваны</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container catalogue-container">
+      @@include('html-parts/catalogue/aside.html', {})
+      @@include('html-parts/catalogue/products.html', {})
+    </div>
+  </main>
+  @@include('html-parts/footer.html', {})
+</body>
+
+</html>

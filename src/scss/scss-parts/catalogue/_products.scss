@@ -1,0 +1,35 @@
+.catalogue-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $gap;
+  padding-bottom: 70px;
+}
+
+.aside-block {
+  grid-column: span 3;
+}
+
+
+//стили каталога
+.catalogue {
+  grid-column: span 9;
+
+  &__title {
+    @include resetMg;
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: $grey-dark;
+  }
+
+  &__list {
+    display: grid; 
+    grid-template-columns: repeat(9, 1fr);
+    gap: $gap;
+  }
+
+  &__item {
+    grid-column: span 3;
+  }
+}

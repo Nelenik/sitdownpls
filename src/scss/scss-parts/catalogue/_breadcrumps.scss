@@ -1,0 +1,34 @@
+.header {
+  padding-bottom: 0;
+}
+
+.breadcrumps {
+  padding-top: 23px;
+  padding-bottom: $gap;
+  
+  &__list {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__item:not(:last-child) {
+    position: relative;
+
+    &::after {
+      content: '/';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -9px;
+      color: $grey;
+    }
+  }
+
+  &__item:last-child {
+    .breadcrumps__link {
+      color: $primary-shade;
+      pointer-events: none;
+    }
+
+  }
+}

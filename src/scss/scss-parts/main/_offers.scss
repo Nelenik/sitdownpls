@@ -28,8 +28,7 @@
     height: auto;
     width: 18.5rem;
 
-    &:nth-child(2),
-    &:nth-child(5) {
+    &:nth-child(3n+2) {
       width: max(calc((100% - 37rem - $gap*2)), 18.5rem);
     }
   }
@@ -93,4 +92,19 @@
   flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 23px;
+}
+
+.sketch-light-bg,
+.sketch-brown-bg {
+  background-repeat: no-repeat;
+  background-position: bottom 30px right 30px;
+
+}
+
+.sketch-light-bg {
+background-image: url("@img/main/offers_sketch_divan-light.webp");
+}
+
+.sketch-brown-bg {
+  background-image: url("@img/main/offers_sketch_divan-brown.webp");
 }

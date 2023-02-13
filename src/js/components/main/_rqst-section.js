@@ -1,9 +1,9 @@
-import { main } from '../_variables.js';
+import { mainPage } from '../_variables.js';
 import JustValidate from 'just-validate';
 import Inputmask from 'inputmask';
 
 export function formValidation() {
-  const { rqstForm } = main;
+  const { rqstForm } = mainPage;
   const tel = rqstForm.rqstTel;
   let im = new Inputmask('+7(999)999-99-99');
   im.mask(tel);

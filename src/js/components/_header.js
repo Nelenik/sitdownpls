@@ -1,4 +1,4 @@
-import { main } from '../_variables.js'
+import { header } from './_variables.js'
 import Choices from "choices.js";
 
 export function initChoices() {
@@ -17,7 +17,7 @@ export function initChoices() {
   //     shouldSort: false,
   // })
 
-  main.selects.forEach(el => {
+  header.selects.forEach(el => {
     const select = new Choices(el, {
       searchEnabled: false,
       itemSelectText: '',
@@ -33,7 +33,7 @@ export function initChoices() {
 };
 
 export function addClassToSearch() {
-  const {search} = main;
+  const {search} = header;
   search.searchField.addEventListener('input', () =>{
     search.classList.add('js-search-on-input')
   })
