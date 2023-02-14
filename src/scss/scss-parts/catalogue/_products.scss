@@ -11,6 +11,7 @@
 
 .filter {
   margin-bottom: 89px;
+
   &__title {
     @include resetMg;
     margin-bottom: 20px;
@@ -52,7 +53,7 @@
 
   &__check-wrap {
     &:not(:last-child) {
-    margin-bottom: 11px;
+      margin-bottom: 11px;
     }
 
     &:hover {
@@ -157,7 +158,8 @@
     @include resetMg;
     margin-bottom: 12px;
     font-size: 1.2rem;
-    line-height: 133.333333%; /* 32px/24 */
+    line-height: 133.333333%;
+    /* 32px/24 */
     color: $grey;
   }
 }
@@ -180,9 +182,56 @@
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: $gap;
+    margin-bottom: 32px;
   }
 
   &__item {
     grid-column: span 3;
+    display: none;
+  }
+}
+
+.card-active {
+  display: block;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  &__btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 100%;
+    color: $primary;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    outline: none;
+    transition: color 0.3s linear, background-color 0.3s linear, border-color 0.3s linear;
+
+    &:focus-visible:not(.current) {
+      background-color: $primary-light;
+      color: $white;
+    }
+
+    &:hover:not(:focus-visible):not(.current):not(:active) {
+      @media (hover: hover) {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    &:active,
+    &.current {
+      color: $white;
+      background-color: $primary-shade;
+      border-color: $primary-shade;
+    }
   }
 }
