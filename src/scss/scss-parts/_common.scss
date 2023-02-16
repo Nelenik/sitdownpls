@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
-
+body::-webkit-scrollbar {
+  display: none;
+}
 // container первая переменная max-width, вторая - padding
 .container {
   @include container(1352px, 36px);
@@ -536,4 +538,31 @@
       color: $primary-shade;
     }
   }
+}
+
+//styles for modals
+.modal {
+  &__overlay {
+    position: fixed;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    inset: 0;
+    justify-content: center;
+    background-color: rgba(51, 51, 51, 0.3);
+
+    // z-index: 1000;
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -10;
+  }
+}
+
+
+.modal-open {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1000;
 }

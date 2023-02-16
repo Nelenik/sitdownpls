@@ -4,6 +4,6 @@ exports.server = () => {
       baseDir: `${app.pathes.build.html}`
     },
     notify: false,
-    port: 5000,
+    port: 3000,
   })
 }

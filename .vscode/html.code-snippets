@@ -135,10 +135,10 @@
     "scope": "html",
     "prefix": "html-modal",
     "body": [
-      "<div class=\"modal-overlay\" data-modal=\"1\">",
-      "<div class=\"modal-content-wrapper\">",
-      "<button class=\"modal-close-btn\" type=\"button\">close</button>",
-      "</div>",
+      "<div class=\"modal-overlay\" data-modal=\"$1\">",
+      "\t<div class=\"modal-content-wrapper\">",
+      "\t\t<button class=\"btn-reset modal-close-btn\" type=\"button\">close</button>",
+      "\t</div>",
       "</div>"
     ]
   }

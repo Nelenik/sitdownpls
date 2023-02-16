@@ -130,11 +130,12 @@ export function ModalConstructor(triggerSelectorOrEl, userOptions) {
       let scrollWidth = window.innerWidth - body.offsetWidth + 'px';
       let fixedEl = document.querySelectorAll('.fixed-el');
       if (this.isOpen) {
+        console.log(scrollWidth)
         body.style.overflow = 'hidden';
         body.style.paddingRight = scrollWidth;
         fixedEl.forEach(el => { el.style.paddingRight = scrollWidth });
       } else {
-        body.style.overflow = 'auto';
+        body.style.overflowY = 'auto';
         body.style.paddingRight = '';
         fixedEl.forEach(el => { el.style.paddingRight = '' });
       }

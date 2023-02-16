@@ -4,6 +4,14 @@ initChoices()
 addClassToSearch()
 
 //product swiper
-import { productSwiperInit, similarsSwiperInit } from './components/product-card/card-descr.js';
+import { productSwiperInit} from './components/product-card/card-descr.js';
 productSwiperInit();
+
+
+//similar swiper
+import {similarsSwiperInit} from './components/product-card/similar-goods.js';
 similarsSwiperInit()
+
+//buy form
+import {setBuyForm} from './components/modals/_buy-form.js';
+setBuyForm()
