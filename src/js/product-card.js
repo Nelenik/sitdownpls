@@ -4,5 +4,6 @@ initChoices()
 addClassToSearch()
 
 //product swiper
-import { productSwiperInit } from './components/product-card/card-descr.js';
-productSwiperInit()
+import { productSwiperInit, similarsSwiperInit } from './components/product-card/card-descr.js';
+productSwiperInit();
+similarsSwiperInit()

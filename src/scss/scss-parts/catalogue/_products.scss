@@ -170,12 +170,12 @@
   grid-column: span 9;
 
   &__title {
-    @include resetMg;
+    // @include resetMg;
     margin-bottom: 24px;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 130%;
-    color: $grey-dark;
+    // font-weight: 400;
+    // font-size: 1.5rem;
+    // line-height: 130%;
+    // color: $grey-dark;
   }
 
   &__list {

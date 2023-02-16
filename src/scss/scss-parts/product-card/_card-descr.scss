@@ -1,21 +1,205 @@
 .product {
+  padding-bottom: 81px;
+
   &__top {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-rows: minmax(245px, auto) min-max(81px, auto);
     gap: $gap;
+    row-gap: 16px;
+    margin-bottom: 32px;
   }
 
   &__galery {
     grid-column: span 6;
+    max-width: 100%;
   }
 
   &__preview {
     grid-column: span 6;
     grid-row: 2/3;
+    max-width: 100%;
+    background-color: $grey-light;
+    padding: 10px 25px;
   }
+
   &__name {
     grid-column: span 6;
     grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__descr {
+    @include resetMg;
+    margin-bottom: 21px;
+    font-size: 14px;
+    line-height: 100%;
+    color: $grey;
+
+  }
+
+  &__price {
+    margin-bottom: 21px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: $grey-dark;
+  }
+
+  &__buy-btn {
+    padding: 19px 35px;
+    margin-bottom: 12px;
+  }
+
+  &__add-to-cart {
+    position: relative;
+    z-index: 1;
+    color: $primary;
+    transition: color 0.3s linear;
+
+    &::before {
+      @include focusPseudo(-2px -4px, $pink-violet);
+    }
+
+    &:focus-visible {
+      color: $primary-shade;
+
+      &::before {
+        opacity: 1
+      }
+    }
+
+    &:hover:not(:focus-visible):not(:active) {
+      @media (hover: hover) {
+        color: $primary-light;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+
+}
+
+.galery-swiper {
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+  }
+}
+
+.preview-swiper {
+
+  &__slide {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__picture {
+    display: block;
+  }
+
+  &__img {
+    vertical-align: middle;
+  }
+}
+
+.description {
+  display: flex;
+  gap: $gap;
+
+  &__left,
+  &__right {
+    flex-basis: calc((100% - $gap)/2);
+    height: auto;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    @include resetMg;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 100%;
+    color: $grey-dark;
+  }
+
+  &__text-wrap {
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    @include resetMg;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 180%;
+    color: $grey-dark;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__sketches {
+    margin-top: auto;
+
+  }
+
+}
+
+.sketches {
+  display: flex;
+  gap: $gap;
+
+  &__picture {
+    font-size: 0;
+  }
+}
+
+.specification {
+  &__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    order: 1;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 180%;
+    color: $grey;
+
+    &::after {
+      content: '';
+      flex-grow: 1;
+      border-bottom: 1px dashed $grey;
+      // margin: 0 5px;
+      order: 2;
+    }
+
+  }
+
+  &__value {
+    order: 3;
+    width: 39.705882%; /* 216px/544 */
+    color: $grey-dark;
   }
 }

@@ -1,0 +1,24 @@
+.similar-goods {
+  margin-bottom: 70px;
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__swiper-nav {
+    position: absolute;
+    top: 0;
+    right: 36px;
+    display: flex;
+    gap: 13px;
+  }
+  &__swiper-slide {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}
