@@ -61,6 +61,21 @@
   color: $grey-dark;
 }
 
+//rating
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1rem;
+  line-height: 150%;
+  color: $secondary;
+  &__star {
+    width: 16px;
+    height: 16px;
+    fill: $secondary;
+  }
+}
+
 //product card styles
 .card {
   display: flex;
@@ -73,19 +88,7 @@
   border-radius: 10px;
 
   &__rating {
-    display: flex;
-    align-items: center;
-    gap: 7px;
     margin-bottom: 7px;
-    font-size: 1rem;
-    line-height: 150%;
-    color: $secondary;
-  }
-
-  &__star {
-    width: 16px;
-    height: 16px;
-    fill: $secondary;
   }
 
   &__picture {

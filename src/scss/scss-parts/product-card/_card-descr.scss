@@ -1,0 +1,21 @@
+.product {
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    gap: $gap;
+  }
+
+  &__galery {
+    grid-column: span 6;
+  }
+
+  &__preview {
+    grid-column: span 6;
+    grid-row: 2/3;
+  }
+  &__name {
+    grid-column: span 6;
+    grid-row: 1/3;
+  }
+}

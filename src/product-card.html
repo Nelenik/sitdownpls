@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html-parts/head.html', {
+"title": "SitDownPls - карточка товара",
+"stylesPath": "css/product-card.css",
+"jsPath": "js/product-card.js",
+})
+
+<body>
+  @@include('html-parts/header.html', {})
+  <main>
+    <div class="container">
+      <nav class="breadcrumps" aria-label="Меню хлебные крошки">
+        <ul class="list-reset breadcrumps__list">
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="index.html">Главная</a>
+          </li>
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="#!">Каталог</a>
+          </li>
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="#!">Диваны</a>
+          </li>
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="#!">Прямые диваны</a>
+          </li>
+          <li class="breadcrumps__item">
+            <a class="breadcrumps__link grey-link" href="#!">D-31</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    @@include('html-parts/product-card/card-descr.html', {})
+    @@include('html-parts/product-card/similar-goods.html', {})
+  </main>
+  @@include('html-parts/footer.html', {})
+</body>
+
+</html>

@@ -12,3 +12,7 @@ export const cataloguePage = {
   rangeMin: document.querySelector('.field-min'),
   rangeMax: document.querySelector('.field-max')
 }
+
+export const productCard = {
+  
+}

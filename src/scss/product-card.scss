@@ -1,9 +1,9 @@
 @import "./scss-parts/base";
 @import '../../node_modules/choices.js/public/assets/styles/choices.min.css';
-@import "../../node_modules/nouislider/dist/nouislider.min.css";
-// @import '../../node_modules/swiper/swiper-bundle.min.css';
+@import '../../node_modules/swiper/swiper-bundle.min.css';
 @import "./scss-parts/common";
 @import "./scss-parts/header";
 @import "./scss-parts/breadcrumps";
-@import "./scss-parts/catalogue/products";
+@import "./scss-parts/product-card/card-descr";
+@import './scss-parts/product-card/similar-goods.scss';
 @import './scss-parts/footer';
