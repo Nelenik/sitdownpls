@@ -8,6 +8,6 @@ export function setBuyForm() {
     modalCloseBtnClass: 'modal__close',
     modalOverlayClass: 'buy-modal',
     modalWrapperClass: 'buy-modal__content',
-    // modalOpenClass: 'is-open-modal'
+    modalOpenClass: 'modal__open'
   })
 }

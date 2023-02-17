@@ -51,7 +51,9 @@ body {
 
 .visually-hidden {
   position: fixed;
-  left: -100vh;
+  z-index: -100;
+  opacity: 0;
+  // left: -100vh;
   transform: scale(0);
 }
 

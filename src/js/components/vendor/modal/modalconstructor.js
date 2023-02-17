@@ -135,7 +135,7 @@ export function ModalConstructor(triggerSelectorOrEl, userOptions) {
         body.style.paddingRight = scrollWidth;
         fixedEl.forEach(el => { el.style.paddingRight = scrollWidth });
       } else {
-        body.style.overflowY = 'auto';
+        body.style.overflow = '';
         body.style.paddingRight = '';
         fixedEl.forEach(el => { el.style.paddingRight = '' });
       }

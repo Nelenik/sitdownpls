@@ -1,0 +1,23 @@
+.buy-modal {
+  padding-top: 181px;
+
+  &__content {
+    position: relative;
+    padding: 30px;
+    width: min(100%, 624px);
+    background-color: $white;
+    border-radius: 10px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__descr {
+    @include resetMg;
+    margin-bottom: 30px;
+    font-size: 0.875rem;
+    line-height: 135.714286%; /* 19px/14 */
+    color: $grey-dark;
+  }
+}
