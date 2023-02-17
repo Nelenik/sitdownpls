@@ -14,5 +14,7 @@ export const cataloguePage = {
 }
 
 export const productCard = {
-  
+  buyForm: document.querySelector('[name="buyForm"]'),
+  buyTel: document.querySelector('[name="buyTel"]'),
+  zoomBtns: document.querySelectorAll('.js-zoom-btn')
 }

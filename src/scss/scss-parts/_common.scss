@@ -449,7 +449,7 @@
   }
 
   &__field {
-    padding: 7px 18px;
+    padding: 6px 18px;
     width: 100%;
     font-weight: 400;
     font-size: 1rem;
@@ -487,7 +487,7 @@
   &__btn {
     align-self: flex-start;
     margin-bottom: 12px;
-    padding: 19px 35px;
+    padding: 17px 31.5px;
   }
 
   &__agreement {
@@ -529,29 +529,8 @@
   }
 }
 
-//styles for modals
-.modal {
-  &__overlay {
-    position: fixed;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    inset: 0;
-    background-color: rgba(51, 51, 51, 0.3);
-    transform: scale(0);
-    opacity: 0;
-    visibility: hidden;
-    z-index: -10;
-  }
-  &__open {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
-    z-index: 1000;
-  }
-
-  &__close {
+//styles for modal close btn
+  .modal-close {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -584,5 +563,4 @@
       }
     }
   }
-}
 

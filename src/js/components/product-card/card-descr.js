@@ -1,5 +1,6 @@
 import Swiper from "swiper/bundle";
 import { productCard } from "../_variables";
+import { ModalConstructor } from "../vendor/modal/modalconstructor";
 
 export function productSwiperInit() {
   const preview = new Swiper('.preview-swiper', {
@@ -18,3 +19,6 @@ export function productSwiperInit() {
     }
   })
 }
+
+
+

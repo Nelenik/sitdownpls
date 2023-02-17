@@ -1,4 +1,6 @@
 .buy-modal {
+  @include modalOverlay;
+
   padding-top: 181px;
 
   &__content {
@@ -16,8 +18,13 @@
   &__descr {
     @include resetMg;
     margin-bottom: 30px;
+    max-width: 374px;
     font-size: 0.875rem;
     line-height: 135.714286%; /* 19px/14 */
     color: $grey-dark;
+  }
+
+  &__open {
+    @include modalOpen;
   }
 }

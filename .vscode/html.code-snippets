@@ -137,7 +137,7 @@
     "body": [
       "<div class=\"modal-overlay\" data-modal=\"$1\">",
       "\t<div class=\"modal-content-wrapper\">",
-      "\t\t<button class=\"btn-reset modal-close-btn\" type=\"button\">close</button>",
+      "\t\t<button class=\"btn-reset modal-close\" type=\"button\">close</button>",
       "\t</div>",
       "</div>"
     ]

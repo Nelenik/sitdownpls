@@ -1,0 +1,26 @@
+.thanks-modal {
+  @include modalOverlay;
+  padding-top: 181px;
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 624px);
+    padding: 120px 75px;
+    background-color: $white;
+    border-radius: 10px;
+  }
+
+  &__svg {
+    display: block;
+    width: 172px;
+    height: 117px;
+    fill: $secondary;
+    margin-bottom: $gap;
+  }
+
+  &__open {
+    @include modalOpen;
+  }
+}

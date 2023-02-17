@@ -13,5 +13,10 @@ import {similarsSwiperInit} from './components/product-card/similar-goods.js';
 similarsSwiperInit()
 
 //buy form
-import {setBuyForm} from './components/modals/_buy-form.js';
-setBuyForm()
+import {setBuyForm, setBuyFormValidation} from './components/modals/_buy-form.js';
+setBuyForm();
+setBuyFormValidation();
+
+//zoom product
+import { setZoom } from './components/modals/_product-zoom.js';
+setZoom()
