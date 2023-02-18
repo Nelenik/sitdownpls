@@ -6,14 +6,15 @@ function zoomSwiperInit() {
   const zoomSm = new Swiper('.zoom-swiper-sm', {
     slidesPerView: 4,
     spaceBetween: 38,
+    navigation: {
+      nextEl: '.zoom-swiper-sm__next',
+      prevEl: '.zoom-swiper-sm__prev',
+    },
   });
   const zoomLg = new Swiper('.zoom-swiper-lg', {
     slidesPerView: 1,
     spaceBetween: 20,
-    navigation: {
-      nextEl: '.galery-swiper__next',
-      prevEl: '.galery-swiper__prev',
-    },
+    
     thumbs: {
       swiper: zoomSm
     }
@@ -36,7 +37,7 @@ zoomBtns.forEach(el=> {
 
   el.addEventListener('click', function(e) {
     zoomModal.open();
-    zoomLarge.slideTo(this.dataset.slideInd)
+    zoomLarge.slideTo(this.dataset.slideInd, 0)
   })
 })
 }

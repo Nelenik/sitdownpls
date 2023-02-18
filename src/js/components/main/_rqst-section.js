@@ -1,6 +1,7 @@
 import { mainPage } from '../_variables.js';
 import JustValidate from 'just-validate';
 import Inputmask from 'inputmask';
+import { setThanksModal } from '../modals/_thanks-modal.js';
 
 export function formValidation() {
   const { rqstForm } = mainPage;
@@ -63,32 +64,10 @@ export function formValidation() {
     ], {
       errorsContainer: '.feedback__agreement'
     })
-    // .onSuccess(async(event) => {
-    //   let form = event.target;
-    //   let formData = new FormData(form);
-    //   // disableInputs(form.elements);
-    //   let response = await fetch('send-mail.php', {
-    //     method: 'POST',
-    //     body: formData
-    //   });
-    //   if(response.ok) {
-    //     let result = await response.json();
-    //     alert(result.message)
-    //     form.reset();
-    //     // enableInputs(form.elements);
-    //   } else {
-    //     alert('Ошибка')
-    //     // enableInputs(form.elements)
-    //   }
-    // })
+    .onSuccess((e) => {
+      let thanks = setThanksModal(rqstForm.rqstSbmtBtn);
+      thanks.open();
+      rqstForm.reset();
+      rqstValidation.refresh();
+    })
 }
-
-// function disableInputs(inputs) {
-//   inputs.submitBtn.classList.add('sending');
-//   [...inputs].forEach(el => {el.disabled = true});
-// }
-
-// function enableInputs(inputs) {
-//   inputs.submitBtn.classList.remove('sending');
-//   [...inputs].forEach(el =>{el.disabled = false});
-// }
