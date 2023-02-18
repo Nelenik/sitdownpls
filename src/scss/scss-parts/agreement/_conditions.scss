@@ -1,0 +1,88 @@
+.conditions-wrapper {
+  max-width: min(100%, 843px);
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.text-grey {
+  @include resetMg;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 180%;
+  color: $grey-shade;
+}
+
+.title-md {
+  margin-bottom: 12px;
+}
+
+.providers {}
+
+.we-do {
+
+  &__item{
+    display: flex;
+    align-items: flex-start;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+
+  &__svg {
+    flex-shrink: 0;
+    margin-right: 12px;
+    width: 25px;
+    height: 25px;
+    stroke: $secondary;
+    fill: none;
+    transform: translateY(7px);
+  }
+}
+
+.advantages {
+  &__item {
+    margin-bottom: 12px;
+  }
+
+  &__subtitle {
+    @include resetMg;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 137.5%;
+    /* 22px/16 */
+    color: $secondary;
+  }
+}
+
+.quarantees {
+  padding-bottom: 70px;
+  &__list {
+    padding: 16px;
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    margin-bottom: 12px;
+    padding-left: 12px;
+    &::marker {
+      color: $secondary;
+    }
+  }
+
+  &__term {
+    @include resetMg;
+    padding: 22px 0 22px 109px;
+    max-width: 624px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 150%;
+    color: $grey-dark;
+    background-image: url("@img/pencil.webp");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 77px 100%;
+  }
+}

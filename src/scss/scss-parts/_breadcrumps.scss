@@ -17,8 +17,7 @@
     &::after {
       content: '/';
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 0;
       right: -9px;
       color: $grey;
     }
@@ -28,6 +27,9 @@
     .breadcrumps__link {
       color: $primary-shade;
       pointer-events: none;
+      &:focus-visible::before {
+        opacity: 0;
+      }
     }
 
   }

@@ -42,3 +42,13 @@ export function addClassToSearch() {
   })
 }
 
+
+export function setGreyRowSize() {
+  const {headerBlock, observingBlock} = header;
+  const resizeObs = new ResizeObserver((entries) => {
+    let size = entries[0].contentBoxSize[0].blockSize;
+    headerBlock.style.setProperty('--grey-row-height', size >50? `${size}px` : '50px' )
+  })
+  
+  resizeObs.observe(observingBlock)
+}

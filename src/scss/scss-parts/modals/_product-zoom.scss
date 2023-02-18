@@ -1,6 +1,6 @@
 .zoom-modal {
   @include modalOverlay;
-  padding-top: 143px;
+  justify-content: center;
   
   &__content {
     position: relative;

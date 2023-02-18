@@ -1,6 +1,8 @@
 export const header = {
   selects: document.querySelectorAll('[name="region"], [name="searchSelect"]'),
   search: document.querySelector('[name="search"]'),
+  headerBlock: document.querySelector('.header'),
+  observingBlock: document.querySelector('.additional-menu__list')
 }
 
 export const mainPage = {
