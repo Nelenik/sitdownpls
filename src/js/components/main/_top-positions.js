@@ -1,1 +1,1 @@
-import {main} from '../_variables.js'
+import {mainPage} from '../_variables.js'

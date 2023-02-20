@@ -10,14 +10,23 @@
 
     &--1 {
       background-image: url("@img/main/hero_red-divan_desk.webp");
+      @include sol1200 {
+        background-image: url("@img/main/hero_red-divan_1024.webp");
+      }
     }
 
     &--2 {
       background-image: url("@img/main/hero_plant_desk.webp");
+      @include sol1200 {
+        background-image: url("@img/main/hero_plant_1024.webp");
+      }
     }
 
     &--3 {
       background-image: url("@img/main/hero_textile_desk.webp");
+      @include sol1200 {
+        background-image: url("@img/main/hero_textile_1024.webp");
+      }
     }
 
     &--4 {
@@ -36,6 +45,10 @@
     .swiper-pagination-bullet-active {
       // opacity: 1;
     }
+  }
+
+  &__mob-btn {
+    display: none;
   }
 }
 
@@ -75,6 +88,7 @@
     padding-bottom: 30px;
     width: 161px;
     height: 112px;
+    opacity: 0.3;
   }
 
   &__text {

@@ -9,6 +9,7 @@
 <body>
   @@include('html-parts/header.html', {})
   <main>
+    <h1 class="visually-hidden">Каталог, подкатегория прямые диваны</h1>
     <div class="container">
       <nav class="breadcrumps" aria-label="Меню хлебные крошки">
         <ul class="list-reset breadcrumps__list">
@@ -28,6 +29,7 @@
       </nav>
     </div>
     <div class="container catalogue-container">
+      <h2 class="catalogue-mob-title title-md">Каталог</h2>
       @@include('html-parts/catalogue/aside.html', {})
       @@include('html-parts/catalogue/products.html', {})
     </div>

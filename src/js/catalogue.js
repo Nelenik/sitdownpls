@@ -1,8 +1,9 @@
 // header
-import {initChoices, addClassToSearch, setGreyRowSize} from './components/_header.js';
+import {initChoices, addClassToSearch, setGreyRowSize, setHeaderBloksMoving} from './components/_header.js';
 initChoices()
 addClassToSearch()
 setGreyRowSize()
+setHeaderBloksMoving()
 
 //filter
 

@@ -18,6 +18,7 @@ export function setThanksModal(trigger) {
     modalOverlayClass: 'thanks-modal',
     modalWrapperClass: 'thanks-modal__content',
     modalOpenClass: 'thanks-modal__open',
+    elemToFocus: '.modal-close'
   })
   return thanksModal
 }

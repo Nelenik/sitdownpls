@@ -16,10 +16,17 @@
     background-color: $grey-light;
     pointer-events: none;
     z-index: -1;
+    @include sol1200 {
+      top: 58px;
+    }
   }
   // overflow-x: hidden;
   &__region {
     margin-right: 26px;
+  }
+
+  &__burger {
+    display: none;
   }
 }
 
@@ -30,28 +37,45 @@
   gap: 32px;
   outline: none;
 
+  @include sol1200 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
   &__cell {
-    &--1 {
+    &--1 {//region
       grid-column: span 5;
+      @include sol1200 {
+        grid-column: span 9;
+        
+      }
     }
 
-    &--2 {
+    &--2 {//add-menu
       grid-column: span 7;
     }
 
-    &--3 {
+    &--3 {//logo
       grid-column: span 3;
+      @include sol1200 {
+        grid-column: span 2;
+      }
     }
 
-    &--4 {
+    &--4 {//main menu
       grid-column: span 9;
+      @include sol1200 {
+        grid-column: span 7;
+      }
     }
 
-    &--5 {
+    &--5 {//search
       grid-column: span 10;
+      @include sol1200 {
+        grid-column: span 9;
+      }
     }
 
-    &--6 {
+    &--6 {//cart
       grid-column: span 2;
     }
   }
@@ -60,6 +84,10 @@
 .cell-1 {
   display: flex;
   align-items: center;
+  @include sol1200 {
+    justify-content: space-between;
+    padding-top: 14px;
+  }
 }
 
 .region {
@@ -93,6 +121,9 @@
         border-width: 0 0 1px 1px;
         transform: rotate(-45deg);
         transition: transform 0.25s linear, border-color 0.3s linear;
+        @include sol1200 {
+          top: 30%;
+        }
       }
 
       &.is-open {
@@ -121,6 +152,9 @@
     &__list {
       &--single {
         padding: 6px 8px 5px 0;
+        @include sol1200 {
+          padding: 2.5px 8px 2.5px 0;
+        }
       }
 
       &[aria-expanded] {
@@ -197,6 +231,7 @@
   transition: background-color 0.3s linear, color 0.3s linear;
 
   &__svg {
+    display: block;
     width: 22px;
     height: 22px;
     fill: $secondary;
@@ -230,6 +265,9 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  @include sol1200 {
+    justify-content: flex-start;
+  }
 
   &__list {
     display: flex;
@@ -238,17 +276,23 @@
     flex-wrap: wrap;
     width: min(100%, 710px);
     gap: 20px;
+    
   }
 
   &__item {
     padding: 16px 0;
-
+    @include sol1200 {
+      padding: 0;
+    }
   }
 }
 
 .main-menu {
   display: flex;
   justify-content: flex-end;
+  @include sol1200 {
+    padding-left: 32px;
+  }
 
   &__list {
     display: flex;
@@ -311,6 +355,10 @@
     &:hover {
       background-color: $grey-md;
       border-color: $grey-md;
+    }
+
+    @include sol1200 {
+      width: 68.45%;
     }
   }
 
@@ -390,7 +438,7 @@
     z-index: 100;
 
     &__inner {
-      padding: 13.3px 25px;
+      padding: 12.3px 25px;
       font-size: 1rem;
       line-height: 137.5%;
       /* 22/16 */
@@ -510,6 +558,8 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 32px;
+
+
 }
 
 .entry-btn {

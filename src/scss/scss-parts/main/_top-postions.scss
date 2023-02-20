@@ -11,6 +11,9 @@
     grid-template-columns: repeat(12, 1fr);
     gap: $gap;
     margin-bottom: $gap;
+    @include sol1200 {
+      grid-template-columns: repeat(9, 1fr);
+    }
   }
 
   &__item {

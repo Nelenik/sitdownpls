@@ -69,6 +69,24 @@
 
   &__picture {
     min-height: 245px;
+    @include sol1200 {
+      position: relative;
+      &:has(.offer__img--lg) {
+        width: 110%;
+      }
+    }
+  }
+
+  &__img {
+    &--lg {
+      @include sol1200 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 138px;
+      }
+    }
   }
 
   &__title {
@@ -103,8 +121,14 @@
 
 .sketch-light-bg {
 background-image: url("@img/main/offers_sketch_divan-light.webp");
+@include sol1200 {
+  background-image: none;
+}
 }
 
 .sketch-brown-bg {
   background-image: url("@img/main/offers_sketch_divan-brown.webp");
+  @include sol1200 {
+    background-image: none;
+  }
 }
