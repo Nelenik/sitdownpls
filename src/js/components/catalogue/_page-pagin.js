@@ -1,11 +1,12 @@
 import {Paginator} from '../vendor/paginator.js'
+// функция получает номер страницы из url
 function getPageNumFromUrl() {
   const searchParams = new URLSearchParams(window.location.search);
   let pageNum = searchParams.get('page');
   pageNum = +pageNum < 1 ? 1 : +pageNum;
   return pageNum;
 }
-
+// метод разделяет массив на несколько массивов по заданному шагу
 Array.prototype.cutArray = function (step) {
   const result = [];
   let initPoint = Math.ceil(this.length / step);
@@ -26,7 +27,7 @@ function addActiveClass(pages, i) {
 function removeActiveClass(arr) {
   arr.forEach(el => el.classList.remove('card-active'))
 }
-
+// переключение страниц, а также обновление пагинации
 let pages;
 function togglePages(cards, step, i) {
   pages = cards.cutArray(step);
@@ -38,7 +39,7 @@ function togglePages(cards, step, i) {
     enablePrevAndNext: false,
   })
 }
-
+// функция настраивает пагинацию и переключение страниц в зависимости от разрешения экрана; mediaOptions это массив с объектами вида [{solution: "(value)", step: number}]
 export function setProductPages(mediaOptions) {
   const cards = [...document.querySelectorAll('.catalogue__item')];
 

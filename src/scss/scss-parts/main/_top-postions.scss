@@ -11,6 +11,7 @@
     grid-template-columns: repeat(12, 1fr);
     gap: $gap;
     margin-bottom: $gap;
+
     @include sol1200 {
       grid-template-columns: repeat(9, 1fr);
     }
@@ -18,11 +19,31 @@
 
   &__item {
     grid-column: span 3;
+
+    &--inactive {
+      position: absolute;
+      left: -100vw;
+      visibility: hidden;
+      opacity: 0;
+      transition-property: visibility, opacity;
+      transition-duration: 0.4s;
+      transition-timing-function: linear;
+    }
+
+    &--active {
+      position: static;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &__btn {
     display: block;
     margin: 0 auto;
     padding: 22px 36.5px;
+
+    &--hidden {
+        display:none;
+    }
   }
 }

@@ -1,5 +1,5 @@
 // header
-import {initChoices, addClassToSearch, setGreyRowSize, setHeaderBloksMoving} from './components/_header.js';
+import { initChoices, addClassToSearch, setGreyRowSize, setHeaderBloksMoving } from './components/_header.js';
 initChoices()
 addClassToSearch()
 setGreyRowSize()
@@ -14,7 +14,9 @@ import { offersSwiperInit } from './components/main/_offers.js';
 offersSwiperInit()
 
 //top-positions
+import { showMoreCards } from './components/main/_top-positions.js';
 
+showMoreCards()
 
 //articles-prev
 import { articlesSwiperInit } from './components/main/_articles-prev.js';

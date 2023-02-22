@@ -5,6 +5,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @include sol1200 {
+    background-image: url('@img/main/banner_1024.webp');
+  }
 
   &__title {
     @include resetMg;

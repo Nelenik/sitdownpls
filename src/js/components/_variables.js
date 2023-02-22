@@ -10,7 +10,7 @@ export const header = {
 }
 
 export const mainPage = {
-  topItems: document.querySelectorAll('.top__item'),
+  topItems: document.querySelectorAll('.top__item--inactive'),
   moreBtn: document.querySelector('.top__btn'),
   rqstForm: document.forms.rqstForm,
 }
