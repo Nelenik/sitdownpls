@@ -8,16 +8,25 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: $gap;
+    @include sol1200 {
+      grid-template-columns: repeat(9, 1fr);
+    }
   }
 
   &__left {
     grid-column: span 4;
+    @include sol1200 {
+      grid-column: span 2;
+    }
   }
 
   &__nav {
     grid-column: span 8;
     display: flex;
     justify-content: space-between;
+    @include sol1200 {
+      grid-column: span 7;
+    }
   }
 
   &__logo {

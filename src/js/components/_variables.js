@@ -2,11 +2,13 @@ export const header = {
   selects: document.querySelectorAll('[name="region"], [name="searchSelect"]'),
   search: document.querySelector('[name="search"]'),
   headerBlock: document.querySelector('.header'),
-  observingBlock: document.querySelector('.additional-menu__list'),
+  observing1: document.querySelector('.additional-menu__list'),
+  observing2: document.querySelector('.cell-1'),
   gridCells: document.querySelectorAll('.header-grid__cell'),
   gridContainer: document.querySelector('.header-grid'),
-  mainMenu: document.querySelector('.main-menu'),
-  additionalMenu: document.querySelector('.additional-menu')
+  mainMenu: document.querySelector('.js-main-menu'),
+  additionalMenu: document.querySelector('.additional-menu'), 
+  burger: document.querySelector('.js-burger')
 }
 
 export const mainPage = {

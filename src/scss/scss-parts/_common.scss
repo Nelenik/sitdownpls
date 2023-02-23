@@ -4,6 +4,9 @@
 // container первая переменная max-width, вторая - padding
 .container {
   @include container(1352px, 36px);
+  @include sol1200 {
+    padding: 0 72px;
+  }
 }
 
 // common styles blocks
@@ -264,13 +267,15 @@
   align-items: center;
   gap: 5px;
   margin-top: auto;
-  max-width: 345px;
+  // max-width: 345px;
+  max-width: 80%;
   font-weight: 700;
   font-size: 1rem;
   line-height: 120%;
   color: $primary;
   outline: none;
   transition: color 0.3s linear;
+  word-break: break-all;
 
   &__icon {
     flex-shrink: 0;

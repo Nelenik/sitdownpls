@@ -21,38 +21,81 @@ export function initChoices() {
 
 //добавление класса в инпут поиска
 export function addClassToSearch() {
-  const {search} = header;
-  search.searchField.addEventListener('input', () =>{
+  const { search } = header;
+  search.searchField.addEventListener('input', () => {
     search.classList.add('js-search-on-input')
   })
-  search.searchField.addEventListener('blur', () =>{
+  search.searchField.addEventListener('blur', () => {
     search.classList.remove('js-search-on-input')
   })
 }
 
-//настраиваем наблюдение за серым блоком
+//настраиваем наблюдение за серым блоком. и настраиваем его размеры и положение
 export function setGreyRowSize() {
-  const {headerBlock, observingBlock} = header;
+  const { headerBlock, observing1, observing2 } = header;
+  // resizeObserver следит за указаными блоками
   const resizeObs = new ResizeObserver((entries) => {
-    let size = entries[0].contentBoxSize[0].blockSize;
-    headerBlock.style.setProperty('--grey-row-height', size >50? `${size}px` : '50px' )
+    let size1 = entries[0].borderBoxSize[0].blockSize;
+    let size2;
+    if (entries[1]) {
+      size2 = entries[1].borderBoxSize[0].blockSize
+    }
+    headerBlock.style.setProperty('--grey-row-height', size1 > 50 ? `${size1}px` : '50px');
+    if (size2) {
+      headerBlock.style.setProperty('--grey-row-top', `${size2}px`)
+    }
   })
-  
-  resizeObs.observe(observingBlock)
+
+  // функции переключения  наблюдения
+  let funcs = {
+    func1: () => {
+      resizeObs.observe(observing1);
+      resizeObs.unobserve(observing2);
+      headerBlock.style.setProperty('--grey-row-top', '')
+    },
+    func2: () => {
+      console.log('func2 called')
+      resizeObs.observe(observing1);
+      resizeObs.observe(observing2);
+    },
+    func3: () => {
+      resizeObs.unobserve(observing1);
+      resizeObs.unobserve(observing2);
+      headerBlock.style.setProperty('--grey-row-top', '')
+      headerBlock.style.setProperty('--grey-row-height', '')
+    }
+  };
+  // медиазапросы
+  let mQ = [
+    window.matchMedia("(min-width: 1201px)"),
+    window.matchMedia("(min-width: 577px) and (max-width: 1200px)"),
+    window.matchMedia("(max-width: 576px)")
+  ]
+// переключение наблюдения в зависимости от медиа запросов
+  function toggleMediaObs() {
+    let values = Object.values(funcs)
+    mQ.forEach((el, i)=>{
+      if(el.matches) {values[i]()}
+      el.addEventListener('change', function(e) {
+        if(e.matches) values[i]()
+      })
+    })
+  }
+  toggleMediaObs()
 }
 
 
 //настраиваем перемещение блоков в хедере
-function setOrderInArr(arr, order=[]) {
+function setOrderInArr(arr, order = []) {
   let result = [];
-  for(let num of order) {
+  for (let num of order) {
     result.push(arr[num])
   }
   return result
 }
 
 export function setHeaderBloksMoving() {
-  const {mainMenu, additionalMenu, gridCells, gridContainer} = header
+  const { mainMenu, additionalMenu, gridCells, gridContainer } = header
   const order1920 = Array.from(gridCells);
   const order1024 = setOrderInArr(order1920, [0, 1, 5, 2, 3, 4])
   const order768 = setOrderInArr(order1920, [0, 1, 3, 2, 5, 4]);
@@ -96,7 +139,30 @@ export function setHeaderBloksMoving() {
         elems: [additionalMenu],
         method: 'append'
       },
-      
+
     ]
   })
+}
+
+// бургер-меню
+export function setBurgerMenu() {
+  const { mainMenu, burger } = header;
+  burger.addEventListener('click', function (e) {
+    this.classList.toggle('js-burger--active')
+    mainMenu.classList.toggle('js-main-menu--active');
+    document.body.classList.toggle('stop-scroll');
+    document.documentElement.classList.toggle('stop-scroll')
+  })
+  mainMenu.addEventListener('click', function (e) {
+    e._isClickedMenu = true;
+  })
+
+  document.addEventListener('click', function (e) {
+    if ((!e.target.closest('.main-menu__item') && e._isClickedMenu) || e.target.closest('.js-burger')) return;
+    burger.classList.remove('js-burger--active');
+    mainMenu.classList.remove('js-main-menu--active');
+    document.body.classList.remove('stop-scroll');
+    document.documentElement.classList.remove('stop-scroll')
+  })
+
 }

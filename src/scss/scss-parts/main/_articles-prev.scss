@@ -40,6 +40,11 @@
   background-position: top center;
   background-color: $grey-light;
 
+  @include sol1200 {
+    padding: 232px 30px 30px;
+    background-size: 100% 202px;
+  }
+
   &--1 {
     background-image: url("@img/main/articles_1_desk.webp");
   }
@@ -67,6 +72,9 @@
     font-size: 1.5rem;
     line-height: 137.5%; /* 33px/24 */
     color: $grey-dark;
+    @include sol1200 {
+      font-size: 1rem;
+    }
   }
   &__link {
     margin-top: auto;

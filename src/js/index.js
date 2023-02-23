@@ -1,9 +1,10 @@
 // header
-import { initChoices, addClassToSearch, setGreyRowSize, setHeaderBloksMoving } from './components/_header.js';
+import { initChoices, addClassToSearch, setGreyRowSize, setHeaderBloksMoving, setBurgerMenu} from './components/_header.js';
 initChoices()
 addClassToSearch()
-setGreyRowSize()
 setHeaderBloksMoving()
+setBurgerMenu()
+setGreyRowSize()
 
 //hero
 import { heroSwiperInit } from './components/main/_hero.js';

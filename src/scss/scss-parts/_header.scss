@@ -3,6 +3,7 @@
 
 .header {
   --grey-row-height: 50px;
+  --grey-row-top: ;
   padding-bottom: 32px;
   position: relative;
 
@@ -12,14 +13,16 @@
     top: 0;
     left: 0;
     right: 0;
-    height: var(--grey-row-height);
+    height: var(--grey-row-height, 50px);
     background-color: $grey-light;
     pointer-events: none;
     z-index: -1;
+
     @include sol1200 {
-      top: 58px;
+      top: var(--grey-row-top);
     }
   }
+
   // overflow-x: hidden;
   &__region {
     margin-right: 26px;
@@ -27,6 +30,10 @@
 
   &__burger {
     display: none;
+
+    @include sol992 {
+      display: block;
+    }
   }
 }
 
@@ -34,48 +41,87 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
-  gap: 32px;
+  gap: $gap;
   outline: none;
 
   @include sol1200 {
     grid-template-columns: repeat(9, 1fr);
   }
 
+  @include sol992 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   &__cell {
-    &--1 {//region
+    &--1 {
+      //region
       grid-column: span 5;
+
       @include sol1200 {
         grid-column: span 9;
-        
+        margin-bottom: -32px;
+      }
+
+      @include sol992 {
+        grid-column: span 6;
       }
     }
 
-    &--2 {//add-menu
+    &--2 {
+      //add-menu
       grid-column: span 7;
+
+      @include sol1200 {
+        padding: 16px 0;
+      }
+
+      @include sol992 {
+        grid-column: span 6;
+      }
     }
 
-    &--3 {//logo
+    &--3 {
+      //logo
       grid-column: span 3;
+
       @include sol1200 {
         grid-column: span 2;
       }
+
+      @include sol992 {
+        grid-column: span 3;
+        justify-self: end;
+      }
     }
 
-    &--4 {//main menu
+    &--4 {
+      //main menu
       grid-column: span 9;
+
       @include sol1200 {
         grid-column: span 7;
       }
-    }
 
-    &--5 {//search
-      grid-column: span 10;
-      @include sol1200 {
-        grid-column: span 9;
+      @include sol992 {
+        grid-column: span 1;
       }
     }
 
-    &--6 {//cart
+    &--5 {
+      //search
+      grid-column: span 10;
+
+      @include sol1200 {
+        grid-column: span 9;
+      }
+
+      @include sol992 {
+        grid-column: span 6;
+      }
+    }
+
+    &--6 {
+      //cart
       grid-column: span 2;
     }
   }
@@ -84,9 +130,14 @@
 .cell-1 {
   display: flex;
   align-items: center;
+
   @include sol1200 {
     justify-content: space-between;
-    padding-top: 14px;
+    padding: 17px 0 18px;
+  }
+
+  @include sol992 {
+    padding-top: 18px;
   }
 }
 
@@ -103,6 +154,7 @@
   }
 
   & .choices {
+    z-index: 100;
 
     &[data-type*=select-one] {
       & .choices__inner {
@@ -121,6 +173,7 @@
         border-width: 0 0 1px 1px;
         transform: rotate(-45deg);
         transition: transform 0.25s linear, border-color 0.3s linear;
+
         @include sol1200 {
           top: 30%;
         }
@@ -152,6 +205,7 @@
     &__list {
       &--single {
         padding: 6px 8px 5px 0;
+
         @include sol1200 {
           padding: 2.5px 8px 2.5px 0;
         }
@@ -265,6 +319,7 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+
   @include sol1200 {
     justify-content: flex-start;
   }
@@ -276,11 +331,12 @@
     flex-wrap: wrap;
     width: min(100%, 710px);
     gap: 20px;
-    
+
   }
 
   &__item {
     padding: 16px 0;
+
     @include sol1200 {
       padding: 0;
     }
@@ -290,8 +346,36 @@
 .main-menu {
   display: flex;
   justify-content: flex-end;
+
   @include sol1200 {
     padding-left: 32px;
+  }
+
+  @include sol992 {
+    position: absolute;
+    left: 0;
+    top: 108px;
+    z-index: 1000;
+    display: block;
+    padding: 72px 72px 40px;
+    width: 100vw;
+    height: min(100vh, 300px);
+    background-color: $white;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 72px;
+      bottom: 60px;
+      width: 161px;
+      height: 112px;
+      background-image: url('../sprite.svg#elefant');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+    }
   }
 
   &__list {
@@ -301,6 +385,20 @@
     align-items: center;
     gap: 20px;
     width: min(100%, 952px);
+
+    @include sol992 {
+      display: block;
+      columns: auto 2;
+      width: 46.153846%;
+      /* 288px/624 */
+    }
+  }
+
+  &__item {
+    @include sol992 {
+      width: max-content;
+      padding: 20px 0;
+    }
   }
 
   &__link {
@@ -348,10 +446,12 @@
     border: 2px solid $grey-light;
     border-radius: 10px 0px 0px 10px;
     transition: background-color 0.3s linear, border-color 0.3s linear;
+
     &:focus-within {
       background-color: $pink-ligth;
       border-color: $primary;
     }
+
     &:hover {
       background-color: $grey-md;
       border-color: $grey-md;
@@ -359,6 +459,10 @@
 
     @include sol1200 {
       width: 68.45%;
+    }
+
+    @include sol992 {
+      width: 69.7%;
     }
   }
 
@@ -411,6 +515,7 @@
 
     &:focus-visible {
       background-color: $primary-light;
+
       svg {
         stroke: $white;
       }
@@ -426,6 +531,7 @@
       border-color: $grey-light;
     }
   }
+
   .search__loupe {
     fill: $primary;
   }
@@ -494,7 +600,6 @@
         top: 95%;
         z-index: -1;
 
-        // padding-top: 10px;
         .choices__list {
           padding-top: 10px;
           border: 2px solid $grey-light;
@@ -504,10 +609,22 @@
           grid-template-columns: repeat(2, 1fr);
           column-gap: 32px;
 
+          @include sol1200 {
+            column-gap: 15px;
+          }
+
+          @include sol992 {
+            display: block;
+          }
+
           .choices__item {
             padding: 10px 20px;
             font-size: 1rem;
             line-height: 130%;
+
+            @include sol992 {
+              padding: 7px 20px;
+            }
 
             &--selectable {
               padding-right: 20px;
@@ -538,7 +655,7 @@
     }
 
     &:active {
-      .choices__inner{
+      .choices__inner {
         border-color: $primary-shade;
       }
     }
@@ -634,6 +751,99 @@
     .entry-btn__svg,
     .cart-btn__svg {
       fill: $primary-shade;
+    }
+  }
+}
+
+.burger {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transition: outline 0.3s linear;
+
+
+  &__line,
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $primary;
+    border-radius: 4px;
+    transition: background-color 0.3s linear;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    transition: transform 0.3s linear, top 0.3s linear;
+  }
+
+  &__line {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &:focus-visible, &:active {
+
+    &::before,
+    &::after,
+    .burger__line {
+      background-color: $primary-shade;
+    }
+  }
+
+  &:hover:not(:focus-visible):not(:active) {
+    @media (hover: hover) {
+
+      &::before,
+      &::after,
+      .burger__line {
+        background-color: $primary-light;
+      }
+    }
+  }
+}
+
+.js-main-menu {
+  @include sol992 {
+    @include hide;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition-property: visibility, opacity, transform;
+    transition-duration: 0.3s, 0.3s, 0.5s;
+    transition-timing-function: linear;
+    &--active {
+      @include show;
+      transform: scaleY(1);
+    }
+  }
+}
+
+.js-burger {
+  &--active {
+    z-index: 1001;
+    .burger__line {
+      opacity: 0;
+    }
+
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
     }
   }
 }
