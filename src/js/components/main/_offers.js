@@ -11,8 +11,11 @@ export function offersSwiperInit() {
       1200: {
         slidesPerView: 'auto',
       },
-      992: {
+      921: {
         slidesPerView: 3,
+      },
+      577: {
+        slidesPerView: 2,
       }
     },
     navigation: {

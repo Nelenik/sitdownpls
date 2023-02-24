@@ -28,10 +28,15 @@
     margin-right: 26px;
   }
 
+  &__logo {
+    display: inline-block;
+    width: max-content;
+  }
+
   &__burger {
     display: none;
 
-    @include sol992 {
+    @include sol920 {
       display: block;
     }
   }
@@ -48,8 +53,12 @@
     grid-template-columns: repeat(9, 1fr);
   }
 
-  @include sol992 {
+  @include sol920 {
     grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include sol600 {
+    gap: $gap-mobile;
   }
 
   &__cell {
@@ -59,12 +68,17 @@
 
       @include sol1200 {
         grid-column: span 9;
-        margin-bottom: -32px;
+        // margin-bottom: -32px;
       }
 
-      @include sol992 {
+      @include sol920 {
         grid-column: span 6;
       }
+
+      @include sol600 {
+        grid-column: span 6;
+      }
+      
     }
 
     &--2 {
@@ -75,8 +89,12 @@
         padding: 16px 0;
       }
 
-      @include sol992 {
+      @include sol920 {
         grid-column: span 6;
+      }
+
+      @include sol600 {
+        display: none;
       }
     }
 
@@ -88,9 +106,14 @@
         grid-column: span 2;
       }
 
-      @include sol992 {
+      @include sol920 {
         grid-column: span 3;
         justify-self: end;
+      }
+      @include sol600 {
+        grid-column: span 6;
+        justify-self: center;
+        padding: 10px 0;
       }
     }
 
@@ -102,8 +125,11 @@
         grid-column: span 7;
       }
 
-      @include sol992 {
+      @include sol920 {
         grid-column: span 1;
+      }
+      @include sol600 {
+        grid-column: span 3;
       }
     }
 
@@ -115,7 +141,7 @@
         grid-column: span 9;
       }
 
-      @include sol992 {
+      @include sol920 {
         grid-column: span 6;
       }
     }
@@ -123,6 +149,11 @@
     &--6 {
       //cart
       grid-column: span 2;
+      @include sol600 {
+        grid-column: span 3;
+        justify-self: end;
+        padding: 10px 0;
+      }
     }
   }
 }
@@ -134,10 +165,20 @@
   @include sol1200 {
     justify-content: space-between;
     padding: 17px 0 18px;
+    margin-bottom: -32px;
   }
 
-  @include sol992 {
+  @include sol920 {
     padding-top: 18px;
+  }
+
+  @include sol600 {
+    // flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: $gap-mobile;
+    margin-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -331,7 +372,9 @@
     flex-wrap: wrap;
     width: min(100%, 710px);
     gap: 20px;
-
+    @include sol920 {
+      width: 100%;
+    }
   }
 
   &__item {
@@ -351,7 +394,7 @@
     padding-left: 32px;
   }
 
-  @include sol992 {
+  @include sol920 {
     position: absolute;
     left: 0;
     top: 108px;
@@ -386,7 +429,7 @@
     gap: 20px;
     width: min(100%, 952px);
 
-    @include sol992 {
+    @include sol920 {
       display: block;
       columns: auto 2;
       width: 46.153846%;
@@ -395,7 +438,7 @@
   }
 
   &__item {
-    @include sol992 {
+    @include sol920 {
       width: max-content;
       padding: 20px 0;
     }
@@ -433,7 +476,11 @@
 
 .search {
   display: flex;
-  max-height: 60px;
+  @include sol600 {
+    flex-wrap: wrap;
+    gap: $gap-mobile;
+    max-height: unset;
+  }
 
   &__input-wrap {
     position: relative;
@@ -452,7 +499,7 @@
       border-color: $primary;
     }
 
-    &:hover {
+    &:hover:not(:focus-within) {
       background-color: $grey-md;
       border-color: $grey-md;
     }
@@ -461,8 +508,12 @@
       width: 68.45%;
     }
 
-    @include sol992 {
+    @include sol920 {
       width: 69.7%;
+    }
+    @include sol600 {
+      width: 100%;
+      border-radius: 10px;
     }
   }
 
@@ -480,7 +531,7 @@
 
   &__input {
     flex-grow: 1;
-    padding: 21px 27px;
+    padding: 18.5px 27px;
     font-size: 1rem;
     line-height: 120%;
     color: $grey-dark;
@@ -553,7 +604,9 @@
       border-radius: 0px 10px 10px 0px;
       color: $primary;
       transition: background-color 0.3s linear, border-color 0.3s linear;
-
+      @include sol600 {
+        border-radius: 10px;
+      }
     }
 
     &[data-type*=select-one] {
@@ -599,12 +652,11 @@
       &--dropdown {
         top: 95%;
         z-index: -1;
-
+        border-radius: 0 0 10px 10px;
         .choices__list {
           padding-top: 10px;
           border: 2px solid $grey-light;
           border-width: 0 2px 2px 2px;
-          border-radius: 0 0 10px 10px;
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           column-gap: 32px;
@@ -613,8 +665,12 @@
             column-gap: 15px;
           }
 
-          @include sol992 {
+          @include sol920 {
             display: block;
+          }
+
+          @include sol600 {
+            display: grid;
           }
 
           .choices__item {
@@ -622,7 +678,7 @@
             font-size: 1rem;
             line-height: 130%;
 
-            @include sol992 {
+            @include sol920 {
               padding: 7px 20px;
             }
 
@@ -815,7 +871,7 @@
 }
 
 .js-main-menu {
-  @include sol992 {
+  @include sol920 {
     @include hide;
     transform: scaleY(0);
     transform-origin: top;

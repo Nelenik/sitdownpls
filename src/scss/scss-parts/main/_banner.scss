@@ -8,6 +8,9 @@
   @include sol1200 {
     background-image: url('@img/main/banner_1024.webp');
   }
+  @include sol920 {
+    background-image: url('@img/main/banner_768.webp');
+  }
 
   &__title {
     @include resetMg;
@@ -30,6 +33,6 @@
   }
 
   &__btn {
-    padding: 22px 31.5px;
+    padding: 20px 30px;
   }
 }

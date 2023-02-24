@@ -13,6 +13,9 @@
       @include sol1200 {
         background-image: url("@img/main/hero_red-divan_1024.webp");
       }
+      @include sol920 {
+        background-image: url("@img/main/hero_red-divan_768.webp");
+      }
     }
 
     &--2 {
@@ -20,12 +23,18 @@
       @include sol1200 {
         background-image: url("@img/main/hero_plant_1024.webp");
       }
+      @include sol920 {
+        background-image: url("@img/main/hero_plant_768.webp");
+      }
     }
 
     &--3 {
       background-image: url("@img/main/hero_textile_desk.webp");
       @include sol1200 {
         background-image: url("@img/main/hero_textile_1024.webp");
+      }
+      @include sol920 {
+        background-image: url("@img/main/hero_textile_768.webp");
       }
     }
 

@@ -11,12 +11,24 @@
     @include sol1200 {
       grid-template-columns: repeat(9, 1fr);
     }
+
+    @include sol920 {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 25px;
+    }
   }
 
   &__left {
     grid-column: span 4;
     @include sol1200 {
       grid-column: span 2;
+    }
+
+    @include sol920 {
+      grid-column: span 6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 
@@ -27,11 +39,17 @@
     @include sol1200 {
       grid-column: span 7;
     }
+    @include sol920 {
+      grid-column: span 6;
+    }
   }
 
   &__logo {
     display: block;
     margin-bottom: 28px;
+    @include sol920 {
+      margin-bottom: 0;
+    }
   }
 
   &__socials {

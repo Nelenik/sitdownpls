@@ -15,6 +15,9 @@
     @include sol1200 {
       grid-template-columns: repeat(9, 1fr);
     }
+    @include sol920 {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 
   &__item {
@@ -40,7 +43,7 @@
   &__btn {
     display: block;
     margin: 0 auto;
-    padding: 22px 36.5px;
+    padding: 20px 34.8px;
 
     &--hidden {
         display:none;

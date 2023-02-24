@@ -4,8 +4,12 @@
 // container первая переменная max-width, вторая - padding
 .container {
   @include container(1352px, 36px);
-  @include sol1200 {
+  @include sol920 {
     padding: 0 72px;
+  }
+
+  @include sol767 {
+    padding: 0 12px;
   }
 }
 

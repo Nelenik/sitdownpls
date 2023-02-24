@@ -1,9 +1,7 @@
 @import "../variables";
 .request {
   --form-width: calc((100% - 32px)/2);
-  @include sol1200 {
-    --form-width: 42.5%;
-  }
+  
   padding-top: 70px;
   padding-bottom: 70px;
 
@@ -14,6 +12,14 @@
     background-size: var(--form-width) auto;
     @include sol1200 {
       background-size: 54% auto;
+    }
+    @include sol920 {
+      background-image: url("@img/main/rqst_bg_768.webp");
+      background-size: max(25%,187px) auto;
+      background-position: right 72px center;
+    }
+    @include sol767 {
+      background-position: right 12px center;
     }
   }
 
@@ -67,6 +73,13 @@
 
   &__form {
     width: var(--form-width);
+  }
+
+  @include sol1200 {
+    --form-width: 42.5%;
+  }
+  @include sol920 {
+    --form-width: 65%;
   }
 
 }

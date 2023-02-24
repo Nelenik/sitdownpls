@@ -35,15 +35,18 @@ export function setGreyRowSize() {
   const { headerBlock, observing1, observing2 } = header;
   // resizeObserver следит за указаными блоками
   const resizeObs = new ResizeObserver((entries) => {
+    console.log(entries)
     let size1 = entries[0].borderBoxSize[0].blockSize;
-    let size2;
+    console.log(size1)
+    // let size2;
     if (entries[1]) {
-      size2 = entries[1].borderBoxSize[0].blockSize
-    }
-    headerBlock.style.setProperty('--grey-row-height', size1 > 50 ? `${size1}px` : '50px');
-    if (size2) {
+      let size2 = entries[1].borderBoxSize[0].blockSize;
       headerBlock.style.setProperty('--grey-row-top', `${size2}px`)
     }
+    headerBlock.style.setProperty('--grey-row-height', size1 > 50 ? `${size1}px` : '50px');
+    // if (size2) {
+    //   headerBlock.style.setProperty('--grey-row-top', `${size2}px`)
+    // }
   })
 
   // функции переключения  наблюдения
@@ -54,7 +57,6 @@ export function setGreyRowSize() {
       headerBlock.style.setProperty('--grey-row-top', '')
     },
     func2: () => {
-      console.log('func2 called')
       resizeObs.observe(observing1);
       resizeObs.observe(observing2);
     },
@@ -68,8 +70,8 @@ export function setGreyRowSize() {
   // медиазапросы
   let mQ = [
     window.matchMedia("(min-width: 1201px)"),
-    window.matchMedia("(min-width: 577px) and (max-width: 1200px)"),
-    window.matchMedia("(max-width: 576px)")
+    window.matchMedia("(min-width: 601px) and (max-width: 1200px)"),
+    window.matchMedia("(max-width: 600px)")
   ]
 // переключение наблюдения в зависимости от медиа запросов
   function toggleMediaObs() {
@@ -110,31 +112,31 @@ export function setHeaderBloksMoving() {
         method: 'append'
       },
       {
-        solution: "(min-width: 992px) and (max-width: 1200px)",
+        solution: "(min-width: 921px) and (max-width: 1200px)",
         target: gridContainer,
         elems: order1024,
         method: 'append'
       },
       {
-        solution: "(min-width: 577px) and (max-width: 991px)",
+        solution: "(min-width: 601px) and (max-width: 920px)",
         target: gridContainer,
         elems: order768,
         method: 'append'
       },
       {
-        solution: "(max-width: 576px)",
+        solution: "(max-width: 600px)",
         target: gridContainer,
         elems: order320,
         method: 'append'
       },
       {
-        solution: "(min-width: 577px)",
+        solution: "(min-width: 601px)",
         target: gridCells[1],
         elems: [additionalMenu],
         method: 'append'
       },
       {
-        solution: "(max-width: 576px)",
+        solution: "(max-width: 600px)",
         target: mainMenu,
         elems: [additionalMenu],
         method: 'append'

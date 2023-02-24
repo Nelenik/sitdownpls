@@ -11,6 +11,12 @@
     right: 36px;
     display: flex;
     gap: 13px;
+    @include sol920 {
+      right: 72px;
+    }
+    @include sol767 {
+      right: 12px;
+    }
   }
 
   &__title {
