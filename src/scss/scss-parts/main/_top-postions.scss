@@ -18,6 +18,9 @@
     @include sol920 {
       grid-template-columns: repeat(6, 1fr);
     }
+    @include sol600 {
+      gap: $gap-mobile;
+    }
   }
 
   &__item {
@@ -38,6 +41,10 @@
       visibility: visible;
       opacity: 1;
     }
+  }
+
+  &__card-link {
+    padding: 12px 22px
   }
 
   &__btn {

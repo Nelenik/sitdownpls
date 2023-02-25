@@ -6,7 +6,7 @@ export function offersSwiperInit() {
     grabCursor: true,
     spaceBetween: 32,
     // slidesPerView: 'auto',
-    slidesPerGroup: 3,
+    
     breakpoints: {
       1200: {
         slidesPerView: 'auto',
@@ -14,8 +14,13 @@ export function offersSwiperInit() {
       921: {
         slidesPerView: 3,
       },
-      577: {
+      601: {
         slidesPerView: 2,
+        slidesPerGroup: 3,
+      },
+      0: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
       }
     },
     navigation: {

@@ -2,183 +2,170 @@
 @import "variables";
 
 .header {
-  --grey-row-height: 50px;
-  --grey-row-top: ;
-  padding-bottom: 32px;
-  position: relative;
+  padding-bottom: $gap;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--grey-row-height, 50px);
-    background-color: $grey-light;
-    pointer-events: none;
-    z-index: -1;
-
+  &__contacts-wrap {
+    grid-column: span 5;
+    display: flex;
+    flex-wrap: wrap;
     @include sol1200 {
-      top: var(--grey-row-top);
+      grid-column: span 9;
+      justify-content: space-between;
+    }
+    @include sol920 {
+      grid-column: span 6;
+      gap: 10px;
+    }
+    
+  }
+  &__region {
+    display: inline-block;
+    margin-right: 30px;
+  }
+  &__additional-menu {
+    grid-column: span 7;
+    @include sol920 {
+      grid-column: span 6;
     }
   }
-
-  // overflow-x: hidden;
-  &__region {
-    margin-right: 26px;
-  }
-
   &__logo {
-    display: inline-block;
-    width: max-content;
+    grid-column: span 3;
+    @include sol1200 {
+      grid-column: span 2;
+    }
+    @include sol920 {
+      grid-column: span 3;
+      justify-self: end;
+    }
+    @include sol600 {
+      grid-column: span 6;
+      justify-self: center;
+    }
+   
   }
 
+  &__main-menu {
+    grid-column: span 9;
+    @include sol1200 {
+      grid-column: span 7;
+    }
+    @include sol920 {
+      grid-column: span 1;
+    }
+    @include sol600 {
+      grid-column: span 3;
+    }
+  }
   &__burger {
     display: none;
-
     @include sol920 {
       display: block;
     }
   }
+
+  &__search {
+    grid-column: span 10;
+    @include sol1200 {
+      grid-column: span 9;
+    }
+    @include sol920 {
+      grid-column: span 6;
+    }
+  }
+  &__nav-btns {
+    grid-column: span 2;
+    justify-self: end;
+    @include sol600 {
+      grid-column:  span 3;
+    }
+  }
 }
 
-.header-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: center;
-  gap: $gap;
-  outline: none;
-
+.row-1 {
+  background-color: $grey-light;
   @include sol1200 {
-    grid-template-columns: repeat(9, 1fr);
+    padding: 18px 0;
+    background-color: $white;
   }
-
-  @include sol920 {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
   @include sol600 {
-    gap: $gap-mobile;
+    padding: 11px 0;
+    background-color: $grey-light;
   }
 
-  &__cell {
-    &--1 {
-      //region
-      grid-column: span 5;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gap;
+    align-items: center;
+    @include sol1200 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    @include sol920 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
 
-      @include sol1200 {
-        grid-column: span 9;
-        // margin-bottom: -32px;
-      }
+.row-2 {
+  @include sol1200 {
+    background-color: $grey-light;
+  }
+  @include sol600 {
+    padding: 16px 0;
+    background-color: $white;
+  }
+  &__container {
+    @include sol1200 {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      column-gap: $gap;
+      align-items: center;
+    }
+    @include sol920 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
 
-      @include sol920 {
-        grid-column: span 6;
-      }
-
-      @include sol600 {
-        grid-column: span 6;
-      }
+.row-3 {
+  padding: $gap 0;
+  @include sol920 {
+    position: relative;
+  }
+  @include sol600 {
+    padding: 10px 0;
+    border-top: 1px solid $grey-light;
+    border-bottom: 1px solid $grey-light;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gap;
+    @include sol1200 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    @include sol920 {
+      grid-template-columns: repeat(6, 1fr);
       
     }
-
-    &--2 {
-      //add-menu
-      grid-column: span 7;
-
-      @include sol1200 {
-        padding: 16px 0;
-      }
-
-      @include sol920 {
-        grid-column: span 6;
-      }
-
-      @include sol600 {
-        display: none;
-      }
-    }
-
-    &--3 {
-      //logo
-      grid-column: span 3;
-
-      @include sol1200 {
-        grid-column: span 2;
-      }
-
-      @include sol920 {
-        grid-column: span 3;
-        justify-self: end;
-      }
-      @include sol600 {
-        grid-column: span 6;
-        justify-self: center;
-        padding: 10px 0;
-      }
-    }
-
-    &--4 {
-      //main menu
-      grid-column: span 9;
-
-      @include sol1200 {
-        grid-column: span 7;
-      }
-
-      @include sol920 {
-        grid-column: span 1;
-      }
-      @include sol600 {
-        grid-column: span 3;
-      }
-    }
-
-    &--5 {
-      //search
-      grid-column: span 10;
-
-      @include sol1200 {
-        grid-column: span 9;
-      }
-
-      @include sol920 {
-        grid-column: span 6;
-      }
-    }
-
-    &--6 {
-      //cart
-      grid-column: span 2;
-      @include sol600 {
-        grid-column: span 3;
-        justify-self: end;
-        padding: 10px 0;
-      }
-    }
   }
 }
 
-.cell-1 {
-  display: flex;
-  align-items: center;
-
-  @include sol1200 {
-    justify-content: space-between;
-    padding: 17px 0 18px;
-    margin-bottom: -32px;
-  }
-
-  @include sol920 {
-    padding-top: 18px;
-  }
-
+.row-4 {
   @include sol600 {
-    // flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: $gap-mobile;
-    margin-bottom: 0;
-    padding: 0;
+    padding-top: 16px;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gap;
+    align-items: center;
+    @include sol1200 {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    @include sol920 {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 }
 
@@ -215,9 +202,6 @@
         transform: rotate(-45deg);
         transition: transform 0.25s linear, border-color 0.3s linear;
 
-        @include sol1200 {
-          top: 30%;
-        }
       }
 
       &.is-open {
@@ -246,10 +230,6 @@
     &__list {
       &--single {
         padding: 6px 8px 5px 0;
-
-        @include sol1200 {
-          padding: 2.5px 8px 2.5px 0;
-        }
       }
 
       &[aria-expanded] {
@@ -357,12 +337,18 @@
 }
 
 .additional-menu {
+  
   display: flex;
   justify-content: flex-end;
   width: 100%;
 
   @include sol1200 {
     justify-content: flex-start;
+  }
+
+  @include sol600 {
+    padding: 24px 12px;
+    background-color: $grey-light;
   }
 
   &__list {
@@ -372,16 +358,21 @@
     flex-wrap: wrap;
     width: min(100%, 710px);
     gap: 20px;
-    @include sol920 {
+    @include sol600 {
       width: 100%;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $gap-mobile;
+      row-gap: 12px;
+      align-items: start;
     }
   }
 
   &__item {
     padding: 16px 0;
-
-    @include sol1200 {
-      padding: 0;
+    @include sol600 {
+      grid-column: span 3;
+      padding: 0
     }
   }
 }
@@ -390,14 +381,10 @@
   display: flex;
   justify-content: flex-end;
 
-  @include sol1200 {
-    padding-left: 32px;
-  }
-
   @include sol920 {
     position: absolute;
     left: 0;
-    top: 108px;
+    top: 0;
     z-index: 1000;
     display: block;
     padding: 72px 72px 40px;
@@ -418,7 +405,18 @@
       background-size: cover;
       background-position: center;
       opacity: 0.2;
+      @include sol600 {
+        content: none;
+      }
     }
+  }
+
+  @include sol600 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 42px 0 0;
+    height: 80vh;
   }
 
   &__list {
@@ -428,12 +426,20 @@
     align-items: center;
     gap: 20px;
     width: min(100%, 952px);
-
+    @include sol1200 {
+      width: 95.59004%; /* 701px/733.34 */
+    }
     @include sol920 {
       display: block;
       columns: auto 2;
       width: 46.153846%;
-      /* 288px/624 */
+    }
+    @include sol600 {
+      padding: 0 12px 0;
+      margin-bottom: auto;
+      width: 100%;
+      columns: unset;
+      overflow-y: auto;
     }
   }
 
@@ -476,10 +482,11 @@
 
 .search {
   display: flex;
+
   @include sol600 {
+    position: relative;
     flex-wrap: wrap;
-    gap: $gap-mobile;
-    max-height: unset;
+    gap: 16px;
   }
 
   &__input-wrap {
@@ -505,11 +512,10 @@
     }
 
     @include sol1200 {
-      width: 68.45%;
+      width: 68.487395%; /* 652px/952 */
     }
-
     @include sol920 {
-      width: 69.7%;
+      width: 69.711538%; /* 435px/624 */
     }
     @include sol600 {
       width: 100%;
@@ -571,6 +577,10 @@
         stroke: $white;
       }
     }
+    @include sol600 {
+      position: absolute;
+      right: 32px;
+    }
   }
 
 }
@@ -595,7 +605,7 @@
     z-index: 100;
 
     &__inner {
-      padding: 12.3px 25px;
+      padding: 12.7px 25px;
       font-size: 1rem;
       line-height: 137.5%;
       /* 22/16 */
@@ -653,6 +663,7 @@
         top: 95%;
         z-index: -1;
         border-radius: 0 0 10px 10px;
+
         .choices__list {
           padding-top: 10px;
           border: 2px solid $grey-light;
@@ -662,7 +673,7 @@
           column-gap: 32px;
 
           @include sol1200 {
-            column-gap: 15px;
+            column-gap: 0;
           }
 
           @include sol920 {
@@ -680,6 +691,10 @@
 
             @include sol920 {
               padding: 7px 20px;
+            }
+
+            @include sol600 {
+              padding: 10px 20px;
             }
 
             &--selectable {
@@ -725,17 +740,8 @@
   }
 }
 
-.cell-6 {
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 32px;
-
-
-}
-
 .entry-btn {
+  margin-right: $gap;
   &__svg {
     width: 26px;
     height: 28px;
@@ -849,7 +855,8 @@
     bottom: 0;
   }
 
-  &:focus-visible, &:active {
+  &:focus-visible,
+  &:active {
 
     &::before,
     &::after,
@@ -878,6 +885,7 @@
     transition-property: visibility, opacity, transform;
     transition-duration: 0.3s, 0.3s, 0.5s;
     transition-timing-function: linear;
+
     &--active {
       @include show;
       transform: scaleY(1);
@@ -888,6 +896,7 @@
 .js-burger {
   &--active {
     z-index: 1001;
+
     .burger__line {
       opacity: 0;
     }

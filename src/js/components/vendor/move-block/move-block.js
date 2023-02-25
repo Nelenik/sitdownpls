@@ -35,7 +35,6 @@ export function MoveBlock(options) {
           default:
             target.replaceWith(...elemToPaste);
             break;
-  
         }
       },
       isString(arg) {

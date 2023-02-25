@@ -1,6 +1,7 @@
-  <header class="header">
-    <div class="container header__container header-grid">
-      <div class="header-grid__cell header-grid__cell--1 cell-1">
+<header class="header">
+  <div class="header__row row-1">
+    <div class="container row-1__container">
+      <div class="header__contacts-wrap">
         <label class="header__region region">
           <span class="region__text">Ваш регион:</span>
           <select name="region">
@@ -17,32 +18,37 @@
           <span class="tel__text">+7 (495) 885-45-47</span>
         </a>
       </div>
-      <div class="header-grid__cell header-grid__cell--2 cell-2">
-        <nav class="additional-menu">
-          <ul class="list-reset additional-menu__list">
-            <li class="additional-menu__item">
-              <a class="additional-menu__link grey-link" href="#!">О компании</a>
-            </li>
-            <li class="additional-menu__item">
-              <a class="additional-menu__link grey-link" href="#!">Гарантия и возврат</a>
-            </li>
-            <li class="additional-menu__item">
-              <a class="additional-menu__link grey-link" href="#!">Корпоративным клиентам</a>
-            </li>
-            <li class="additional-menu__item">
-              <a class="additional-menu__link grey-link" href="#!">Дизайн-решение</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header-grid__cell header-grid__cell--3">
-        <a href="index.html" class="header__logo logo" aria-label="SitDownPls logo">
-          <svg class="logo__svg">
-            <use xlink:href="sprite.svg#logo"></use>
-          </svg>
-        </a>
-      </div>
-      <div class="header-grid__cell header-grid__cell--4">
+      <nav class="additional-menu header__additional-menu">
+        <ul class="list-reset additional-menu__list">
+          <li class="additional-menu__item">
+            <a class="additional-menu__link grey-link" href="#!">О компании</a>
+          </li>
+          <li class="additional-menu__item">
+            <a class="additional-menu__link grey-link" href="#!">Гарантия и возврат</a>
+          </li>
+          <li class="additional-menu__item">
+            <a class="additional-menu__link grey-link" href="#!">Корпоративным клиентам</a>
+          </li>
+          <li class="additional-menu__item">
+            <a class="additional-menu__link grey-link" href="#!">Дизайн-решение</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header__row row-2">
+    <div class="container row-2__container">
+      
+    </div>
+  </div>
+  <div class="header__row row-3">
+    <div class="container row-3__container">
+      <a href="index.html" class="header__logo logo" aria-label="SitDownPls logo">
+        <svg class="logo__svg">
+          <use xlink:href="sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <div class="header__main-menu">
         <button class="btn-reset header__burger burger js-burger" aria-label="Открыть меню">
           <span class="burger__line"></span>
         </button>
@@ -69,36 +75,38 @@
           </ul>
         </nav>
       </div>
-      <div class="header-grid__cell header-grid__cell--5">
-        <form class="header__search search" name="search" autocomplete="off">
-          <div class="search__input-wrap">
-            <svg class="search__loupe">
-              <use xlink:href="sprite.svg#search"></use>
+    </div>
+  </div>
+  <div class="header__row row-4">
+    <div class="container row-4__container">
+      <form class="header__search search" name="search" autocomplete="off">
+        <div class="search__input-wrap">
+          <svg class="search__loupe">
+            <use xlink:href="sprite.svg#search"></use>
+          </svg>
+          <input type="text" class="search__input" name="searchField" placeholder="Я хочу купить...">
+          <button class="btn-reset search__btn" type="button" name="searchBtn">
+            <svg>
+              <use xlink:href="sprite.svg#arrow-right"></use>
             </svg>
-            <input type="text" class="search__input" name="searchField" placeholder="Я хочу купить...">
-            <button class="btn-reset search__btn" type="button" name="searchBtn">
-              <svg>
-                <use xlink:href="sprite.svg#arrow-right"></use>
-              </svg>
-            </button>
-          </div>
-          <label class="search__select-wrap category">
-            <select name="searchSelect">
-              <option value="">Категория</option>
-              <option value="Диваны">Диваны</option>
-              <option value="Кресла">Кресла</option>
-              <option value="Пуфы">Пуфы</option>
-              <option value="Кровати">Кровати</option>
-              <option value="Тумбы">Тумбы</option>
-              <option value="Комоды">Комоды</option>
-              <option value="Стулья">Стулья</option>
-              <option value="Столы">Столы</option>
-              <option value="Аксессуары">Аксессуары</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div class="header-grid__cell header-grid__cell--6 cell-6">
+          </button>
+        </div>
+        <label class="search__select-wrap category">
+          <select name="searchSelect">
+            <option value="">Категория</option>
+            <option value="Диваны">Диваны</option>
+            <option value="Кресла">Кресла</option>
+            <option value="Пуфы">Пуфы</option>
+            <option value="Кровати">Кровати</option>
+            <option value="Тумбы">Тумбы</option>
+            <option value="Комоды">Комоды</option>
+            <option value="Стулья">Стулья</option>
+            <option value="Столы">Столы</option>
+            <option value="Аксессуары">Аксессуары</option>
+          </select>
+        </label>
+      </form>
+      <div class="header__nav-btns">
         <button class="btn-reset entry-btn" type="button">
           <svg class="entry-btn__svg">
             <use xlink:href="sprite.svg#user"></use>
@@ -112,5 +120,5 @@
         </button>
       </div>
     </div>
-    <a href="#!" class="hidden" aria-hidden="true"></a>
-  </header>
+  </div>
+</header>

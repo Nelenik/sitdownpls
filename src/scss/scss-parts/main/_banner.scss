@@ -11,6 +11,19 @@
   @include sol920 {
     background-image: url('@img/main/banner_768.webp');
   }
+  @include sol600 {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: 302px;
+    background-image: url('@img/main/banner_320.webp');
+    background-size: 100% 210px;
+    background-position: top center;
+  }
+
+  &__container {
+    // position: relative;
+  }
 
   &__title {
     @include resetMg;
@@ -20,6 +33,10 @@
     font-size: 3.75rem;
     line-height: 120%;
     color: $gold;
+    @include sol600 {
+      max-width: 187px;
+      font-size: 1.5rem;
+    }
   }
 
   &__descr {
@@ -30,9 +47,21 @@
     font-size: 3rem;
     line-height: 120%;
     color: $white;
+    @include sol600 {
+      max-width: 187px;
+      font-size: 1rem;
+      margin-bottom: auto;
+    }
   }
 
   &__btn {
     padding: 20px 30px;
+    @include sol600 {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(100%, 296px);
+    }
   }
 }

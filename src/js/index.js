@@ -4,7 +4,6 @@ initChoices()
 addClassToSearch()
 setHeaderBloksMoving()
 setBurgerMenu()
-setGreyRowSize()
 
 //hero
 import { heroSwiperInit } from './components/main/_hero.js';

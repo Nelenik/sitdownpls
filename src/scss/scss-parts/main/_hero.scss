@@ -7,6 +7,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    @include sol600 {
+      min-height: 210px;
+    }
 
     &--1 {
       background-image: url("@img/main/hero_red-divan_desk.webp");
@@ -15,6 +18,10 @@
       }
       @include sol920 {
         background-image: url("@img/main/hero_red-divan_768.webp");
+      }
+
+      @include sol600 {
+        background-image: url("@img/main/hero_red-divan_320.webp");
       }
     }
 
@@ -26,6 +33,9 @@
       @include sol920 {
         background-image: url("@img/main/hero_plant_768.webp");
       }
+      @include sol600 {
+        background-image: url("@img/main/hero_plant_320.webp");
+      }
     }
 
     &--3 {
@@ -36,6 +46,9 @@
       @include sol920 {
         background-image: url("@img/main/hero_textile_768.webp");
       }
+      @include sol600 {
+        background-image: url("@img/main/hero_textile_320.webp");
+      }
     }
 
     &--4 {
@@ -44,6 +57,9 @@
   }
 
   &__swiper {
+    @include sol600 {
+      margin-bottom: $gap;
+    }
     .swiper-pagination-bullet {
       width: 20px;
       height: 20px;
@@ -58,6 +74,11 @@
 
   &__mob-btn {
     display: none;
+    @include sol600 {
+      display: block;
+      margin: 0 auto;
+      width: min(100%, 296px);
+    }
   }
 }
 
@@ -69,6 +90,9 @@
   width: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
+  @include sol600 {
+    padding: 30px;
+  }
 
   &__title {
     @include resetMg;
@@ -84,6 +108,14 @@
       max-width: 587px;
       color: $white;
     }
+    @include sol600 {
+      max-width: 204px;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__btn {
+    display: none;
   }
 }
 
@@ -94,17 +126,27 @@
   &__svg {
     flex: 0 0 auto;
     display: block;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     width: 161px;
     height: 112px;
     opacity: 0.3;
+    @include sol600 {
+      width: 73px;
+      height: 50px;
+      // padding-bottom: 0;
+    }
   }
 
   &__text {
+    display: inline-block;
     max-width: 276px;
     font-size: 1.5rem;
     line-height: 100%;
     text-align: center;
     color: $grey;
+    @include sol600 {
+      max-width: 194px;
+      font-size: 1rem;
+    }
   }
 }

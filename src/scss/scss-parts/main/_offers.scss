@@ -3,10 +3,18 @@
 
   &__container {
     position: relative;
+
+    @include sol600 {
+      padding-bottom: 48px;
+    }
   }
 
   &__title {
     margin-bottom: 26px;
+
+    @include sol600 {
+      max-width: 212px;
+    }
   }
 
   &__swiper-nav {
@@ -15,11 +23,22 @@
     top: 0;
     display: flex;
     gap: 13px;
+
     @include sol920 {
       right: 72px;
     }
+
     @include sol767 {
       right: 12px;
+    }
+
+    @include sol600 {
+      top: unset;
+      bottom: 0;
+      left: 50%;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(-50%);
     }
   }
 
@@ -75,8 +94,10 @@
 
   &__picture {
     min-height: 245px;
+
     @include sol1200 {
       position: relative;
+
       &:has(.offer__img--lg) {
         width: 110%;
       }
@@ -92,6 +113,7 @@
         transform: translateY(-50%);
         height: 138px;
       }
+
       @include sol920 {
         height: 123px;
       }
@@ -100,6 +122,8 @@
 
   &__title {
     max-width: 222px;
+    font-size: 1.5rem;
+    line-height: 130%;
   }
 
   &__stock-price {
@@ -107,6 +131,7 @@
     line-height: 130%;
     color: $secondary;
   }
+
   &__grey-price {
     margin: 0;
     text-decoration: line-through;
@@ -129,14 +154,16 @@
 }
 
 .sketch-light-bg {
-background-image: url("@img/main/offers_sketch_divan-light.webp");
-@include sol1200 {
-  background-image: none;
-}
+  background-image: url("@img/main/offers_sketch_divan-light.webp");
+
+  @include sol1200 {
+    background-image: none;
+  }
 }
 
 .sketch-brown-bg {
   background-image: url("@img/main/offers_sketch_divan-brown.webp");
+
   @include sol1200 {
     background-image: none;
   }

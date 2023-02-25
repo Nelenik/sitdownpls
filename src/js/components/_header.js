@@ -30,125 +30,105 @@ export function addClassToSearch() {
   })
 }
 
-//настраиваем наблюдение за серым блоком. и настраиваем его размеры и положение
-export function setGreyRowSize() {
-  const { headerBlock, observing1, observing2 } = header;
-  // resizeObserver следит за указаными блоками
-  const resizeObs = new ResizeObserver((entries) => {
-    console.log(entries)
-    let size1 = entries[0].borderBoxSize[0].blockSize;
-    console.log(size1)
-    // let size2;
-    if (entries[1]) {
-      let size2 = entries[1].borderBoxSize[0].blockSize;
-      headerBlock.style.setProperty('--grey-row-top', `${size2}px`)
-    }
-    headerBlock.style.setProperty('--grey-row-height', size1 > 50 ? `${size1}px` : '50px');
-    // if (size2) {
-    //   headerBlock.style.setProperty('--grey-row-top', `${size2}px`)
-    // }
-  })
-
-  // функции переключения  наблюдения
-  let funcs = {
-    func1: () => {
-      resizeObs.observe(observing1);
-      resizeObs.unobserve(observing2);
-      headerBlock.style.setProperty('--grey-row-top', '')
-    },
-    func2: () => {
-      resizeObs.observe(observing1);
-      resizeObs.observe(observing2);
-    },
-    func3: () => {
-      resizeObs.unobserve(observing1);
-      resizeObs.unobserve(observing2);
-      headerBlock.style.setProperty('--grey-row-top', '')
-      headerBlock.style.setProperty('--grey-row-height', '')
-    }
-  };
-  // медиазапросы
-  let mQ = [
-    window.matchMedia("(min-width: 1201px)"),
-    window.matchMedia("(min-width: 601px) and (max-width: 1200px)"),
-    window.matchMedia("(max-width: 600px)")
-  ]
-// переключение наблюдения в зависимости от медиа запросов
-  function toggleMediaObs() {
-    let values = Object.values(funcs)
-    mQ.forEach((el, i)=>{
-      if(el.matches) {values[i]()}
-      el.addEventListener('change', function(e) {
-        if(e.matches) values[i]()
-      })
-    })
-  }
-  toggleMediaObs()
-}
-
-
-//настраиваем перемещение блоков в хедере
-function setOrderInArr(arr, order = []) {
-  let result = [];
-  for (let num of order) {
-    result.push(arr[num])
-  }
-  return result
-}
-
+// перемещаем блоки на разных разрешениях
 export function setHeaderBloksMoving() {
-  const { mainMenu, additionalMenu, gridCells, gridContainer } = header
-  const order1920 = Array.from(gridCells);
-  const order1024 = setOrderInArr(order1920, [0, 1, 5, 2, 3, 4])
-  const order768 = setOrderInArr(order1920, [0, 1, 3, 2, 5, 4]);
-  const order320 = setOrderInArr(order1920, [2, 0, 3, 1, 5, 4]);
+  let { containers, movedElems, search } = header;
+  const { contacts, addMenu, logo, mainMenuWrap, mainMenu, navBtns } = movedElems;
 
   new MoveBlock({
     breakpoints: [
       {
         solution: "(min-width: 1201px)",
-        target: gridContainer,
-        elems: order1920,
+        target: containers[0],
+        elems: [contacts, addMenu],
+        method: 'append',
+      },
+      {
+        solution: "(min-width: 1201px)",
+        target: containers[1],
+        elems: [],
+        method: 'append',
+      },
+      {
+        solution: "(min-width: 1201px)",
+        target: containers[2],
+        elems: [logo, mainMenuWrap],
+        method: 'append',
+      },
+      {
+        solution: "(min-width: 1201px)",
+        target: containers[3],
+        elems: [search, navBtns],
+        method: 'append',
+      },
+      {
+        solution: "(min-width: 921px) and (max-width: 1200px)",
+        target: containers[0],
+        elems: [contacts],
         method: 'append'
       },
       {
         solution: "(min-width: 921px) and (max-width: 1200px)",
-        target: gridContainer,
-        elems: order1024,
+        target: containers[1],
+        elems: [addMenu, navBtns],
+        method: 'append'
+      },
+      {
+        solution: "(min-width: 921px) and (max-width: 1200px)",
+        target: containers[2],
+        elems: [logo, mainMenuWrap],
         method: 'append'
       },
       {
         solution: "(min-width: 601px) and (max-width: 920px)",
-        target: gridContainer,
-        elems: order768,
+        target: containers[0],
+        elems: [contacts],
+        method: 'append'
+      },
+      {
+        solution: "(min-width: 601px) and (max-width: 920px)",
+        target: containers[1],
+        elems: [addMenu],
+        method: 'append'
+      },
+      {
+        solution: "(min-width: 601px) and (max-width: 920px)",
+        target: containers[2],
+        elems: [mainMenuWrap, logo, navBtns],
         method: 'append'
       },
       {
         solution: "(max-width: 600px)",
-        target: gridContainer,
-        elems: order320,
+        target: containers[0],
+        elems: [logo],
         method: 'append'
       },
       {
-        solution: "(min-width: 601px)",
-        target: gridCells[1],
-        elems: [additionalMenu],
+        solution: "(max-width: 600px)",
+        target: containers[1],
+        elems: [contacts],
+        method: 'append'
+      },
+      {
+        solution: "(max-width: 600px)",
+        target: containers[2],
+        elems: [mainMenuWrap, navBtns],
         method: 'append'
       },
       {
         solution: "(max-width: 600px)",
         target: mainMenu,
-        elems: [additionalMenu],
+        elems: [addMenu],
         method: 'append'
       },
-
     ]
   })
 }
 
 // бургер-меню
 export function setBurgerMenu() {
-  const { mainMenu, burger } = header;
+  const { movedElems, burger } = header;
+  const { mainMenu } = movedElems;
   burger.addEventListener('click', function (e) {
     this.classList.toggle('js-burger--active')
     mainMenu.classList.toggle('js-main-menu--active');
