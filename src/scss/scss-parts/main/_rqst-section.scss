@@ -8,8 +8,8 @@
   &__container {
     background-image: url("@img/main/rqst_bg_desk.webp");
     background-repeat: no-repeat;
-    background-position: right center;
-    background-size: var(--form-width) auto;
+    background-position: right 32px center;
+    background-size: calc(var(--form-width) - 32px) auto;
     @include sol1200 {
       background-size: 54% auto;
     }

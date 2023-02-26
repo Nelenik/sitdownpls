@@ -144,6 +144,10 @@
     min-height: 130px;
     margin-bottom: 16px;
 
+    @include sol1200 {
+      margin-bottom: 18px;
+    }
+
     @include sol500 {
       justify-content: center;
       min-height: 0;
@@ -162,6 +166,10 @@
   &__title {
     margin-bottom:  16px;
     padding: 0 30px;
+
+    @include sol1200 {
+      margin-bottom: 21px;
+    }
 
     @include sol600 {
       padding: 0;
@@ -189,6 +197,9 @@
   &__link {
     transform: translateX(30px);
     outline: none;
+    @include sol1200 {
+      padding: 17px 33px;
+    }
     @include sol600 {
       transform: unset;
     }
@@ -257,7 +268,7 @@
 }
 
 .btn-colored {
-  padding: 20px 50.5px;
+  padding: 20px 47px;
   font-size: 1rem;
   font-weight: 700;
   line-height: 100%;

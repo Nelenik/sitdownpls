@@ -20,7 +20,7 @@
   }
   &__region {
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 25px;
   }
   &__additional-menu {
     grid-column: span 7;
@@ -84,7 +84,7 @@
 .row-1 {
   background-color: $grey-light;
   @include sol1200 {
-    padding: 18px 0;
+    padding: 14px 0;
     background-color: $white;
   }
   @include sol600 {
@@ -426,8 +426,10 @@
     align-items: center;
     gap: 20px;
     width: min(100%, 952px);
+    transform: translateY(4px);
     @include sol1200 {
-      width: 95.59004%; /* 701px/733.34 */
+      width: 95.59%; /* 701px/733.34 */
+      transform: translateY(2px);
     }
     @include sol920 {
       display: block;
@@ -453,7 +455,7 @@
   &__link {
     position: relative;
     font-size: 1rem;
-    line-height: 1.375rem;
+    line-height: 1.375rem; /* 22px/16 */
     color: $grey-dark;
     outline: none;
     transition: color 0.3s linear;
@@ -513,6 +515,7 @@
 
     @include sol1200 {
       width: 68.487395%; /* 652px/952 */
+      padding: 0 31px;
     }
     @include sol920 {
       width: 69.711538%; /* 435px/624 */
@@ -544,6 +547,9 @@
     border: none;
     outline: none;
     background: transparent;
+    &::placeholder {
+      transform: translateY(3px);
+    }
   }
 
   &__btn {
@@ -657,6 +663,9 @@
     &__list {
       &--single {
         padding-right: 30px;
+        @include sol1200 {
+          padding: 6px 16px 2px 5px;
+        }
       }
 
       &--dropdown {
@@ -741,12 +750,11 @@
 }
 
 .entry-btn {
-  margin-right: $gap;
+  margin-right: 28px;
   &__svg {
     width: 26px;
     height: 28px;
   }
-
 }
 
 .cart-btn {

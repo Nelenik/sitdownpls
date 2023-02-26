@@ -111,6 +111,7 @@
 
     @include sol1200 {
       position: relative;
+      margin-bottom: 18px;
 
       &:has(.offer__img--lg) {
         width: 110%;
@@ -120,10 +121,11 @@
 
   &__img {
     display: block;
+
     &--lg {
       @include sol1200 {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         height: 138px;
@@ -160,6 +162,10 @@
 
   &__link {
     outline: none;
+
+    @include sol1200 {
+      padding: 17px 34px;
+    }
   }
 }
 

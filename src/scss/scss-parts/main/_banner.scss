@@ -1,6 +1,6 @@
 .banner {
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 149px;
+  padding-bottom: 149px;
   background-image: url('@img/main/banner_desk.webp');
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,17 +27,18 @@
 
   &__title {
     @include resetMg;
-    max-width: 508px;
-    font-family: 'Playfair Display';
-    font-weight: 900;
-    font-size: 3.75rem;
-    line-height: 120%;
-    color: $gold;
+    transform: translateY(10px);
     @include sol600 {
-      max-width: 187px;
-      font-size: 1.5rem;
     }
+
   }
+  &__svg {
+    display: block;
+    width: 413px;
+    height: 76px;
+    fill: $gold;
+  }
+
 
   &__descr {
     @include resetMg;
