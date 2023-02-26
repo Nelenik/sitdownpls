@@ -2,6 +2,12 @@
   &__top {
     padding: 27px 0 16px;
     background-color: $grey-md;
+    @include sol1200 {
+      padding: 27px 0 18px;
+    }
+    @include sol920 {
+      padding: 21px 0;
+    }
   }
 
   &__container {
@@ -14,7 +20,7 @@
 
     @include sol920 {
       grid-template-columns: repeat(6, 1fr);
-      row-gap: 25px;
+      row-gap: 21px;
     }
     @include sol600 {
       column-gap: $gap-mobile;
@@ -66,6 +72,9 @@
     @include sol920 {
       margin-bottom: 0;
     }
+    @include sol600 {
+      transform: translateY(5px);
+    }
   }
 
   &__socials {
@@ -81,6 +90,13 @@
     font-size: 0.875rem;
     line-height: 135.714286%; /* 19px/14 */
     color: $grey;
+    @include sol1200 {
+      padding: 6px 0;
+      transform: translateX(-2px);
+    }
+    @include sol600 {
+      padding: 8px 0;
+    }
   }
 }
 

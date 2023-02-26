@@ -105,38 +105,47 @@
 
 .divans-img {
   @include sol1200 {
-    width: max(80%, 515px)
+    width: max(80%, 515px);
   }
 }
 
 .arm-chairs-img {
   @include sol1200 {
-    width: max(85%, 260px)
+    width: max(85%, 260px);
+    transform: translateY(5px);
+  }
+  @include sol600 {
+    transform: unset;
   }
 }
 
 .beds-img {
   @include sol1200 {
-    width: 100%
+    width: 100%;
+    transform: translateY(5px);
+  }
+  @include sol600 {
+    transform: unset;
   }
 }
 
 .dressers-img {
   @include sol1200 {
-    width: max(85%, 252px)
+    width: max(85%, 252px);
+    transform: translateY(5px);
   }
-  &.category-card__img {
-    @include sol600 {
-      // min-height: 0;
-      // max-height: 83px;
-    }
-
+  @include sol600 {
+    transform: unset;
   }
 }
 
 .chairs-img {
   @include sol1200 {
-    width: max(85%, 264px)
+    width: max(85%, 264px);
+    transform: translateY(5px);
+  }
+  @include sol600 {
+    transform: unset;
   }
 }
 
@@ -154,7 +163,7 @@
 
   &--sm {
     @include sol600 {
-      padding: 16px 0;
+      padding: 18px 0 16px;
     }
   }
 
@@ -177,7 +186,7 @@
         padding: 0 16px;
         margin-bottom: 16px;
         font-size: 1rem;
-        line-height: 137.5%; /* 22px/16 */
+        line-height: 104%; /* 22px/16 */
 
       }
     }
@@ -224,6 +233,11 @@
   flex-wrap: wrap;
   margin-bottom: 14px;
   padding: 0 30px;
+  transform: translateY(-2px);
+  @include sol600 {
+    margin-bottom: 12px;
+    transform: translateY(-4px);
+  }
 
   &__item:not(:last-child) {
     margin-right: 30px;
@@ -245,10 +259,11 @@
 
   &--sm {
     @include sol600 {
-      gap: 8.5px;
+      gap: 6px;
       max-width: 80%;
       padding: 0 16px;
-      margin-bottom: 6px;
+      margin-bottom: 9px;
+      transform: translateY(0);
     }
   }
 }

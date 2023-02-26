@@ -148,10 +148,14 @@
       margin-bottom: 18px;
     }
 
+    @include sol920 {
+      margin-bottom: 16px;
+    }
+
     @include sol500 {
       justify-content: center;
       min-height: 0;
-      margin-bottom: 0;
+      margin-bottom: 10px;
       height: 27.642276%; /* 68px/246 */
     }
   }
@@ -173,6 +177,7 @@
 
     @include sol600 {
       padding: 0;
+      margin-bottom: 16px;
       font-size: 1rem;
       // line-height: 100%;
     }
@@ -297,7 +302,7 @@
 }
 
 .btn-transp {
-  padding: 17px 32px;
+  padding: 17px 33px;
   font-size: 1rem;
   line-height: 100%;
   font-weight: 600;

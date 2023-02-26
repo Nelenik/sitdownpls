@@ -11,18 +11,23 @@
     background-position: right 32px center;
     background-size: calc(var(--form-width) - 32px) auto;
     @include sol1200 {
-      background-size: 54% auto;
+      background-size: 50% auto;
+      background-position: right 37px center;
     }
     @include sol920 {
       background-image: url("@img/main/rqst_bg_768.webp");
-      background-size: max(25%,187px) auto;
+      background-size: min(25%,187px) auto;
       background-position: right 72px center;
     }
     @include sol767 {
       background-position: right 12px center;
     }
 
-    @include sol600 {
+    // @include sol600 {
+    //   background-size: 29%;
+    // }
+
+    @include sol500 {
       background-image: none;
     }
   }
@@ -86,7 +91,7 @@
     --form-width: 65%;
   }
 
-  @include sol600 {
+  @include sol500 {
     --form-width: 100%;
   }
 

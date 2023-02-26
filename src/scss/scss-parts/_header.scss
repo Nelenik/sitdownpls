@@ -131,9 +131,10 @@
   padding: $gap 0;
   @include sol920 {
     position: relative;
+    padding: 32px 0 30px;
   }
   @include sol600 {
-    padding: 10px 0;
+    padding: 9px 0;
     border-top: 1px solid $grey-light;
     border-bottom: 1px solid $grey-light;
   }
@@ -549,6 +550,10 @@
     background: transparent;
     &::placeholder {
       transform: translateY(3px);
+
+      @include sol920 {
+        transform: unset;
+      }
     }
   }
 
@@ -830,6 +835,10 @@
   width: 24px;
   height: 24px;
   transition: outline 0.3s linear;
+
+  @include sol600 {
+    transform: translate(4px, 4px);
+  }
 
 
   &__line,

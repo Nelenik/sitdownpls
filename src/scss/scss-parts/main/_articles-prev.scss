@@ -1,5 +1,8 @@
 .articles {
   padding-top: 70px;
+  @include sol600 {
+    padding-top: 77px;
+  }
 
   &__container {
     position: relative;
@@ -91,6 +94,7 @@
     color: $grey-dark;
     @include sol1200 {
       font-size: 1rem;
+      margin-bottom: 31px;
     }
     @include sol600 {
       margin-bottom: 30px;
