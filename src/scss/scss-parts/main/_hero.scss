@@ -115,7 +115,10 @@
   }
 
   &__btn {
-    display: none;
+    @include sol600 {
+
+      display: none;
+    }
   }
 }
 

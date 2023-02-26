@@ -16,6 +16,9 @@
       grid-template-columns: repeat(6, 1fr);
       row-gap: 25px;
     }
+    @include sol600 {
+      column-gap: $gap-mobile;
+    }
   }
 
   &__left {
@@ -30,6 +33,12 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    @include sol600 {
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
   }
 
   &__nav {
@@ -41,6 +50,13 @@
     }
     @include sol920 {
       grid-column: span 6;
+    }
+
+    @include sol600 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $gap-mobile;
+      row-gap: 24px;
     }
   }
 
@@ -108,6 +124,9 @@
 }
 
 .nav-block {
+  @include sol600 {
+    grid-column: span 3;
+  }
   &__title {
     @include resetMg;
     margin-bottom: 10px;

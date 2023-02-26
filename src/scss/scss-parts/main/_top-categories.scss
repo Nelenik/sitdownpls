@@ -18,6 +18,12 @@
     @include sol920 {
       grid-template-columns: repeat(6, 1fr);
     }
+
+    @include sol600 {
+      column-gap: $gap-mobile;
+      grid-auto-rows: unset;
+      grid-template-rows: 1fr repeat(2, minmax(206px, auto));
+    }
   }
 
   &__item {
@@ -67,6 +73,7 @@
         grid-column: span 3;
       }
     }
+
     @include sol920 {
       &:nth-child(1) {
         //divans
@@ -96,46 +103,6 @@
   }
 }
 
-.category-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 30px 0;
-  height: 100%;
-  background-color: $grey-light;
-  border-radius: 10px;
-
-
-  &__title {
-    @include resetMg;
-    margin-bottom: 30px;
-    padding: 0 30px;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 120.5%;
-    /* 33px/24 */
-    color: $grey-dark;
-  }
-
-  &__picture {
-    margin-bottom: 30px;
-    width: 100%;
-  }
-
-  &__img {
-    display: block;
-
-    @include sol1200 {
-      min-height: 296px;
-    }
-  }
-
-  &__link {
-    transform: translateX(30px);
-  }
-
-}
-
 .divans-img {
   @include sol1200 {
     width: max(80%, 515px)
@@ -158,6 +125,13 @@
   @include sol1200 {
     width: max(85%, 252px)
   }
+  &.category-card__img {
+    @include sol600 {
+      // min-height: 0;
+      // max-height: 83px;
+    }
+
+  }
 }
 
 .chairs-img {
@@ -165,6 +139,85 @@
     width: max(85%, 264px)
   }
 }
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 0;
+  height: 100%;
+  background-color: $grey-light;
+  border-radius: 10px;
+  @include sol600 {
+    padding: 30px 0 16px;
+  }
+
+  &--sm {
+    @include sol600 {
+      padding: 16px 0;
+    }
+  }
+
+
+  &__title {
+    @include resetMg;
+    margin-bottom: 30px;
+    padding: 0 30px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 120.5%;
+    /* 33px/24 */
+    color: $grey-dark;
+    @include sol600 {
+      margin-bottom: 13px;
+    }
+
+    &--sm {
+      @include sol600 {
+        padding: 0 16px;
+        margin-bottom: 16px;
+        font-size: 1rem;
+        line-height: 137.5%; /* 22px/16 */
+
+      }
+    }
+  }
+
+  &__picture {
+    margin-bottom: 30px;
+    width: 100%;
+    @include sol600 {
+      margin-bottom: 0;
+      // margin-top: auto;
+    }
+  }
+
+  &__img {
+    display: block;
+
+    @include sol1200 {
+      min-height: 296px;
+    }
+
+    @include sol600 {
+      width: 100%;
+      // min-height: 0;
+      // min-height: 104px;
+      min-height: 83px;
+    }
+  }
+
+  &__link {
+    transform: translateX(30px);
+
+    @include sol600 {
+      display: none;
+    }
+  }
+
+}
+
+
 
 .subcategories {
   display: flex;
@@ -174,5 +227,45 @@
 
   &__item:not(:last-child) {
     margin-right: 30px;
+    @include sol600 {
+      margin-right: 20px;
+
+    }
+  }
+
+  &__link {
+    &--sm {
+      @include sol600 {
+        display: block;
+        font-size: 0.625rem;
+        line-height: 80%;
+      }
+    }
+  }
+
+  &--sm {
+    @include sol600 {
+      gap: 8.5px;
+      max-width: 80%;
+      padding: 0 16px;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.to-category-link-mob {
+  display: none;
+
+  @include sol600 {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
+    transform: translateX(5px);
+
+    svg {
+      width: 6px;
+      height: 8px;
+    }
   }
 }

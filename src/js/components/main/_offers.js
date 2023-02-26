@@ -4,23 +4,31 @@ import Swiper from "swiper/bundle";
 export function offersSwiperInit() {
   const offersSwiper = new Swiper('.offers__swiper', {
     grabCursor: true,
-    spaceBetween: 32,
-    // slidesPerView: 'auto',
-    
     breakpoints: {
       1200: {
         slidesPerView: 'auto',
+        slidesPerGroup: 3,
+        spaceBetween: 32,
       },
       921: {
         slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 32,
       },
       601: {
+        spaceBetween: 32,
         slidesPerView: 2,
-        slidesPerGroup: 3,
+        slidesPerGroup: 2,
+      },
+      501: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 16,
       },
       0: {
         slidesPerView: 1,
         slidesPerGroup: 1,
+        spaceBetween: 16,
       }
     },
     navigation: {

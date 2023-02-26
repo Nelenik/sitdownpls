@@ -3,6 +3,9 @@
 
   &__container {
     position: relative;
+    @include sol600 {
+      padding-bottom: 48px;
+    }
   }
 
   &__swiper-nav {
@@ -16,6 +19,14 @@
     }
     @include sol767 {
       right: 12px;
+    }
+
+    @include sol600 {
+      top: unset;
+      bottom: 0;
+      left: 50%;
+      justify-content: center;
+      transform: translateX(-50%);
     }
   }
 
@@ -80,6 +91,9 @@
     color: $grey-dark;
     @include sol1200 {
       font-size: 1rem;
+    }
+    @include sol600 {
+      margin-bottom: 30px;
     }
   }
   &__link {

@@ -36,7 +36,8 @@ body {
   background: none;
   outline: none;
   cursor: pointer;
-  word-break: break-all;
+  // word-break: break-all;
+  @include textBreak;
 }
 
 [role="button"],
@@ -61,4 +62,8 @@ body {
   overflow: hidden;
   // height: 100%;
   position: relative;
+}
+
+.text-break {
+
 }

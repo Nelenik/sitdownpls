@@ -12,8 +12,11 @@ export function articlesSwiperInit() {
       992: {
         slidesPerView: 3
       },
-      577: {
+      500: {
         slidesPerView: 2
+      }, 
+      0: {
+        slidesPerView: 1,
       }
     },
     navigation: {

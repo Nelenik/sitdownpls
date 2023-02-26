@@ -4,6 +4,7 @@
 // container первая переменная max-width, вторая - padding
 .container {
   @include container(1352px, 36px);
+
   @include sol920 {
     padding: 0 72px;
   }
@@ -65,6 +66,8 @@
   font-weight: 400;
   line-height: 100%;
   color: $grey-dark;
+  @include textBreak;
+
   @include sol600 {
     font-size: 1.5rem;
   }
@@ -76,6 +79,7 @@
   font-size: 1.5rem;
   line-height: 130%;
   color: $grey-dark;
+  @include textBreak;
 }
 
 //rating
@@ -83,9 +87,12 @@
   display: flex;
   align-items: center;
   gap: 7px;
+  max-width: 100%;
   font-size: 1rem;
   line-height: 150%;
   color: $secondary;
+  @include textBreak;
+
   @include sol600 {
     font-size: 0.75rem;
     line-height: 130%;
@@ -95,6 +102,7 @@
     width: 16px;
     height: 16px;
     fill: $secondary;
+
     @include sol600 {
       width: 13px;
       height: 13px;
@@ -107,11 +115,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 30px;
+  padding: 30px 0;
   min-height: 420px;
   height: 100%;
   background-color: $grey-light;
   border-radius: 10px;
+
   @include sol600 {
     min-height: 278px;
     padding: 16px;
@@ -119,6 +128,10 @@
 
   &__rating {
     margin-bottom: 7px;
+    transform: translateX(30px);
+    @include sol600 {
+      transform: unset;
+    }
   }
 
   &__picture {
@@ -130,33 +143,55 @@
     width: 100%;
     min-height: 130px;
     margin-bottom: 16px;
-    @include sol600 {
-      min-height: 63px;
+
+    @include sol500 {
+      justify-content: center;
+      min-height: 0;
+      margin-bottom: 0;
+      height: 27.642276%; /* 68px/246 */
     }
   }
 
   &__img {
     display: block;
+    @include sol500 {
+      max-height: 100%;
+    }
   }
 
   &__title {
-    margin-bottom: auto;
+    margin-bottom:  16px;
+    padding: 0 30px;
+
     @include sol600 {
+      padding: 0;
       font-size: 1rem;
-      line-height: 100%;
+      // line-height: 100%;
     }
   }
 
   &__price {
+    margin-top: auto;
     margin-bottom: 24px;
+    padding: 0 30px;
     font-weight: 400;
     font-size: 1rem;
     line-height: 130%;
     color: $grey-shade;
+    @include textBreak;
+
+    @include sol600 {
+      padding: 0;
+      margin-bottom: 16px;
+    }
   }
 
   &__link {
+    transform: translateX(30px);
     outline: none;
+    @include sol600 {
+      transform: unset;
+    }
   }
 }
 
@@ -254,7 +289,7 @@
   padding: 17px 32px;
   font-size: 1rem;
   line-height: 100%;
-  font-weight: 700;
+  font-weight: 600;
   color: $primary;
   border: 2px solid $primary;
   border-radius: 10px;
@@ -516,11 +551,15 @@
   }
 
   &__agreement {
-    // position: relative;
     font-size: 0.875rem;
     line-height: 135.714286%;
     /* 19px/14 */
     color: $grey-dark;
+
+    @include sol600 {
+      font-size: 0.75rem;
+      line-height: 133.333333%; /* 16px/12 */
+    }
 
     & .invalid-message {
       bottom: 80%;
@@ -555,37 +594,39 @@
 }
 
 //styles for modal close btn
-  .modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    transition: background-color 0.3s linear;
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: background-color 0.3s linear;
+
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: $grey;
+    transition: fill 0.3s linear;
+  }
+
+  &:focus-visible {
+    background-color: $pink-violet;
+
     svg {
-      display: block;
-      width: 20px;
-      height: 20px;
-      fill: $grey;
-      transition: fill 0.3s linear;
+      fill: $primary-shade;
     }
+  }
 
-    &:focus-visible {
-      background-color: $pink-violet;
+  &:hover:not(:focus-visible):not(:active) {
+    @media (hover:hover) {
       svg {
-        fill: $primary-shade;
-      }
-    }
-
-    &:hover:not(:focus-visible):not(:active) {
-      @media (hover:hover) {
-        svg {
-          fill: $primary;
-        }
-      }
-    }
-    &:active {
-      svg {
-        fill: $primary-shade;
+        fill: $primary;
       }
     }
   }
 
+  &:active {
+    svg {
+      fill: $primary-shade;
+    }
+  }
+}

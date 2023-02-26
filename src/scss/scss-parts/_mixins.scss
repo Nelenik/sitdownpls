@@ -55,6 +55,12 @@
   z-index: 1000;
 }
 
+@mixin textBreak {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 
 @mixin sol1200 {
   @media (max-width: 1200px) {
@@ -80,8 +86,8 @@
   }
 }
 
-@mixin sol576 {
-  @media (max-width: 576px) {
+@mixin sol500 {
+  @media (max-width: 500px) {
     @content;
   }
 }

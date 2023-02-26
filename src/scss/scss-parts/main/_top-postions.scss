@@ -44,7 +44,10 @@
   }
 
   &__card-link {
-    padding: 12px 22px
+    @include sol600 {
+
+      padding: 12px 22px
+    }
   }
 
   &__btn {
@@ -54,6 +57,10 @@
 
     &--hidden {
         display:none;
+    }
+    @include sol600 {
+      padding: 20px 32px;
+      width: min(100%, 296px);
     }
   }
 }

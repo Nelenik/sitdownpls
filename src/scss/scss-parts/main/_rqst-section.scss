@@ -21,6 +21,10 @@
     @include sol767 {
       background-position: right 12px center;
     }
+
+    @include sol600 {
+      background-image: none;
+    }
   }
 
   &__title {
@@ -80,6 +84,10 @@
   }
   @include sol920 {
     --form-width: 65%;
+  }
+
+  @include sol600 {
+    --form-width: 100%;
   }
 
 }
