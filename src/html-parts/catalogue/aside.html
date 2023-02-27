@@ -1,13 +1,16 @@
 <aside class="aside-block">
   <div class="aside-block__filter filter">
-    <h3 class="filter__title">Фильтровать по:</h3>
+    <h3 class="filter__title">
+      <span class="filter__title-desk">Фильтровать по:</span>
+      <span class="filter__title-mob">Фильтры</span>
+    </h3>
     <ul class="list-reset filter__list">
       <li class="filter__item">
         <h4 class="filter__subtitle">
           <span class="filter__subtitle-desk">Категория</span>
-          <button class="btn-reset filter__subtitle-mobile" type="button">Категория</button>
+          <button class="btn-reset filter__subtitle-mobile js-filter-btn" type="button" data-path="one">Категория</button>
         </h4>
-        <div class="filter__group filter__group--check">
+        <div class="filter__group filter__group--check js-filter-group" data-target="one">
           <label class="filter__check-wrap check">
             <input class="check__default" type="checkbox" name="categoryCheck" value="Диваны" checked>
             <span class="check__custom">
@@ -94,9 +97,9 @@
       <li class="filter__item">
         <h4 class="filter__subtitle">
           <span class="filter__subtitle-desk">Цена</span>
-          <button class="btn-reset filter__subtitle-mobile" type="button">Цена</button>
+          <button class="btn-reset filter__subtitle-mobile js-filter-btn" type="button" data-path="two">Цена</button>
         </h4>
-        <div class="filter__group price">
+        <div class="filter__group price js-filter-group" data-target="two">
           <div class="price__interval">
             <label class="price__label">
               от
@@ -113,9 +116,9 @@
       <li class="filter__item">
         <h4 class="filter__subtitle">
           <span class="filter__subtitle-desk">Скидка</span>
-          <button class="btn-reset filter__subtitle-mobile" type="button">Скидка</button>
+          <button class="btn-reset filter__subtitle-mobile js-filter-btn" type="button" data-path="three">Скидка</button>
         </h4>
-        <div class="filter__group filter__group--check">
+        <div class="filter__group filter__group--check js-filter-group" data-target="three">
           <label class="filter__check-wrap check">
             <input class="check__default" type="checkbox" name="discountCheck" value="Более 5 000">
             <span class="check__custom">
@@ -148,9 +151,9 @@
       <li class="filter__item">
         <h4 class="filter__subtitle">
           <span class="filter__subtitle-desk">Цвет</span>
-          <button class="btn-reset filter__subtitle-mobile" type="button">Цвет</button>
+          <button class="btn-reset filter__subtitle-mobile js-filter-btn" type="button" data-path="four">Цвет</button>
         </h4>
-        <div class="filter__group filter__group--check">
+        <div class="filter__group filter__group--check js-filter-group" data-target="four">
           <label class="filter__check-wrap check">
             <input class="check__default" type="checkbox" name="colorCheck" value="Коричневый">
             <span class="check__custom">

@@ -162,8 +162,10 @@
 
   &__img {
     display: block;
+    max-width: 89%;
     @include sol500 {
       max-height: 100%;
+      max-width: 100%;
     }
   }
 

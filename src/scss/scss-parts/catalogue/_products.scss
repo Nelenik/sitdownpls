@@ -3,6 +3,10 @@
   grid-template-columns: repeat(12, 1fr);
   gap: $gap;
   padding-bottom: 70px;
+
+  @include sol1200 {
+    grid-template-columns: repeat(9, 1fr);
+  }
 }
 
 .aside-block {
@@ -11,13 +15,28 @@
   flex-direction: column;
   padding-bottom: 64px;
 
+  @include sol1200 {
+    grid-column: span 9;
+    padding-bottom: 0;
+  }
+
   &__banner {
     margin-top: 20px;
+
+    @include sol1200 {
+      display: none;
+    }
   }
 }
 
 .filter {
   margin-bottom: auto;
+
+  @include sol1200 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+  }
 
   &__title {
     @include resetMg;
@@ -28,10 +47,37 @@
     color: $grey-dark;
   }
 
+  &__title-desk {
+    @include sol1200 {
+      display: none;
+    }
+  }
+
+  &__title-mob {
+    display: none;
+
+    @include sol1200 {
+      display: block;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: 26px;
+
+    @include sol1200 {
+      flex-flow: row wrap;
+      gap: $gap;
+      flex-grow: 1;
+    }
+  }
+
+  &__item {
+    @include sol1200 {
+      position: relative;
+      width: calc((100% - 32px*3)/4);
+    }
   }
 
   &__subtitle {
@@ -41,15 +87,62 @@
     font-size: 1rem;
     line-height: 130%;
     color: $grey-shade;
+
+    @include sol1200 {
+      margin: 0;
+    }
+  }
+
+  &__subtitle-desk {
+    @include sol1200 {
+      display: none;
+    }
   }
 
   &__subtitle-mobile {
     font: inherit;
     color: inherit;
     display: none;
+
+    @include sol1200 {
+      position: relative;
+      z-index: 1001;
+      display: block;
+      padding: 9px 16px;
+      width: 100%;
+      text-align: start;
+      background-color: $grey-light;
+      border-radius: 10px;
+      border: 2px solid $grey-light;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        right: 34px;
+        height: 8px;
+        width: 8px;
+        border: 1px solid $primary;
+        border-width: 0 0 1px 1px;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: transform 0.3s linear, border-color 0.3s linear;
+      }
+    }
   }
 
   &__group {
+    @include sol1200 {
+      position: absolute;
+      top: 80%;
+      left: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 41px 20px 32px;
+      background-color: $white;
+      border: 1px solid $grey-md;
+      border-radius: 0 0 10px 10px;
+    }
 
     &--check {
       display: flex;
@@ -84,6 +177,38 @@
   }
 }
 
+.js-filter-btn {
+  @include sol1200 {
+    transition-property: background-color, border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    &--active {
+      background-color: $white;
+      border-color: $primary-shade;
+
+      &::after {
+        transform: translateY(-50%) rotate(-225deg);
+      }
+    }
+  }
+}
+
+.js-filter-group {
+  @include sol1200 {
+    @include hide;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition-property: transform, opacity, visibility;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+
+    &--active {
+      @include show;
+      transform: scale(1);
+    }
+  }
+}
+
 .price {
 
   &__interval {
@@ -92,6 +217,10 @@
     gap: 20px;
     margin-right: auto;
     margin-bottom: 15px;
+
+    @include sol1200 {
+      margin-bottom: 0;
+    }
   }
 
   &__label {
@@ -119,6 +248,10 @@
     height: 3px;
     border-radius: 3px;
     background-color: $grey-md;
+
+    @include sol1200 {
+      display: none;
+    }
 
     .noUi-connect {
       background-color: $primary;
@@ -180,6 +313,10 @@
 
   &__title {
     margin-bottom: 24px;
+
+    @include sol1200 {
+      display: none;
+    }
   }
 
   &__list {
@@ -194,7 +331,7 @@
   }
 
   &__pagination {
-    position:absolute;
+    position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
@@ -248,4 +385,9 @@
 
 .catalogue-mob-title {
   display: none;
+
+  @include sol1200 {
+    display: block;
+    grid-column: span 9;
+  }
 }
