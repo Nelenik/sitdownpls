@@ -82,136 +82,6 @@
   @include textBreak;
 }
 
-//rating
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  max-width: 100%;
-  font-size: 1rem;
-  line-height: 150%;
-  color: $secondary;
-  @include textBreak;
-
-  @include sol600 {
-    font-size: 0.75rem;
-    line-height: 130%;
-  }
-
-  &__star {
-    width: 16px;
-    height: 16px;
-    fill: $secondary;
-
-    @include sol600 {
-      width: 13px;
-      height: 13px;
-    }
-  }
-}
-
-//product card styles
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 30px 0;
-  min-height: 420px;
-  height: 100%;
-  background-color: $grey-light;
-  border-radius: 10px;
-
-  @include sol600 {
-    min-height: 278px;
-    padding: 16px;
-  }
-
-  &__rating {
-    margin-bottom: 7px;
-    transform: translateX(30px);
-    @include sol600 {
-      transform: unset;
-    }
-  }
-
-  &__picture {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    min-height: 130px;
-    margin-bottom: 16px;
-
-    @include sol1200 {
-      margin-bottom: 18px;
-    }
-
-    @include sol920 {
-      margin-bottom: 16px;
-    }
-
-    @include sol500 {
-      justify-content: center;
-      min-height: 0;
-      margin-bottom: 10px;
-      height: 27.642276%; /* 68px/246 */
-    }
-  }
-
-  &__img {
-    display: block;
-    max-width: 89%;
-    @include sol500 {
-      max-height: 100%;
-      max-width: 100%;
-    }
-  }
-
-  &__title {
-    margin-bottom:  16px;
-    padding: 0 30px;
-
-    @include sol1200 {
-      margin-bottom: 21px;
-    }
-
-    @include sol600 {
-      padding: 0;
-      margin-bottom: 16px;
-      font-size: 1rem;
-      // line-height: 100%;
-    }
-  }
-
-  &__price {
-    margin-top: auto;
-    margin-bottom: 24px;
-    padding: 0 30px;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 130%;
-    color: $grey-shade;
-    @include textBreak;
-
-    @include sol600 {
-      padding: 0;
-      margin-bottom: 16px;
-    }
-  }
-
-  &__link {
-    transform: translateX(30px);
-    outline: none;
-    @include sol1200 {
-      padding: 17px 33px;
-    }
-    @include sol600 {
-      transform: unset;
-    }
-  }
-}
 
 //btns round, transparent and colored
 .round-btn {
@@ -332,6 +202,141 @@
   }
 
 }
+
+//rating
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  font-size: 1rem;
+  line-height: 150%;
+  color: $secondary;
+  @include textBreak;
+
+  @include sol600 {
+    font-size: 0.75rem;
+    line-height: 130%;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    fill: $secondary;
+
+    @include sol600 {
+      width: 13px;
+      height: 13px;
+    }
+  }
+}
+
+
+
+//product card styles
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 0;
+  min-height: 420px;
+  height: 100%;
+  background-color: $grey-light;
+  border-radius: 10px;
+
+  @include sol600 {
+    min-height: 278px;
+    padding: 16px;
+  }
+
+  &__rating {
+    margin-bottom: 7px;
+    transform: translateX(30px);
+    @include sol600 {
+      transform: unset;
+    }
+  }
+
+  &__picture {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 130px;
+    margin-bottom: 16px;
+
+    @include sol1200 {
+      margin-bottom: 18px;
+    }
+
+    @include sol920 {
+      margin-bottom: 16px;
+    }
+
+    @include sol500 {
+      justify-content: center;
+      min-height: 0;
+      margin-bottom: 10px;
+      height: 27.642276%; /* 68px/246 */
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 89%;
+    @include sol500 {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom:  16px;
+    padding: 0 30px;
+
+    @include sol1200 {
+      margin-bottom: 21px;
+    }
+
+    @include sol600 {
+      padding: 0;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      // line-height: 100%;
+    }
+  }
+
+  &__price {
+    margin-top: auto;
+    margin-bottom: 24px;
+    padding: 0 30px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+    color: $grey-shade;
+    @include textBreak;
+
+    @include sol600 {
+      padding: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    transform: translateX(30px);
+    outline: none;
+    @include sol1200 {
+      padding: 17px 33px;
+    }
+    @include sol600 {
+      padding: 10px 23px;
+      transform: unset;
+    }
+  }
+}
+
 
 //link В каталог styles
 .to-catalog-link {
@@ -491,8 +496,8 @@
     align-items: center;
     justify-content: center;
     margin-right: 8px;
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     font-size: 0;
     border: 1px solid $grey;
     border-radius: 2px;
@@ -582,6 +587,11 @@
     & .invalid-message {
       bottom: 80%;
     }
+  }
+
+  &__check-custom {
+    width: 14px;
+    height: 14px;
   }
 
   &__agreement-link {

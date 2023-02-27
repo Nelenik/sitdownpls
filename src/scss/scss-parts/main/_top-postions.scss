@@ -43,12 +43,12 @@
     }
   }
 
-  &__card-link {
-    @include sol600 {
+  // &__card-link {
+  //   @include sol600 {
 
-      padding: 10px 23px
-    }
-  }
+  //     padding: 10px 23px
+  //   }
+  // }
 
   &__btn {
     display: block;

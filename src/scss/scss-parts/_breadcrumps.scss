@@ -1,14 +1,23 @@
 .header {
   padding-bottom: 0;
+  @include sol500 {
+    padding-bottom: $gap;
+  }
 }
 
 .breadcrumps {
-  padding-top: 23px;
+  padding-top: 20px;
   padding-bottom: $gap;
+  @include sol920 {
+    padding-bottom: 29px;
+  }
+  @include sol500 {
+    display: none;
+  }
   
   &__list {
     display: flex;
-    gap: 12px;
+    gap: 15px;
   }
 
   &__item:not(:last-child) {

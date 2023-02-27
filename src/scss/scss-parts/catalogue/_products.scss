@@ -33,9 +33,15 @@
   margin-bottom: auto;
 
   @include sol1200 {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
     gap: $gap;
+    align-items: center;
+  }
+
+  @include sol920 {
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: $gap-mobile;
   }
 
   &__title {
@@ -45,6 +51,17 @@
     font-size: 1.125rem;
     line-height: 130%;
     color: $grey-dark;
+
+    @include sol1200 {
+      grid-column: span 1;
+      margin-bottom: 0;
+      font-size: 0.875rem;
+    }
+
+    @include sol920 {
+      grid-column: span 6;
+      margin-bottom: 0;
+    }
   }
 
   &__title-desk {
@@ -64,12 +81,29 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 29px;
 
     @include sol1200 {
+      grid-column: span 8;
       flex-flow: row wrap;
       gap: $gap;
       flex-grow: 1;
+    }
+
+    @include sol920 {
+      grid-column: span 4;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: $gap;
+      row-gap: $gap-mobile;
+    }
+
+    @include sol600 {
+      grid-column: span 6;
+    }
+
+    @include sol500 {
+      gap: $gap-mobile;
     }
   }
 
@@ -77,6 +111,11 @@
     @include sol1200 {
       position: relative;
       width: calc((100% - 32px*3)/4);
+    }
+
+    @include sol920 {
+      width: unset;
+      grid-column: span 2;
     }
   }
 
@@ -90,6 +129,7 @@
 
     @include sol1200 {
       margin: 0;
+      font-weight: 400;
     }
   }
 
@@ -105,10 +145,8 @@
     display: none;
 
     @include sol1200 {
-      position: relative;
-      z-index: 1001;
       display: block;
-      padding: 9px 16px;
+      padding: 7.5px 12px;
       width: 100%;
       text-align: start;
       background-color: $grey-light;
@@ -119,14 +157,18 @@
         content: '';
         position: absolute;
         z-index: 10;
-        top: 50%;
-        right: 34px;
+        top: 48%;
+        right: 18px;
         height: 8px;
         width: 8px;
         border: 1px solid $primary;
         border-width: 0 0 1px 1px;
         transform: translateY(-50%) rotate(-45deg);
         transition: transform 0.3s linear, border-color 0.3s linear;
+
+        @include sol500 {
+          top: 45%;
+        }
       }
     }
   }
@@ -144,6 +186,10 @@
       border-radius: 0 0 10px 10px;
     }
 
+    @include sol500 {
+      padding: 41px 10px 32px;
+    }
+
     &--check {
       display: flex;
       flex-direction: column;
@@ -152,6 +198,7 @@
   }
 
   &__check-wrap {
+    width: 100%;
     &:not(:last-child) {
       margin-bottom: 11px;
     }
@@ -164,16 +211,21 @@
 
       .filter__check-text {
         color: $primary;
+
       }
     }
   }
 
   &__check-text {
+    width: 75%;
     font-weight: 400;
     font-size: 1rem;
     line-height: 130%;
     color: $grey-shade;
     transform: translateX(4px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -182,7 +234,10 @@
     transition-property: background-color, border-color;
     transition-duration: 0.3s;
     transition-timing-function: linear;
+
     &--active {
+      position: relative;
+      z-index: 1001;
       background-color: $white;
       border-color: $primary-shade;
 
@@ -210,13 +265,15 @@
 }
 
 .price {
+  transform: translateY(-6px);
 
   &__interval {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
     margin-right: auto;
-    margin-bottom: 15px;
+    margin-bottom: 9px;
 
     @include sol1200 {
       margin-bottom: 0;
@@ -277,7 +334,7 @@
 }
 
 .banner-card {
-  padding: 220px 30px 30px;
+  padding: 226px 30px 32px;
   background-image: url("@img/catalogue/banner_desk.webp");
   background-color: $grey-dark;
   background-repeat: no-repeat;
@@ -286,18 +343,20 @@
 
   &__title {
     @include resetMg;
+    margin-bottom: 7px;
     font-family: 'PlayfairDisplay';
     font-weight: 900;
-    font-size: 1.5rem;
-    line-height: 133.333333%;
+    font-size: 1.35rem;
+    line-height: 100%;
     /* 32px/24 */
     color: $gold;
   }
 
   &__descr {
     @include resetMg;
-    margin-bottom: 12px;
-    font-size: 1.2rem;
+    margin-bottom: 17px;
+    max-width: 199px;
+    font-size: 0.875rem;
     line-height: 133.333333%;
     /* 32px/24 */
     color: $grey;
@@ -323,6 +382,19 @@
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: $gap;
+
+    @include sol1200 {
+      row-gap: 30px;
+    }
+
+    @include sol920 {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 32px;
+    }
+
+    @include sol500 {
+      gap: $gap-mobile;
+    }
   }
 
   &__item {
@@ -389,5 +461,14 @@
   @include sol1200 {
     display: block;
     grid-column: span 9;
+    margin-bottom: -16px;
+  }
+
+  @include sol920 {
+    margin-bottom: -5px;
+  }
+
+  @include sol500 {
+    margin-bottom: -16px;
   }
 }
