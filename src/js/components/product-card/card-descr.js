@@ -20,10 +20,15 @@ export function productSwiperInit() {
         spaceBetween: -4,
         direction: 'vertical',
       },
+      501: {
+        slidesPerView: 3,
+        spaceBetween:20,
+        direction: 'horizontal',
+      },
       0: {
         slidesPerView: 2.2,
-        spaceBetween:0,
-        direction: 'horizontal',
+        spaceBetween: 20,
+        direction: 'horizontal'
       }
     }
   });
