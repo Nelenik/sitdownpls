@@ -14,11 +14,20 @@
     right: 36px;
     display: flex;
     gap: 13px;
+    @include sol920 {
+      right: 72px;
+    }
   }
   &__swiper-slide {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: auto;
+  }
+
+  &__card {
+    @include sol1200 {
+      padding: 28px 0;
+    }
   }
 }

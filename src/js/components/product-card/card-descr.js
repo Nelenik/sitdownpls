@@ -4,8 +4,23 @@ import { ModalConstructor } from "../vendor/modal/modalconstructor";
 
 export function productSwiperInit() {
   const preview = new Swiper('.preview-swiper', {
-    slidesPerView: 4,
-    spaceBetween: 38,
+    breakpoints: {
+      1201: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        direction: 'horizontal',
+      },
+      921: {
+        slidesPerView: 3.2,
+        spaceBetween: 20,
+        direction: 'horizontal'
+      },
+      601: {
+        slidesPerView: 4,
+        spaceBetween: -4,
+        direction: 'vertical',
+      }
+    }
   });
   const galery = new Swiper('.galery-swiper', {
     slidesPerView: 1,

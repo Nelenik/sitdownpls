@@ -87,20 +87,21 @@
     padding: 20px 30px;
 
     @include sol600 {
-      display: none;
+      width: min(100%, 296px)
+      // display: none;
     }
   }
 }
 
 .banner-btn-mob-wrap {
-  display: none; 
+  // display: none; 
   @include sol600 {
-    display: block;
+    // display: block;
     text-align: center;
   }
 }
-.banner-btn-mob {
-  @include sol600 {
-    width: min(100%, 296px)
-  }
-}
+// .banner-btn-mob {
+//   @include sol600 {
+//     width: min(100%, 296px)
+//   }
+// }

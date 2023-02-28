@@ -1,5 +1,5 @@
 // header
-import { initChoices, addClassToSearch, setGreyRowSize, setHeaderBloksMoving, setBurgerMenu} from './components/_header.js';
+import { initChoices, addClassToSearch, setHeaderBloksMoving, setBurgerMenu} from './components/_header.js';
 initChoices()
 addClassToSearch()
 setHeaderBloksMoving()
@@ -16,8 +16,32 @@ offersSwiperInit()
 //top-positions
 import { showMoreCards } from './components/main/_top-positions.js';
 
-showMoreCards()
+// banner move btn
+import { MoveBlock } from './components/vendor/move-block/move-block.js';
+new MoveBlock({
+  singleBlock: '.js-banner-btn',
+  breakpoints: [
+    {
+      solution: "(min-width: 601px)",
+      target: document.querySelector('.banner__container'),
+      method: 'append'
+    },
+    {
+      solution: "(max-width: 600px)",
+      target: document.querySelector('.banner-btn-mob-wrap'),
+      method: 'append'
+    },
+  ]
+})
 
+showMoreCards()
+//top-categories set focus
+import { SetFocus } from './components/vendor/set-focus.js';
+let prev = document.querySelector('.js-banner-btn');
+new SetFocus('.js-top-categories', {
+  focusedPost: '.js-article-swiper-btn:not(.swiper-button-disabled',
+  focusedPrev: prev,
+})
 //articles-prev
 import { articlesSwiperInit } from './components/main/_articles-prev.js';
 articlesSwiperInit()

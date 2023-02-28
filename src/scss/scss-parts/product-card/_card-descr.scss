@@ -1,5 +1,17 @@
+.product-crumps {
+  padding-top: 17px;
+  @include sol1200 {
+    padding-top: 20px;
+  }
+}
 .product {
-  padding-bottom: 81px;
+  padding-bottom: 82px;
+  @include sol1200 {
+    padding-bottom: 70px;
+  }
+  @include sol920 {
+    padding-bottom: 31px;
+  }
 
   &__top {
     display: grid;
@@ -7,12 +19,26 @@
     grid-template-rows: minmax(245px, auto) min-max(81px, auto);
     gap: $gap;
     row-gap: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 29px;
+    @include sol1200 {
+      grid-template-columns: repeat(9, 1fr);
+      margin-bottom: 32px;
+    }
+    @include sol920 {
+      grid-template-columns: repeat(6,1fr);
+      row-gap: 32px;
+    }
   }
 
   &__galery {
     grid-column: span 6;
     max-width: 100%;
+    @include sol1200 {
+      grid-column: span 5;
+    }
+    @include sol920 {
+      grid-column: span 6;
+    }
   }
 
   &__preview {
@@ -21,6 +47,15 @@
     max-width: 100%;
     background-color: $grey-light;
     padding: 10px 25px;
+    @include sol1200 {
+      grid-column: span 5;
+      padding: 10px 6px;
+    }
+    @include sol920 {
+      grid-column: span 2;
+      padding: 10px 0;
+      height: 349px;
+    }
   }
 
   &__name {
@@ -29,10 +64,29 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 10px;
+    @include sol1200 {
+      grid-column: span 4;
+      padding-top: 13px;
+    }
+    @include sol920 {
+      grid-column: span 4;
+      grid-row: 2/3;
+      align-self: center;
+      padding-top: 0;
+
+    }
+  }
+
+  &__rating {
+    margin-bottom: 2px;
   }
 
   &__title {
     margin-bottom: 5px;
+    @include sol1200 {
+      margin-bottom: 2px;
+    }
   }
 
   &__descr {
@@ -53,14 +107,15 @@
   }
 
   &__buy-btn {
-    padding: 19px 35px;
-    margin-bottom: 12px;
+    padding: 17px 30px;
+    margin-bottom: 15px;
   }
 
   &__add-to-cart {
     position: relative;
     z-index: 1;
     color: $primary;
+    transform: translateX(30px);
     transition: color 0.3s linear;
 
     &::before {
@@ -89,6 +144,12 @@
 }
 
 .galery-swiper {
+  @include sol1200 {
+    max-height: 202px;
+  }
+  @include sol920 {
+    max-height: 245px;
+  }
   &__btn {
     display: flex;
     flex-direction: column;
@@ -101,6 +162,9 @@
 }
 
 .preview-swiper {
+  @include sol1200 {
+    height: 100%;
+  }
 
   &__slide {
     display: flex;
@@ -112,9 +176,13 @@
 
   &__picture {
     display: block;
+    @include sol920 {
+      max-width: 90%;
+    }
   }
 
   &__img {
+    min-height: 61px;
     vertical-align: middle;
   }
 }
@@ -122,6 +190,14 @@
 .description {
   display: flex;
   gap: $gap;
+  @include sol1200 {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: auto;
+  }
+  @include sol920 {
+    grid-template-columns: repeat(6,1fr);
+  }
 
   &__left,
   &__right {
@@ -129,10 +205,22 @@
     height: auto;
   }
 
+  &__right {
+    @include sol1200 {
+      grid-column: span 4;
+    }
+    @include sol920 {
+      grid-column: span 6;
+    }
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @include sol1200 {
+      grid-column: span 5;
+    }
   }
 
   &__title {
@@ -177,6 +265,12 @@
 }
 
 .specification {
+  &__list {
+    width: 87%;
+    @include sol1200 {
+      width: 100%;
+    }
+  }
   &__item {
     display: flex;
     align-items: baseline;
@@ -184,8 +278,11 @@
     order: 1;
     font-weight: 400;
     font-size: 0.875rem;
-    line-height: 180%;
+    line-height: 178%;
     color: $grey;
+    @include sol1200 {
+      line-height: 179%;
+    }
 
     &::after {
       content: '';
@@ -201,5 +298,11 @@
     order: 3;
     width: 39.705882%; /* 216px/544 */
     color: $grey-dark;
+    @include sol1200 {
+      width: 53.333333%; /* 216px/405 */
+    }
+    @include sol920 {
+      width: 34.615385%; /* 216px/624 */
+    }
   }
 }
