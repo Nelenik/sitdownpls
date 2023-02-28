@@ -148,3 +148,23 @@ export function setBurgerMenu() {
   })
 
 }
+// настраиваем высоту бургер меню;
+function countHeight(mq) {
+  const {movedElems} = header
+  if(mq.matches) {
+    let height = document.documentElement.clientHeight;
+    let top = movedElems.mainMenu.getBoundingClientRect().top;
+    let result = height - top;
+    console.log(height)
+    movedElems.mainMenu.style.height = `${result}px`
+  } else movedElems.mainMenu.style.height = ''
+}
+
+export function setMenuHeight() {
+  
+  let mq = window.matchMedia("(max-width: 600px)");
+  countHeight(mq)
+  window.addEventListener('resize', function(e) {
+    countHeight(mq)
+  })
+}

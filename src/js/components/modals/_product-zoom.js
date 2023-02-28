@@ -5,8 +5,8 @@ import { ModalConstructor } from "../vendor/modal/modalconstructor";
 function zoomSwiperInit() {
   const zoomSm = new Swiper('.zoom-swiper-sm', {
     navigation: {
-      nextEl: '.zoom-swiper-sm__next',
-      prevEl: '.zoom-swiper-sm__prev',
+      nextEl: '.zoom-swiper-sm-next',
+      prevEl: '.zoom-swiper-sm-prev',
     },
     breakpoints: {
       1201: {

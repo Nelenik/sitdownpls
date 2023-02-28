@@ -47,7 +47,7 @@ export function Paginator(selectorOrElem, userOptions) {
 
           if (+btn.dataset.page === this.currentPage) {
             btn.classList.add(currentClass);
-            btn.focus();
+            // btn.focus();
           }
         }
       });

@@ -1,9 +1,10 @@
 // header
-import { initChoices, addClassToSearch, setHeaderBloksMoving, setBurgerMenu} from './components/_header.js';
+import { initChoices, addClassToSearch, setHeaderBloksMoving, setBurgerMenu, setMenuHeight} from './components/_header.js';
 initChoices()
 addClassToSearch()
 setHeaderBloksMoving()
 setBurgerMenu()
+setMenuHeight()
 
 //hero
 import { heroSwiperInit } from './components/main/_hero.js';
