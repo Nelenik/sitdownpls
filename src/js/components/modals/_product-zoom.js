@@ -4,8 +4,6 @@ import { ModalConstructor } from "../vendor/modal/modalconstructor";
 
 function zoomSwiperInit() {
   const zoomSm = new Swiper('.zoom-swiper-sm', {
-    // slidesPerView: 4,
-    // spaceBetween: 38,
     navigation: {
       nextEl: '.zoom-swiper-sm__next',
       prevEl: '.zoom-swiper-sm__prev',
