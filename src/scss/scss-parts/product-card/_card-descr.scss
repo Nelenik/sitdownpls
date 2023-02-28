@@ -12,21 +12,31 @@
   @include sol920 {
     padding-bottom: 31px;
   }
+  @include sol600 {
+    padding-bottom: 70px;
+  }
 
   &__top {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(245px, auto) min-max(81px, auto);
+    grid-template-rows: minmax(245px, auto) minmax(81px, auto);
     gap: $gap;
     row-gap: 16px;
     margin-bottom: 29px;
     @include sol1200 {
       grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: 202px minmax(81px,auto);
       margin-bottom: 32px;
     }
     @include sol920 {
       grid-template-columns: repeat(6,1fr);
+      grid-template-rows: 245px minmax(349px, 1fr);
       row-gap: 32px;
+    }
+
+    @include sol600 {
+      grid-template-rows: 116px 81px minmax(230px, auto);
+      gap: $gap-mobile;
     }
   }
 
@@ -56,6 +66,10 @@
       padding: 10px 0;
       height: 349px;
     }
+    @include sol600 {
+      grid-column: span 6;
+      height: unset;
+    }
   }
 
   &__name {
@@ -76,16 +90,32 @@
       padding-top: 0;
 
     }
+    @include sol600 {
+      grid-column: span 6;
+      grid-row: unset;
+    }
   }
 
   &__rating {
     margin-bottom: 2px;
+    @include sol600 {
+      font-size: 1rem;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
   }
 
   &__title {
     margin-bottom: 5px;
     @include sol1200 {
       margin-bottom: 2px;
+    }
+    @include sol600 {
+      margin-bottom: 6px;
+      font-size: 1rem;
+      line-height: 130%;
     }
   }
 
@@ -95,20 +125,31 @@
     font-size: 14px;
     line-height: 100%;
     color: $grey;
-
+    @include sol600 {
+      margin-bottom: 17px;
+      max-width: 244px;
+    }
   }
 
   &__price {
     margin-bottom: 21px;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 2.25rem;
     line-height: 130%;
     color: $grey-dark;
+    @include sol600 {
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+    }
   }
 
   &__buy-btn {
     padding: 17px 30px;
     margin-bottom: 15px;
+    @include sol600 {
+      width: min(100%, 296px);
+
+    }
   }
 
   &__add-to-cart {
@@ -117,6 +158,10 @@
     color: $primary;
     transform: translateX(30px);
     transition: color 0.3s linear;
+    @include sol600 {
+      margin: 0 auto;
+      transform: unset;
+    }
 
     &::before {
       @include focusPseudo(-2px -4px, $pink-violet);
@@ -145,10 +190,13 @@
 
 .galery-swiper {
   @include sol1200 {
-    max-height: 202px;
+    // max-height: 202px;
   }
   @include sol920 {
-    max-height: 245px;
+    // max-height: 245px;
+  }
+  @include sol600 {
+    // max-height: 116px;
   }
   &__btn {
     display: flex;
@@ -221,6 +269,9 @@
     @include sol1200 {
       grid-column: span 5;
     }
+    @include sol600 {
+      grid-column: span 6;
+    }
   }
 
   &__title {
@@ -230,6 +281,10 @@
     font-size: 1rem;
     line-height: 100%;
     color: $grey-dark;
+    @include sol600 {
+      margin-bottom: 7px;
+    }
+
   }
 
   &__text-wrap {
@@ -243,8 +298,13 @@
     line-height: 180%;
     color: $grey-dark;
 
+    
     &:not(:last-child) {
       margin-bottom: 8px;
+      @include sol600 {
+        margin-bottom: 7px;
+      }
+  
     }
   }
 
@@ -258,6 +318,9 @@
 .sketches {
   display: flex;
   gap: $gap;
+  @include sol600 {
+    gap: $gap-mobile;
+  }
 
   &__picture {
     font-size: 0;
@@ -283,6 +346,16 @@
     @include sol1200 {
       line-height: 179%;
     }
+    @include sol600 {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 0.625rem;
+      line-height: 140%; /* 14px/10 */
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
 
     &::after {
       content: '';
@@ -290,6 +363,9 @@
       border-bottom: 1px dashed $grey;
       // margin: 0 5px;
       order: 2;
+      @include sol600 {
+        content: none;
+      }
     }
 
   }
@@ -303,6 +379,12 @@
     }
     @include sol920 {
       width: 34.615385%; /* 216px/624 */
+    }
+    @include sol600 {
+      order: 2;
+      width: unset;
+      font-size: 0.875rem;
+      line-height: 135.714286%; /* 19px/14 */
     }
   }
 }

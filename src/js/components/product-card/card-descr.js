@@ -19,6 +19,11 @@ export function productSwiperInit() {
         slidesPerView: 4,
         spaceBetween: -4,
         direction: 'vertical',
+      },
+      0: {
+        slidesPerView: 2.2,
+        spaceBetween:0,
+        direction: 'horizontal',
       }
     }
   });

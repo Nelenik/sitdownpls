@@ -1,12 +1,31 @@
 .zoom-modal {
   @include modalOverlay;
   justify-content: center;
+  padding: 0 36px;
+  // padding-top: 143px;
+  @include sol920 {
+    padding: 0 72px;
+    // padding-top: 199px;
+  }
+
+  @include sol767 {
+    padding: 0 12px;
+  }
   
   &__content {
     position: relative;
     width: min(100%, 1280px);
     background-color: $white;
-    border-radius: 10px
+    border-radius: 10px;
+    @include sol1200 {
+      width: min(100%, 952px);
+    }
+    @include sol920 {
+      width: min(100%, 624px);
+    }
+    @include sol600 {
+      width: min(100%, 296px);
+    }
   }
 
   &__open {
@@ -15,6 +34,15 @@
 
   &__galery {
     padding: 50px 107px;
+    @include sol1200 {
+      padding: 50px 65px;
+    }
+    @include sol920 {
+      padding: 44px 20px;
+    }
+    @include sol600 {
+      padding: 32px 16px;
+    }
   }
 
   &__preview {
@@ -23,6 +51,10 @@
     padding: 20px 50px;
     background-color: $grey-light;
     border-radius: 0 0 10px 10px;
+    @include sol600 {
+      padding: 16px 62px;
+      height: 118px;
+    }
   }
 }
 
@@ -33,6 +65,16 @@
     flex-direction: column;
     height: auto;
     min-height: 418px;
+    @include sol1200 {
+      min-height: 322px;
+    }
+    @include sol920 {
+      min-height: 228px;
+    }
+    @include sol600 {
+      height: 104px;
+      min-height: unset;
+    }
   }
 
   &__picture {
@@ -75,6 +117,15 @@
     top: 50%;
     display: none;
     transform: translateY(-50%);
+    @include sol1200 {
+      display: block;
+    }
+    @include sol920{
+      top: 47%;
+    }
+    @include sol600{
+      top: 50%;
+    }
   }
 
   &__next {

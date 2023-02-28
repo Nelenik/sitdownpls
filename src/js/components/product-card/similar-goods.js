@@ -13,12 +13,19 @@ export function similarsSwiperInit() {
     breakpoints: {
       1201: {
         slidesPerView: 4,
+        spaceBetween: 32,
       }, 
       921: {
         slidesPerView: 3,
+        spaceBetween: 32,
       },
       601: {
         slidesPerView: 2,
+        spaceBetween: 32,
+      },
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 16,
       }
     }
   })

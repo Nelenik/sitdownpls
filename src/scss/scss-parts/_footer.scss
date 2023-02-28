@@ -144,6 +144,9 @@
   &:nth-child(2),
   &:nth-child(3) {
     transform: translateX(-17px);
+    @include sol600 {
+      transform: unset;
+    }
   }
   &:not(:last-child) {
     margin-right: auto;

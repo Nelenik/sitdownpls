@@ -1,7 +1,11 @@
 .similar-goods {
   margin-bottom: 70px;
+  
   &__container {
     position: relative;
+    @include sol600 {
+      padding-bottom: 48px;
+    }
   }
 
   &__title {
@@ -17,6 +21,13 @@
     @include sol920 {
       right: 72px;
     }
+    @include sol600 {
+      top: unset;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      justify-content: center;
+    }
   }
   &__swiper-slide {
     box-sizing: border-box;
@@ -28,6 +39,12 @@
   &__card {
     @include sol1200 {
       padding: 28px 0;
+    }
+    @include sol600 {
+      padding: 16px;
+      .rating {
+        margin-bottom: 5px;
+      }
     }
   }
 }
