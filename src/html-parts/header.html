@@ -11,7 +11,7 @@
             <option value="Пермь">Пермь</option>
           </select>
         </label>
-        <a class="header__tel tel" href="tel:74958854547">
+        <a class="header__tel tel" href="tel:74958854547" aria-label="Телефон">
           <svg class="tel__svg">
             <use xlink:href="sprite.svg#call"></use>
           </svg>
@@ -24,7 +24,7 @@
             <a class="additional-menu__link grey-link" href="#!">О компании</a>
           </li>
           <li class="additional-menu__item">
-            <a class="additional-menu__link grey-link" href="#!">Гарантия и возврат</a>
+            <a class="additional-menu__link grey-link" href="agreement.html">Гарантия и возврат</a>
           </li>
           <li class="additional-menu__item">
             <a class="additional-menu__link grey-link" href="#!">Корпоративным клиентам</a>
@@ -43,7 +43,7 @@
   </div>
   <div class="header__row row-3">
     <div class="container row-3__container">
-      <a href="index.html" class="header__logo logo" aria-label="SitDownPls logo">
+      <a href="index.html" class="header__logo logo" aria-label="SitDownPls logo, перейти на главную">
         <svg class="logo__svg">
           <use xlink:href="sprite.svg#logo"></use>
         </svg>
@@ -79,13 +79,13 @@
   </div>
   <div class="header__row row-4">
     <div class="container row-4__container">
-      <form class="header__search search" name="search" autocomplete="off">
+      <form class="header__search search" name="search" autocomplete="off" aria-label="Форма поиска по сайту">
         <div class="search__input-wrap">
           <svg class="search__loupe">
             <use xlink:href="sprite.svg#search"></use>
           </svg>
           <input type="text" class="search__input" name="searchField" placeholder="Я хочу купить...">
-          <button class="btn-reset search__btn" type="button" name="searchBtn">
+          <button class="btn-reset search__btn" type="button" name="searchBtn" aria-label="Искать">
             <svg>
               <use xlink:href="sprite.svg#arrow-right"></use>
             </svg>
@@ -107,12 +107,12 @@
         </label>
       </form>
       <div class="header__nav-btns">
-        <button class="btn-reset entry-btn" type="button">
+        <button class="btn-reset entry-btn" type="button" aria-label="Войти в аккаунт">
           <svg class="entry-btn__svg">
             <use xlink:href="sprite.svg#user"></use>
           </svg>
         </button>
-        <button class="btn-reset cart-btn" type="button" >
+        <button class="btn-reset cart-btn" type="button" aria-label="Открыть корзину">
           <span class="cart-btn__count" data-cart-count="0">0</span>
           <svg class="cart-btn__svg">
             <use xlink:href="sprite.svg#cart"></use>

@@ -19,23 +19,26 @@ export function heroSwiperInit() {
     spaceBetween: 48,
     slidesPerView: 1,
     autoplay: {
-      // delay: 4000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
 
     },
     loop: true,
+    a11y: {
+      slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
+      paginationBulletMessage: 'Перейти к слайду {{index}}'
+    }
   })
 
   function setDelay() {
     let activeSlide = document.querySelector('.swiper-slide-active');
     let activeBullet = document.querySelector('.swiper-pagination-bullet-active .progress');
-    activeBullet.style.setProperty('--swiper-delay', `${activeSlide.dataset.swiperAutoplay / 1000 + 1}s`)
+    activeBullet.style.setProperty('--swiper-delay', `${activeSlide.dataset.swiperAutoplay / 1000 + 1.5}s`)
   }
 
   setDelay()
 
-  heroSwiper.on('slideChangeTransitionStart', function () {
+  heroSwiper.on('slideChange', function () {
     setDelay()
   })
 

@@ -126,6 +126,16 @@ export function setHeaderBloksMoving() {
 }
 
 // бургер-меню
+function setDropAria(el) {
+  let ariaExpState = 'true' === el.getAttribute('aria-expanded');
+  el.setAttribute('aria-expanded', !ariaExpState);
+  ariaExpState ? el.setAttribute('aria-label', 'Открыть меню') : el.setAttribute('aria-label', 'Закрыть меню')
+}
+
+function resetDropAria(el) {
+  el.ariaExpanded = false;
+  el.setAttribute('aria-label', 'Открыть меню')
+}
 export function setBurgerMenu() {
   const { movedElems, burger } = header;
   const { mainMenu } = movedElems;
@@ -133,7 +143,8 @@ export function setBurgerMenu() {
     this.classList.toggle('js-burger--active')
     mainMenu.classList.toggle('js-main-menu--active');
     document.body.classList.toggle('stop-scroll');
-    document.documentElement.classList.toggle('stop-scroll')
+    document.documentElement.classList.toggle('stop-scroll');
+    setDropAria(burger)
   })
   mainMenu.addEventListener('click', function (e) {
     e._isClickedMenu = true;
@@ -144,7 +155,8 @@ export function setBurgerMenu() {
     burger.classList.remove('js-burger--active');
     mainMenu.classList.remove('js-main-menu--active');
     document.body.classList.remove('stop-scroll');
-    document.documentElement.classList.remove('stop-scroll')
+    document.documentElement.classList.remove('stop-scroll');
+    resetDropAria(burger)
   })
 
 }

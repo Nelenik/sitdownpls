@@ -170,6 +170,16 @@
           top: 45%;
         }
       }
+
+      &:focus-visible:not(.js-filter-btn--active) {
+        background-color: $pink-ligth;
+        border-color: $primary;
+      }
+      &:hover:not(:focus-visible):not(.js-filter-btn--active) {
+        @media (hover: hover) {
+          border-color: $primary;
+        }
+      }
     }
   }
 

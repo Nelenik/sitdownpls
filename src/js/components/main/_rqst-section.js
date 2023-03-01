@@ -2,6 +2,7 @@ import { mainPage } from '../_variables.js';
 import JustValidate from 'just-validate';
 import Inputmask from 'inputmask';
 import { setThanksModal } from '../modals/_thanks-modal.js';
+import tippy from 'tippy.js';
 
 export function formValidation() {
   const { rqstForm } = mainPage;
@@ -70,4 +71,11 @@ export function formValidation() {
       rqstForm.reset();
       rqstValidation.refresh();
     })
+}
+
+export function setTippy() {
+  tippy('.request__tooltip', {
+    content: 'Реплицированные с зарубежных источников, исследования формируют глобальную сеть.',
+    maxWidth: 157,
+  });
 }
