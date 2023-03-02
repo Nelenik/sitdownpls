@@ -1,7 +1,9 @@
-import Swiper from "swiper/bundle";
+import Swiper, {Pagination, A11y, Autoplay } from 'swiper'
 
 export function heroSwiperInit() {
+
   const heroSwiper = new Swiper('.hero__swiper', {
+    modules: [Pagination, A11y, Autoplay],
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',

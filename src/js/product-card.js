@@ -1,4 +1,4 @@
-import {initChoices, addClassToSearch, setBurgerMenu, setHeaderBloksMoving, setMenuHeight} from './components/_header.js';
+import {initChoices, addClassToSearch, setBurgerMenu, setHeaderBloksMoving} from './components/_header.js';
 import { productSwiperInit} from './components/product-card/card-descr.js';
 import {similarsSwiperInit} from './components/product-card/similar-goods.js';
 import {setBuyForm, setBuyFormValidation} from './components/modals/_buy-form.js';
@@ -8,7 +8,6 @@ setHeaderBloksMoving()
 initChoices()
 addClassToSearch()
 setBurgerMenu()
-setMenuHeight()
 
 //product swiper
 

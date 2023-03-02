@@ -9,10 +9,15 @@
     background-position: center;
 
     @include sol600 {
+      min-height: 300px;
+    }
+
+    @include sol500 {
       min-height: 210px;
     }
 
     &--1 {
+      background-position: bottom center;
       background-image: url("@img/main/hero_red-divan_desk.webp");
 
       @include sol1200 {
@@ -25,6 +30,7 @@
 
       @include sol600 {
         background-image: url("@img/main/hero_red-divan_320.webp");
+        // background-position: bottom center;
       }
     }
 
@@ -139,6 +145,16 @@
   width: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
+
+  @include sol920 {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
+
+  @include sol767 {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
 
   @include sol600 {
     padding: 30px;

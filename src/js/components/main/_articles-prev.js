@@ -1,9 +1,8 @@
-import {main} from "../_variables.js"
-import Swiper from "swiper/bundle";
+import Swiper, {Navigation, A11y} from 'swiper'
 
 export function articlesSwiperInit() {
   const articlesSwiper = new Swiper('.articles__swiper', {
-    // slidesPerView: 2,
+    modules: [Navigation, A11y],
     spaceBetween: 32,
     breakpoints: {
       1200: {

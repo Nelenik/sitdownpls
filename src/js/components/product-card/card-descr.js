@@ -1,9 +1,8 @@
-import Swiper from "swiper/bundle";
-import { productCard } from "../_variables";
-import { ModalConstructor } from "../vendor/modal/modalconstructor";
+import Swiper, {Navigation, Thumbs, A11y} from 'swiper'
 
 export function productSwiperInit() {
   const preview = new Swiper('.preview-swiper', {
+    modules: [Navigation, Thumbs, A11y],
     breakpoints: {
       1201: {
         slidesPerView: 4,
@@ -33,6 +32,7 @@ export function productSwiperInit() {
     }
   });
   const galery = new Swiper('.galery-swiper', {
+    modules: [Navigation, Thumbs, A11y],
     slidesPerView: 1,
     spaceBetween: 20,
     navigation: {

@@ -14,7 +14,6 @@ export function initChoices() {
     })
     if (el.name === 'searchSelect') {
       searchSelect = select;
-      console.log(searchSelect)
     }
   })
 };
@@ -125,41 +124,20 @@ export function setHeaderBloksMoving() {
   })
 }
 
-// бургер-меню
+// БУРГЕР МЕНЮ
+
+// настраиваем ариа атрибуты
 function setDropAria(el) {
   let ariaExpState = 'true' === el.getAttribute('aria-expanded');
   el.setAttribute('aria-expanded', !ariaExpState);
   ariaExpState ? el.setAttribute('aria-label', 'Открыть меню') : el.setAttribute('aria-label', 'Закрыть меню')
 }
-
+// сбрасываем ариа атрибуты
 function resetDropAria(el) {
   el.ariaExpanded = false;
   el.setAttribute('aria-label', 'Открыть меню')
 }
-export function setBurgerMenu() {
-  const { movedElems, burger } = header;
-  const { mainMenu } = movedElems;
-  burger.addEventListener('click', function (e) {
-    this.classList.toggle('js-burger--active')
-    mainMenu.classList.toggle('js-main-menu--active');
-    document.body.classList.toggle('stop-scroll');
-    document.documentElement.classList.toggle('stop-scroll');
-    setDropAria(burger)
-  })
-  mainMenu.addEventListener('click', function (e) {
-    e._isClickedMenu = true;
-  })
 
-  document.addEventListener('click', function (e) {
-    if ((!e.target.closest('.main-menu__item') && e._isClickedMenu) || e.target.closest('.js-burger')) return;
-    burger.classList.remove('js-burger--active');
-    mainMenu.classList.remove('js-main-menu--active');
-    document.body.classList.remove('stop-scroll');
-    document.documentElement.classList.remove('stop-scroll');
-    resetDropAria(burger)
-  })
-
-}
 // настраиваем высоту бургер меню;
 function countHeight(mq) {
   const {movedElems} = header
@@ -167,12 +145,10 @@ function countHeight(mq) {
     let height = document.documentElement.clientHeight;
     let top = movedElems.mainMenu.getBoundingClientRect().top;
     let result = height - top;
-    console.log(height)
     movedElems.mainMenu.style.height = `${result}px`
   } else movedElems.mainMenu.style.height = ''
 }
-
-
+// throttle
 function throttle(fn, throttleTime) {
   let isThrottled = false
   return function () {
@@ -185,15 +161,39 @@ function throttle(fn, throttleTime) {
   }
 }
 
-export function setMenuHeight() {
-  
+export function setBurgerMenu() {
+  const { movedElems, burger } = header;
+  const { mainMenu } = movedElems;
   let mq = window.matchMedia("(max-width: 600px)");
-  countHeight(mq)
-  // window.addEventListener('resize', function(e) {
-  //   countHeight(mq)
-  // })
-  function handler() {
+  let isOpen = false;
+  //создаем ссылку на функцию обработчик созданную с помощью throttle, чтобы можно было удалить обработчик resize;
+  let handler = throttle(function() {
     countHeight(mq)
-  }
-  window.addEventListener('resize', throttle(handler, 100))
+  }, 100)
+
+  burger.addEventListener('click', function (e) {
+    this.classList.toggle('js-burger--active')
+    mainMenu.classList.toggle('js-main-menu--active');
+    document.body.classList.toggle('stop-scroll');
+    document.documentElement.classList.toggle('stop-scroll');
+    setDropAria(burger);
+    countHeight(mq);
+    isOpen = !isOpen;
+    isOpen ? window.addEventListener('resize', handler) : window.removeEventListener('resize', handler)
+  })
+  mainMenu.addEventListener('click', function (e) {
+    e._isClickedMenu = true;
+  })
+
+  document.addEventListener('click', function (e) {
+    if ((!e.target.closest('.main-menu__item') && e._isClickedMenu) || e.target.closest('.js-burger')) return;
+    burger.classList.remove('js-burger--active');
+    mainMenu.classList.remove('js-main-menu--active');
+    document.body.classList.remove('stop-scroll');
+    document.documentElement.classList.remove('stop-scroll');
+    resetDropAria(burger);
+    isOpen = false;
+    window.removeEventListener('resize', handler)
+  })
+
 }

@@ -7,6 +7,13 @@
   @include sol1200 {
     grid-template-columns: repeat(9, 1fr);
   }
+  @include sol920 {
+    padding-bottom: 70px;
+  }
+
+  @include sol767 {
+    padding-bottom: 70px;
+  }
 }
 
 .aside-block {

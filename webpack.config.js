@@ -32,5 +32,9 @@ module.exports = {
     }]
   },
   devtool: !app.isBuild ? 'source-map': false,
+  optimization: {
+    usedExports: app.isBuild,
+    minimize: app.isBuild,
+  },
 
 };

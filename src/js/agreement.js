@@ -1,7 +1,6 @@
 // header
-import {initChoices, addClassToSearch, setBurgerMenu, setHeaderBloksMoving, setMenuHeight} from './components/_header.js';
+import {initChoices, addClassToSearch, setBurgerMenu, setHeaderBloksMoving} from './components/_header.js';
 initChoices()
 addClassToSearch()
 setHeaderBloksMoving()
 setBurgerMenu()
-setMenuHeight()

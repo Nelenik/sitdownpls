@@ -1,4 +1,4 @@
-import { initChoices, addClassToSearch, setHeaderBloksMoving, setBurgerMenu, setMenuHeight} from './components/_header.js';
+import { initChoices, addClassToSearch, setHeaderBloksMoving, setBurgerMenu} from './components/_header.js';
 import { heroSwiperInit } from './components/main/_hero.js';
 import { offersSwiperInit } from './components/main/_offers.js';
 import { showMoreCards } from './components/main/_top-positions.js';
@@ -11,20 +11,15 @@ setHeaderBloksMoving()
 initChoices()
 addClassToSearch()
 setBurgerMenu()
-setMenuHeight()
 
 //hero
 heroSwiperInit()
 
 //offers
-
 offersSwiperInit()
-
 //top-positions
-
 showMoreCards()
 // banner move btn
-
 new MoveBlock({
   singleBlock: '.js-banner-btn',
   breakpoints: [
@@ -40,20 +35,13 @@ new MoveBlock({
     },
   ]
 })
-
-
 //top-categories set focus
-
-let prev = document.querySelector('.js-banner-btn');
 new SetFocus('.js-top-categories', {
   focusedPost: '.js-article-swiper-btn:not(.swiper-button-disabled',
-  focusedPrev: prev,
+  focusedPrev: '.js-banner-btn',
 })
 //articles-prev
-
 articlesSwiperInit()
-
 //request-section
-
 formValidation()
 setTippy()

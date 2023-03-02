@@ -1,9 +1,8 @@
-import Swiper from "swiper/bundle";
-import { productCard } from "../_variables";
+import Swiper, {Navigation, A11y} from 'swiper';
 
 export function similarsSwiperInit() {
   const similar = new Swiper('.similar-goods__swiper', {
-    
+    modules: [Navigation, A11y],
     grabCursor: true,
     spaceBetween: 32,
     navigation: {

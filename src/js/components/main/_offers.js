@@ -1,8 +1,8 @@
-import {main} from "../_variables.js"
-import Swiper from "swiper/bundle";
+import Swiper, {Navigation, A11y} from 'swiper'
 
 export function offersSwiperInit() {
   const offersSwiper = new Swiper('.offers__swiper', {
+    modules: [Navigation, A11y],
     grabCursor: true,
     breakpoints: {
       1200: {

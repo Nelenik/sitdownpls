@@ -1,9 +1,10 @@
-import Swiper from "swiper/bundle";
 import { productCard } from "../_variables";
 import { ModalConstructor } from "../vendor/modal/modalconstructor";
+import Swiper, {Navigation, Thumbs, A11y} from 'swiper'
 
 function zoomSwiperInit() {
   const zoomSm = new Swiper('.zoom-swiper-sm', {
+    modules: [Navigation, Thumbs, A11y],
     navigation: {
       nextEl: '.zoom-swiper-sm-next',
       prevEl: '.zoom-swiper-sm-prev',
@@ -28,6 +29,7 @@ function zoomSwiperInit() {
     }
   });
   const zoomLg = new Swiper('.zoom-swiper-lg', {
+    modules: [Navigation, Thumbs, A11y],
     slidesPerView: 1,
     spaceBetween: 20,
 
