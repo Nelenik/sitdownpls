@@ -1,25 +1,29 @@
-// header
 import {initChoices, addClassToSearch, setBurgerMenu, setHeaderBloksMoving, setMenuHeight} from './components/_header.js';
+import { productSwiperInit} from './components/product-card/card-descr.js';
+import {similarsSwiperInit} from './components/product-card/similar-goods.js';
+import {setBuyForm, setBuyFormValidation} from './components/modals/_buy-form.js';
+import { setZoom } from './components/modals/_product-zoom.js';
+// header
+setHeaderBloksMoving()
 initChoices()
 addClassToSearch()
-setHeaderBloksMoving()
 setBurgerMenu()
 setMenuHeight()
 
 //product swiper
-import { productSwiperInit} from './components/product-card/card-descr.js';
+
 productSwiperInit();
 
 
 //similar swiper
-import {similarsSwiperInit} from './components/product-card/similar-goods.js';
+
 similarsSwiperInit()
 
 //buy form
-import {setBuyForm, setBuyFormValidation} from './components/modals/_buy-form.js';
+
 setBuyForm();
 setBuyFormValidation();
 
 //zoom product
-import { setZoom } from './components/modals/_product-zoom.js';
+
 setZoom()

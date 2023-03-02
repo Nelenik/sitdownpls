@@ -1,24 +1,30 @@
-// header
 import { initChoices, addClassToSearch, setHeaderBloksMoving, setBurgerMenu, setMenuHeight} from './components/_header.js';
+import { heroSwiperInit } from './components/main/_hero.js';
+import { offersSwiperInit } from './components/main/_offers.js';
+import { showMoreCards } from './components/main/_top-positions.js';
+import { MoveBlock } from './components/vendor/move-block/move-block.js';
+import { SetFocus } from './components/vendor/set-focus.js';
+import { articlesSwiperInit } from './components/main/_articles-prev.js';
+import { formValidation, setTippy } from './components/main/_rqst-section.js';
+// header
+setHeaderBloksMoving()
 initChoices()
 addClassToSearch()
-setHeaderBloksMoving()
 setBurgerMenu()
 setMenuHeight()
 
 //hero
-import { heroSwiperInit } from './components/main/_hero.js';
 heroSwiperInit()
 
 //offers
-import { offersSwiperInit } from './components/main/_offers.js';
+
 offersSwiperInit()
 
 //top-positions
-import { showMoreCards } from './components/main/_top-positions.js';
 
+showMoreCards()
 // banner move btn
-import { MoveBlock } from './components/vendor/move-block/move-block.js';
+
 new MoveBlock({
   singleBlock: '.js-banner-btn',
   breakpoints: [
@@ -35,19 +41,19 @@ new MoveBlock({
   ]
 })
 
-showMoreCards()
+
 //top-categories set focus
-import { SetFocus } from './components/vendor/set-focus.js';
+
 let prev = document.querySelector('.js-banner-btn');
 new SetFocus('.js-top-categories', {
   focusedPost: '.js-article-swiper-btn:not(.swiper-button-disabled',
   focusedPrev: prev,
 })
 //articles-prev
-import { articlesSwiperInit } from './components/main/_articles-prev.js';
+
 articlesSwiperInit()
 
 //request-section
-import { formValidation, setTippy } from './components/main/_rqst-section.js';
+
 formValidation()
 setTippy()

@@ -172,11 +172,28 @@ function countHeight(mq) {
   } else movedElems.mainMenu.style.height = ''
 }
 
+
+function throttle(fn, throttleTime) {
+  let isThrottled = false
+  return function () {
+    if (isThrottled) return
+    fn.apply(this, arguments)
+    isThrottled = true
+    setTimeout(function () {
+      isThrottled = false
+    }, throttleTime)
+  }
+}
+
 export function setMenuHeight() {
   
   let mq = window.matchMedia("(max-width: 600px)");
   countHeight(mq)
-  window.addEventListener('resize', function(e) {
+  // window.addEventListener('resize', function(e) {
+  //   countHeight(mq)
+  // })
+  function handler() {
     countHeight(mq)
-  })
+  }
+  window.addEventListener('resize', throttle(handler, 100))
 }
